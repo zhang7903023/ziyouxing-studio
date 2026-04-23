@@ -282,26 +282,26 @@ a {
    YouTube 频道区
    ======================================== */
 .youtube-section {
-    padding: 60px 0;
+    padding: 20px 0;
     background: var(--bg);
 }
 
 .youtube-channel {
     display: flex;
     align-items: center;
-    gap: 24px;
-    padding: 24px;
+    gap: 16px;
+    padding: 16px 20px;
     background: white;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
 }
 
 .channel-avatar {
-    width: 64px;
-    height: 64px;
-    min-width: 64px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #FF0000, #CC0000);
+    background: #FF0000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -309,8 +309,8 @@ a {
 }
 
 .channel-avatar svg {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     fill: white;
 }
 
@@ -319,30 +319,25 @@ a {
 }
 
 .channel-name {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--text);
-    margin-bottom: 6px;
 }
 
 .channel-meta {
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-light);
-}
-
-.channel-meta span {
-    margin-right: 16px;
 }
 
 .subscribe-btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
+    gap: 6px;
+    padding: 8px 16px;
     background: #FF0000;
     color: white;
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     transition: var(--transition);
     white-space: nowrap;
@@ -353,23 +348,19 @@ a {
 }
 
 .subscribe-btn svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     fill: white;
 }
 
 .video-placeholder {
-    margin-top: 20px;
-    padding: 24px;
+    margin-top: 16px;
+    padding: 16px;
     background: white;
-    border-radius: var(--radius-lg);
-    border: 2px dashed var(--border);
-    text-align: center;
-}
-
-.video-placeholder p {
-    color: var(--text-light);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
     font-size: 14px;
+    color: var(--text-light);
 }
 
 .video-placeholder a {
