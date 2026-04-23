@@ -368,6 +368,63 @@ a {
     text-decoration: underline;
 }
 
+/* ========================================
+   平台 Logo 区
+   ======================================== */
+.platforms-section {
+    padding: 20px 0 40px;
+    background: var(--bg);
+}
+
+.platforms-label {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+.platforms-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.platform-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: white;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+}
+
+.platform-item:hover {
+    border-color: var(--text-light);
+}
+
+.platform-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.platform-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.platform-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+}
+
 @media (max-width: 640px) {
     .youtube-channel {
         flex-direction: column;
@@ -377,6 +434,14 @@ a {
     .subscribe-btn {
         width: 100%;
         justify-content: center;
+    }
+    
+    .platforms-grid {
+        gap: 8px;
+    }
+    
+    .platform-item {
+        padding: 8px 12px;
     }
 }
 
