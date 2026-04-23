@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务项目 - 自由行Studio</title>
+    <meta name="description" content="自由行Studio提供虚拟定位、打卡服务、社媒涨粉、海外权限认证等全方位数字服务。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="自由行Studio" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span style="display:none;">自由行Studio</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="services.html" class="nav-link active" data-i18n="nav.services">服务项目</a>
+                <a href="contact.html" class="nav-link" data-i18n="nav.contact">联系我们</a>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu">
+        <a href="index.html" data-i18n="nav.home">首页</a>
+        <a href="services.html" data-i18n="nav.services">服务项目</a>
+        <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+        <div class="mobile-lang">
+            <button class="lang-btn active" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <!-- 页面标题 -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-i18n="services.page_title">服务项目</h1>
+            <p data-i18n="services.page_desc">一站式数字服务解决方案，满足你的多样化需求</p>
+        </div>
+    </section>
+
+    <!-- 服务列表 -->
+    <section class="services-list">
+        <div class="container">
+            
+            <!-- 服务1：虚拟定位 -->
+            <div class="service-detail" id="location">
+                <div class="service-detail-img">
+                    <!-- [素材位置9] 服务详情图 - 替换 images/services/location.jpg -->
+                    <img src="images/services/location.jpg" alt="虚拟定位服务" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="img-placeholder" style="display:none;">📍</div>
+                </div>
+                <div class="service-detail-content">
+                    <h2 data-i18n="service.location.title">虚拟定位服务</h2>
+                    <p data-i18n="service.location.desc">通过先进定位修改技术，让你的手机出现在世界任何角落，满足旅游打卡、位置测试等多种需求。</p>
+                    <ul class="service-features">
+                        <li data-i18n="service.location.1">苹果手机虚拟定位（型号14以下 ¥499）</li>
+                        <li data-i18n="service.location.2">苹果手机虚拟定位（型号15以上 ¥599）</li>
+                        <li data-i18n="service.location.3">苹果海外版本（支持全球定位）¥999</li>
+                        <li data-i18n="service.location.4">安卓虚拟定位（年卡 ¥380 / 半年 ¥260 / 季卡 ¥180 / 月卡 ¥60）</li>
+                        <li data-i18n="service.location.5">支持微信、钉钉、抖音等主流App定位</li>
+                    </ul>
+                    <div class="service-price">
+                        <span data-i18n="service.price">参考价格：</span>
+                        <strong data-i18n="service.location.price">¥60 - ¥999</strong>
+                        <span data-i18n="service.price_note">（根据机型和服务时长定价）</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="service.consult">立即咨询 →</a>
+                </div>
+            </div>
+
+            <!-- 服务2：打卡服务 -->
+            <div class="service-detail reverse" id="clock">
+                <div class="service-detail-img">
+                    <!-- [素材位置10] 服务详情图 - 替换 images/services/clock.jpg -->
+                    <img src="images/services/clock.jpg" alt="远程打卡服务" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="img-placeholder" style="display:none;">⏰</div>
+                </div>
+                <div class="service-detail-content">
+                    <h2 data-i18n="service.clock.title">远程打卡服务</h2>
+                    <p data-i18n="service.clock.desc">告别迟到烦恼！我们提供专业的远程打卡服务，支持多种考勤系统，让你轻松完成每日打卡。</p>
+                    <ul class="service-features">
+                        <li data-i18n="service.clock.1">钉钉远程打卡（支持GPS/WiFi打卡）</li>
+                        <li data-i18n="service.clock.2">企业微信打卡（支持外勤打卡）</li>
+                        <li data-i18n="service.clock.3">自定义打卡时间和位置</li>
+                        <li data-i18n="service.clock.4">支持拍照打卡、水印打卡</li>
+                        <li data-i18n="service.clock.5">稳定不掉线，告别异常提醒</li>
+                    </ul>
+                    <div class="service-price">
+                        <span data-i18n="service.price">参考价格：</span>
+                        <strong data-i18n="service.clock.price">¥XXX/月 起</strong>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="service.consult">立即咨询 →</a>
+                </div>
+            </div>
+
+                <!-- 服务3：社媒涨粉 -->
+            <div class="service-detail" id="fans">
+                <div class="service-detail-img">
+                    <!-- [素材位置11] 服务详情图 - 替换 images/services/fans.jpg -->
+                    <img src="images/services/fans.jpg" alt="社媒涨粉服务" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="img-placeholder" style="display:none;">📈</div>
+                </div>
+                <div class="service-detail-content">
+                    <h2 data-i18n="service.fans.title">社媒涨粉服务</h2>
+                    <p data-i18n="service.fans.desc">快速提升账号影响力！我们提供真实用户增长服务，帮助你的内容获得更多曝光。</p>
+                    <ul class="service-features">
+                        <li data-i18n="service.fans.1">小红书涨粉（100粉起步）</li>
+                        <li data-i18n="service.fans.2">抖音涨粉（200粉起步）</li>
+                        <li data-i18n="service.fans.3">视频号涨粉（200粉起步）</li>
+                        <li data-i18n="service.fans.4">真人粉丝，拒绝机器粉</li>
+                        <li data-i18n="service.fans.5">安全不封号，无风险</li>
+                    </ul>
+                    <div class="service-price">
+                        <span data-i18n="service.price">参考价格：</span>
+                        <strong data-i18n="service.fans.price">咨询客服获取报价</strong>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="service.consult">立即咨询 →</a>
+                </div>
+            </div>
+
+                <!-- 服务4：海外权限 -->
+            <div class="service-detail reverse" id="overseas">
+                <div class="service-detail-img">
+                    <!-- [素材位置12] 服务详情图 - 替换 images/services/overseas.jpg -->
+                    <img src="images/services/overseas.jpg" alt="海外权限认证" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="img-placeholder" style="display:none;">🌐</div>
+                </div>
+                <div class="service-detail-content">
+                    <h2 data-i18n="service.overseas.title">海外直播权限</h2>
+                    <p data-i18n="service.overseas.desc">解决海外用户无法使用国内平台直播的问题！我们提供专业的海外直播权限开通服务。</p>
+                    <ul class="service-features">
+                        <li data-i18n="service.overseas.1">抖音海外直播权限开通（¥500）</li>
+                        <li data-i18n="service.overseas.2">视频号海外直播权限（¥600）</li>
+                        <li data-i18n="service.overseas.3">小红书海外直播权限（¥800）</li>
+                        <li data-i18n="service.overseas.4">全程代办，省心省力</li>
+                        <li data-i18n="service.overseas.5">快速审核，快速开通</li>
+                    </ul>
+                    <div class="service-price">
+                        <span data-i18n="service.price">参考价格：</span>
+                        <strong data-i18n="service.overseas.price">¥500 - ¥800</strong>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="service.consult">立即咨询 →</a>
+                </div>
+            </div>
+
+            <!-- 服务5：手机分身 -->
+            <div class="service-detail" id="clone">
+                <div class="service-detail-img">
+                    <!-- [素材位置13] 服务详情图 - 替换 images/services/clone.jpg -->
+                    <img src="images/services/clone.jpg" alt="手机分身软件" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="img-placeholder" style="display:none;">📱</div>
+                </div>
+                <div class="service-detail-content">
+                    <h2 data-i18n="service.clone.title">手机分身软件</h2>
+                    <p data-i18n="service.clone.desc">一部手机，多个身份！我们提供专业的手机分身解决方案，让你轻松管理多个账号。</p>
+                    <ul class="service-features">
+                        <li data-i18n="service.clone.1">苹果手机分身（iOS多开）</li>
+                        <li data-i18n="service.clone.2">多账号同时在线</li>
+                        <li data-i18n="service.clone.3">数据完全隔离，互不干扰</li>
+                        <li data-i18n="service.clone.4">支持微信、抖音、小红书等多App</li>
+                        <li data-i18n="service.clone.5">稳定不闪退，使用流畅</li>
+                    </ul>
+                    <div class="service-price">
+                        <span data-i18n="service.price">参考价格：</span>
+                        <strong data-i18n="service.clone.price">¥XXX - ¥XXX</strong>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="service.consult">立即咨询 →</a>
+                </div>
+            </div>
+
+            <!-- 服务6：聚光开通 -->
+            <div class="service-detail reverse" id="light">
+                <div class="service-detail-img">
+                    <!-- [素材位置14] 服务详情图 - 替换 images/services/light.jpg -->
+                    <img src="images/services/light.jpg" alt="聚光开通服务" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="img-placeholder" style="display:none;">💡</div>
+                </div>
+                <div class="service-detail-content">
+                    <h2 data-i18n="service.light.title">聚光开通服务</h2>
+                    <p data-i18n="service.light.desc">快速开通各平台专业功能！我们提供一站式代办服务，让你快速获得平台认证。</p>
+                    <ul class="service-features">
+                        <li data-i18n="service.light.1">抖音聚光平台开通</li>
+                        <li data-i18n="service.light.2">小红书专业号认证</li>
+                        <li data-i18n="service.light.3">视频号互选平台开通</li>
+                        <li data-i18n="service.light.4">全程代办，无需自己操作</li>
+                        <li data-i18n="service.light.5">快速审核，快速上线</li>
+                    </ul>
+                    <div class="service-price">
+                        <span data-i18n="service.price">参考价格：</span>
+                        <strong data-i18n="service.light.price">¥XXX - ¥XXX/项</strong>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="service.consult">立即咨询 →</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2 data-i18n="services.cta.title">没找到你需要的服务？</h2>
+            <p data-i18n="services.cta.desc">告诉我们你的需求，定制化服务等你来问</p>
+            <div class="cta-btns">
+                <a href="https://wa.me/14154251293" target="_blank" class="btn btn-whatsapp">
+                    📱 WhatsApp: +14154251293
+                </a>
+                <a href="contact.html" class="btn btn-outline" data-i18n="services.cta.contact">填写咨询表单</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo-white.png" alt="自由行Studio" class="footer-logo" onerror="this.style.display='none';">
+                    <p>自由行Studio</p>
+                    <p data-i18n="footer.tagline">专业数字服务解决方案</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.services">服务项目</h4>
+                    <ul>
+                        <li><a href="#location" data-i18n="service.location.title">虚拟定位服务</a></li>
+                        <li><a href="#clock" data-i18n="service.clock.title">远程打卡服务</a></li>
+                        <li><a href="#fans" data-i18n="service.fans.title">社媒涨粉服务</a></li>
+                        <li><a href="#overseas" data-i18n="service.overseas.title">海外权限认证</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-i18n="footer.contact">联系我们</h4>
+                    <ul>
+                        <li>📱 WhatsApp: +14154251293</li>
+                        <li>💬 微信: yes1974g</li>
+                        <li>📧 邮箱: zhang7903023@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 自由行Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 悬浮联系按钮 -->
+    <div class="floating-btns">
+        <a href="https://wa.me/14154251293" target="_blank" class="float-btn whatsapp" title="WhatsApp">
+            <img src="images/icons/whatsapp.svg" alt="WhatsApp" onerror="this.parentElement.innerHTML='💬'">
+        </a>
+        <a href="wechat://add/p/yes1974g" class="float-btn wechat" title="微信">
+            💬
+        </a>
+        <button class="float-btn back-top" onclick="window.scrollTo({top:0})" title="返回顶部">↑</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

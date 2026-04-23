@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 自由行Studio</title>
+    <meta name="description" content="联系自由行Studio，获取虚拟定位、打卡服务、涨粉运营、海外权限等专业服务咨询。">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="自由行Studio" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span style="display:none;">自由行Studio</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link" data-i18n="nav.home">首页</a>
+                <a href="services.html" class="nav-link" data-i18n="nav.services">服务项目</a>
+                <a href="contact.html" class="nav-link active" data-i18n="nav.contact">联系我们</a>
+            </nav>
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中文</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu">
+        <a href="index.html" data-i18n="nav.home">首页</a>
+        <a href="services.html" data-i18n="nav.services">服务项目</a>
+        <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+        <div class="mobile-lang">
+            <button class="lang-btn active" data-lang="zh">中文</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+    </div>
+
+    <!-- 页面标题 -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 data-i18n="contact.page_title">联系我们</h1>
+            <p data-i18n="contact.page_desc">有任何问题或需求，欢迎通过以下方式联系我们</p>
+        </div>
+    </section>
+
+    <!-- 联系内容 -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- 联系信息 -->
+                <div class="contact-info">
+                    <h2 data-i18n="contact.info.title">联系方式</h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div class="contact-detail">
+                            <h3 data-i18n="contact.info.wechat">微信</h3>
+                            <p>yes1974g</p>
+                            <button class="copy-btn" data-copy="yes1974g" data-i18n="contact.copy">复制</button>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-detail">
+                            <h3>WhatsApp</h3>
+                            <p>+14154251293</p>
+                            <a href="https://wa.me/14154251293" target="_blank" class="btn btn-sm" data-i18n="contact.open_whatsapp">打开 WhatsApp</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-detail">
+                            <h3 data-i18n="contact.info.email">邮箱</h3>
+                            <p>zhang7903023@gmail.com</p>
+                            <a href="mailto:zhang7903023@gmail.com" class="btn btn-sm" data-i18n="contact.send_email">发送邮件</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-note">
+                        <h4 data-i18n="contact.note.title">⏰ 服务时间</h4>
+                        <p data-i18n="contact.note.time">24小时在线，留言必回</p>
+                        <p data-i18n="contact.note.response" class="response-time">预计回复时间：1-24小时</p>
+                    </div>
+                </div>
+
+                <!-- 咨询表单 -->
+                <div class="contact-form-wrapper">
+                    <h2 data-i18n="contact.form.title">在线咨询</h2>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.form.name">您的称呼 *</label>
+                            <input type="text" id="name" name="name" required placeholder="请输入您的称呼">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact_method" data-i18n="contact.form.contact_method">联系方式 *</label>
+                            <select id="contact_method" name="contact_method" required>
+                                <option value="" data-i18n="contact.form.select_option">请选择</option>
+                                <option value="wechat" data-i18n="contact.form.wechat">微信</option>
+                                <option value="whatsapp" data-i18n="contact.form.whatsapp">WhatsApp</option>
+                                <option value="email" data-i18n="contact.form.email">邮箱</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact_value" data-i18n="contact.form.contact_value">联系方式详情 *</label>
+                            <input type="text" id="contact_value" name="contact_value" required placeholder="微信号/WhatsApp/邮箱">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service" data-i18n="contact.form.service">咨询项目 *</label>
+                            <select id="service" name="service" required>
+                                <option value="" data-i18n="contact.form.select_option">请选择</option>
+                                <option value="location" data-i18n="contact.form.location">虚拟定位服务</option>
+                                <option value="clock" data-i18n="contact.form.clock">远程打卡服务</option>
+                                <option value="fans" data-i18n="contact.form.fans">社媒涨粉服务</option>
+                                <option value="overseas" data-i18n="contact.form.overseas">海外权限认证</option>
+                                <option value="clone" data-i18n="contact.form.clone">手机分身软件</option>
+                                <option value="light" data-i18n="contact.form.light">聚光开通服务</option>
+                                <option value="other" data-i18n="contact.form.other">其他服务</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">留言内容 *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="请详细描述您的需求..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.form.submit">提交咨询</button>
+                    </form>
+
+                    <!-- 表单提交提示 -->
+                    <div id="formSuccess" class="form-success" style="display:none;">
+                        <div class="success-icon">✅</div>
+                        <h3 data-i18n="contact.success.title">提交成功！</h3>
+                        <p data-i18n="contact.success.desc">我们已收到您的咨询，将在24小时内回复您</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="faq.title">常见问题</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faq.1.q">服务多久能完成？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq.1.a">大部分服务在付款后1-24小时内完成，具体时间根据服务类型而定。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faq.2.q">付款方式有哪些？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq.2.a">支持微信、支付宝、PayPal等支付方式，详情咨询客服。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faq.3.q">服务有售后吗？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq.3.a">我们提供完善的售后服务，如有问题可随时联系客服解决。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span data-i18n="faq.4.q">如何保证账号安全？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer" data-i18n="faq.4.a">我们采用行业领先的安全技术，全程加密操作，不留存用户敏感信息。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="images/logo-white.png" alt="自由行Studio" class="footer-logo" onerror="this.style.display='none';">
+                    <p>自由行Studio</p>
+                    <p data-i18n="footer.tagline">专业数字服务解决方案</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-i18n="footer.services">服务项目</h4>
+                    <ul>
+                        <li><a href="services.html" data-i18n="service.location.title">虚拟定位服务</a></li>
+                        <li><a href="services.html" data-i18n="service.clock.title">远程打卡服务</a></li>
+                        <li><a href="services.html" data-i18n="service.fans.title">社媒涨粉服务</a></li>
+                        <li><a href="services.html" data-i18n="service.overseas.title">海外权限认证</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-i18n="footer.contact">联系我们</h4>
+                    <ul>
+                        <li>📱 WhatsApp: +14154251293</li>
+                        <li>💬 微信: yes1974g</li>
+                        <li>📧 邮箱: zhang7903023@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 自由行Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 悬浮联系按钮 -->
+    <div class="floating-btns">
+        <a href="https://wa.me/14154251293" target="_blank" class="float-btn whatsapp" title="WhatsApp">
+            <img src="images/icons/whatsapp.svg" alt="WhatsApp" onerror="this.parentElement.innerHTML='💬'">
+        </a>
+        <a href="wechat://add/p/yes1974g" class="float-btn wechat" title="微信">
+            💬
+        </a>
+        <button class="float-btn back-top" onclick="window.scrollTo({top:0})" title="返回顶部">↑</button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
