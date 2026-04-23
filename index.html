@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自由行Studio - 专业数字服务解决方案</title>
-    <meta name="description" content="自由行Studio提供苹果安卓虚拟定位、钉钉企业微信打卡、抖音小红书涨粉、海外平台权限认证等专业服务。服务全球华人，诚信经营。">
-    <meta name="keywords" content="虚拟定位,打卡服务,涨粉,海外认证,抖音,小红书,视频号,钉钉打卡,企业微信">
+    <title>自由行Studio - 一对一设备环境配置</title>
+    <meta name="description" content="一对一设备环境配置与技术支持。面向定位、直播环境、网络配置等需求，提供更直接的沟通与处理方案。">
+    <meta name="keywords" content="虚拟定位,打卡服务,海外权限,设备配置">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,14 +15,11 @@
     <!-- 顶部导航 -->
     <header class="header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">
-                <img src="images/logo.png" alt="自由行Studio" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
-                <span style="display:none;">自由行Studio</span>
-            </a>
+            <a href="index.html" class="logo">自由行Studio</a>
             <nav class="nav">
-                <a href="index.html" class="nav-link active" data-i18n="nav.home">首页</a>
-                <a href="services.html" class="nav-link" data-i18n="nav.services">服务项目</a>
-                <a href="contact.html" class="nav-link" data-i18n="nav.contact">联系我们</a>
+                <a href="index.html" class="nav-link active">首页</a>
+                <a href="services.html" class="nav-link">服务</a>
+                <a href="contact.html" class="nav-link">联系</a>
             </nav>
             <div class="lang-switch">
                 <button class="lang-btn active" data-lang="zh">中文</button>
@@ -38,9 +35,9 @@
 
     <!-- 移动端菜单 -->
     <div class="mobile-menu">
-        <a href="index.html" data-i18n="nav.home">首页</a>
-        <a href="services.html" data-i18n="nav.services">服务项目</a>
-        <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+        <a href="index.html">首页</a>
+        <a href="services.html">服务</a>
+        <a href="contact.html">联系</a>
         <div class="mobile-lang">
             <button class="lang-btn active" data-lang="zh">中文</button>
             <button class="lang-btn" data-lang="en">EN</button>
@@ -49,161 +46,137 @@
 
     <!-- Hero 区域 -->
     <section class="hero">
-        <div class="hero-slider">
-            <!-- [素材位置1] 轮播图 - 替换 images/banner-1.jpg, banner-2.jpg, banner-3.jpg -->
-            <div class="slide active" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                <div class="container">
-                    <h1 data-i18n="hero.title">专业数字服务解决方案</h1>
-                    <p data-i18n="hero.subtitle">虚拟定位 · 打卡服务 · 涨粉运营 · 海外权限</p>
-                    <p class="hero-desc" data-i18n="hero.desc">服务全球华人，助力你的数字生活</p>
-                    <div class="hero-btns">
-                        <a href="services.html" class="btn btn-primary" data-i18n="hero.btn.services">查看服务</a>
-                        <a href="contact.html" class="btn btn-outline" data-i18n="hero.btn.contact">立即咨询</a>
-                    </div>
-                </div>
+        <div class="container">
+            <h1 data-i18n="hero.title">一对一设备环境配置与技术支持</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">面向定位、直播环境、网络配置等需求，提供更直接的沟通与处理方案。</p>
+            <div class="hero-btns">
+                <a href="services.html" class="btn btn-primary" data-i18n="hero.btn.services">查看服务</a>
+                <a href="contact.html" class="btn btn-outline" data-i18n="hero.btn.contact">立即联系</a>
             </div>
         </div>
     </section>
 
-    <!-- 服务特色 -->
-    <section class="features">
+    <!-- 服务列表 -->
+    <section class="services">
         <div class="container">
-            <h2 class="section-title" data-i18n="features.title">我们的核心服务</h2>
-            <p class="section-subtitle" data-i18n="features.subtitle">覆盖手机工具、办公打卡、社媒运营、海外权限等多场景需求</p>
+            <h2 class="section-title" data-i18n="services.title">我能帮到你</h2>
             
-            <div class="features-grid">
-                <!-- 服务卡片1 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- [素材位置2] 服务图标 - 替换 images/icons/location.png -->
-                        <img src="images/icons/location.png" alt="虚拟定位" onerror="this.parentElement.innerHTML='📍'">
+            <div class="services-grid">
+                <a href="services.html#location" class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
                     </div>
-                    <h3 data-i18n="service.location.title">虚拟定位服务</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="service.location.1">苹果/安卓手机虚拟定位</li>
-                        <li data-i18n="service.location.2">支持海外版本</li>
-                        <li data-i18n="service.location.3">支持微信、钉钉、抖音</li>
-                    </ul>
-                </div>
+                    <h3 data-i18n="s.location.title">虚拟定位</h3>
+                    <p data-i18n="s.location.desc">苹果 / 安卓 / 海外版本</p>
+                </a>
 
-                <!-- 服务卡片2 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- [素材位置3] 服务图标 - 替换 images/icons/clock.png -->
-                        <img src="images/icons/clock.png" alt="打卡服务" onerror="this.parentElement.innerHTML='⏰'">
+                <a href="services.html#clock" class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
                     </div>
-                    <h3 data-i18n="service.clock.title">远程打卡服务</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="service.clock.1">钉钉远程打卡</li>
-                        <li data-i18n="service.clock.2">企业微信打卡</li>
-                        <li data-i18n="service.clock.3">支持考勤组设置</li>
-                    </ul>
-                </div>
+                    <h3 data-i18n="s.clock.title">远程打卡</h3>
+                    <p data-i18n="s.clock.desc">钉钉 / 企业微信</p>
+                </a>
 
-                <!-- 服务卡片3 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- [素材位置4] 服务图标 - 替换 images/icons/fans.png -->
-                        <img src="images/icons/fans.png" alt="涨粉服务" onerror="this.parentElement.innerHTML='📈'">
+                <a href="services.html#fans" class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
                     </div>
-                    <h3 data-i18n="service.fans.title">社媒涨粉服务</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="service.fans.1">小红书/抖音/视频号涨粉</li>
-                        <li data-i18n="service.fans.2">真人粉丝，拒绝机器粉</li>
-                        <li data-i18n="service.fans.3">安全不封号，无风险</li>
-                    </ul>
-                </div>
+                    <h3 data-i18n="s.fans.title">社媒涨粉</h3>
+                    <p data-i18n="s.fans.desc">抖音 / 小红书 / 视频号</p>
+                </a>
 
-                <!-- 服务卡片4 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- [素材位置5] 服务图标 - 替换 images/icons/globe.png -->
-                        <img src="images/icons/globe.png" alt="海外权限" onerror="this.parentElement.innerHTML='🌐'">
+                <a href="services.html#overseas" class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
                     </div>
-                    <h3 data-i18n="service.overseas.title">海外直播权限</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="service.overseas.1">抖音海外直播权限开通</li>
-                        <li data-i18n="service.overseas.2">视频号海外直播权限</li>
-                        <li data-i18n="service.overseas.3">小红书海外直播权限</li>
-                    </ul>
-                </div>
+                    <h3 data-i18n="s.overseas.title">海外权限</h3>
+                    <p data-i18n="s.overseas.desc">抖音 / 视频号 / 小红书直播</p>
+                </a>
 
-                <!-- 服务卡片5 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- [素材位置6] 服务图标 - 替换 images/icons/phone.png -->
-                        <img src="images/icons/phone.png" alt="分身软件" onerror="this.parentElement.innerHTML='📱'">
+                <a href="services.html#clone" class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                            <line x1="12" y1="18" x2="12.01" y2="18"/>
+                        </svg>
                     </div>
-                    <h3 data-i18n="service.clone.title">手机分身软件</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="service.clone.1">苹果手机分身</li>
-                        <li data-i18n="service.clone.2">多账号同时在线</li>
-                        <li data-i18n="service.clone.3">数据完全隔离</li>
-                    </ul>
-                </div>
+                    <h3 data-i18n="s.clone.title">手机分身</h3>
+                    <p data-i18n="s.clone.desc">苹果多开 / 多账号</p>
+                </a>
 
-                <!-- 服务卡片6 -->
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <!-- [素材位置7] 服务图标 - 替换 images/icons/light.png -->
-                        <img src="images/icons/light.png" alt="聚光开通" onerror="this.parentElement.innerHTML='💡'">
+                <a href="services.html#light" class="service-card">
+                    <div class="service-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                        </svg>
                     </div>
-                    <h3 data-i18n="service.light.title">聚光开通服务</h3>
-                    <ul class="feature-list">
-                        <li data-i18n="service.light.1">抖音聚光平台开通</li>
-                        <li data-i18n="service.light.2">小红书专业号认证</li>
-                        <li data-i18n="service.light.3">视频号互选平台</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="features-more">
-                <a href="services.html" class="btn btn-primary" data-i18n="features.more">查看全部服务 →</a>
+                    <h3 data-i18n="s.light.title">平台认证</h3>
+                    <p data-i18n="s.light.desc">聚光开通 / 专业号</p>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- 为什么选择我们 -->
-    <section class="why-us">
+    <!-- 工作方式 -->
+    <section class="how">
         <div class="container">
-            <h2 class="section-title" data-i18n="why.title">为什么选择我们</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <div class="why-num">01</div>
-                    <h3 data-i18n="why.1.title">安全稳定</h3>
-                    <p data-i18n="why.1.desc">采用先进加密技术，保护用户隐私安全</p>
+            <h2 class="section-title" data-i18n="how.title">工作方式</h2>
+            
+            <div class="how-grid">
+                <div class="how-item">
+                    <h3 data-i18n="how.1.title">先判断，再建议</h3>
+                    <p data-i18n="how.1.desc">不是直接套模板回复。先了解你的设备和需求，再告诉你怎么处理更有效。</p>
                 </div>
-                <div class="why-item">
-                    <div class="why-num">02</div>
-                    <h3 data-i18n="why.2.title">快速响应</h3>
-                    <p data-i18n="why.2.desc">24小时内完成服务，及时沟通全程透明</p>
+                <div class="how-item">
+                    <h3 data-i18n="how.2.title">沟通更直接</h3>
+                    <p data-i18n="how.2.desc">减少反复试错，也减少无效操作。说明情况，直接给方案。</p>
                 </div>
-                <div class="why-item">
-                    <div class="why-num">03</div>
-                    <h3 data-i18n="why.3.title">专业可靠</h3>
-                    <p data-i18n="why.3.desc">多年行业经验，服务超过10000+客户</p>
-                </div>
-                <div class="why-item">
-                    <div class="why-num">04</div>
-                    <h3 data-i18n="why.4.title">售后保障</h3>
-                    <p data-i18n="why.4.desc">7×24小时在线支持，问题无忧解决</p>
+                <div class="how-item">
+                    <h3 data-i18n="how.3.title">后续还能继续</h3>
+                    <p data-i18n="how.3.desc">不是发完就结束。后续有问题，直接联系继续确认。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA 区域 -->
-    <section class="cta">
+    <!-- 联系区 -->
+    <section class="contact-section">
         <div class="container">
-            <h2 data-i18n="cta.title">准备好开始了吗？</h2>
-            <p data-i18n="cta.desc">添加微信或WhatsApp，立即咨询你的需求</p>
-            <div class="cta-btns">
-                <a href="https://wa.me/14154251293" target="_blank" class="btn btn-whatsapp">
-                    📱 WhatsApp: +14154251293
-                </a>
-                <a href="wechat://add/p/yes1974g" class="btn btn-wechat">
-                    💬 微信: yes1974g
-                </a>
+            <h2 class="section-title" data-i18n="contact.title">直接联系我</h2>
+            <p class="contact-desc" data-i18n="contact.desc">把设备、平台和当前问题简单发过来。我会先判断，再告诉你怎么沟通更有效。</p>
+            
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <span class="contact-label">微信</span>
+                    <span class="contact-value">yes1974g</span>
+                    <button class="copy-btn" onclick="copyText('yes1974g', this)">复制</button>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-label">WhatsApp</span>
+                    <span class="contact-value">+14154251293</span>
+                    <a href="https://wa.me/14154251293" target="_blank" class="contact-link">打开</a>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-label">邮箱</span>
+                    <span class="contact-value">zhang7903023@gmail.com</span>
+                    <a href="mailto:zhang7903023@gmail.com" class="contact-link">写信</a>
+                </div>
             </div>
         </div>
     </section>
@@ -211,48 +184,40 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <!-- [素材位置8] 页脚Logo - 替换 images/logo-white.png -->
-                    <img src="images/logo-white.png" alt="自由行Studio" class="footer-logo" onerror="this.style.display='none';">
-                    <p>自由行Studio</p>
-                    <p data-i18n="footer.tagline">专业数字服务解决方案</p>
-                </div>
-                <div class="footer-links">
-                    <h4 data-i18n="footer.services">服务项目</h4>
-                    <ul>
-                        <li><a href="services.html" data-i18n="service.location.title">虚拟定位服务</a></li>
-                        <li><a href="services.html" data-i18n="service.clock.title">远程打卡服务</a></li>
-                        <li><a href="services.html" data-i18n="service.fans.title">社媒涨粉服务</a></li>
-                        <li><a href="services.html" data-i18n="service.overseas.title">海外权限认证</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4 data-i18n="footer.contact">联系我们</h4>
-                    <ul>
-                        <li>📱 WhatsApp: +14154251293</li>
-                        <li>💬 微信: yes1974g</li>
-                        <li>📧 邮箱: zhang7903023@gmail.com</li>
-                    </ul>
-                </div>
+            <div class="footer-brand">
+                <p class="footer-name">自由行Studio</p>
+                <p class="footer-tagline" data-i18n="footer.tagline">一对一设备环境配置与技术支持</p>
+            </div>
+            <div class="footer-links">
+                <p>微信：yes1974g</p>
+                <p>邮箱：zhang7903023@gmail.com</p>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 自由行Studio. All rights reserved.</p>
+                <p>© 2026 自由行Studio</p>
             </div>
         </div>
     </footer>
 
-    <!-- 悬浮联系按钮 -->
-    <div class="floating-btns">
-        <a href="https://wa.me/14154251293" target="_blank" class="float-btn whatsapp" title="WhatsApp">
-            <img src="images/icons/whatsapp.svg" alt="WhatsApp" onerror="this.parentElement.innerHTML='💬'">
-        </a>
-        <a href="wechat://add/p/yes1974g" class="float-btn wechat" title="微信">
-            💬
-        </a>
-        <button class="float-btn back-top" onclick="window.scrollTo({top:0})" title="返回顶部">↑</button>
+    <!-- 悬浮咨询按钮 -->
+    <div class="float-consult">
+        <button class="consult-btn" onclick="toggleContact(this)" data-i18n="float.consult">咨询</button>
+        <div class="consult-popup">
+            <a href="https://wa.me/14154251293" target="_blank">WhatsApp</a>
+            <a href="contact.html">微信</a>
+        </div>
     </div>
 
     <script src="js/main.js"></script>
+    <script>
+        function copyText(text, btn) {
+            navigator.clipboard.writeText(text);
+            btn.textContent = '已复制';
+            setTimeout(() => btn.textContent = '复制', 2000);
+        }
+        function toggleContact(btn) {
+            btn.classList.toggle('active');
+            btn.nextElementSibling.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
