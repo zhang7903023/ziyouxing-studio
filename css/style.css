@@ -279,6 +279,115 @@ a {
 }
 
 /* ========================================
+   YouTube 频道区
+   ======================================== */
+.youtube-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.youtube-channel {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.channel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.channel-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF0000, #CC0000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.channel-avatar svg {
+    width: 40px;
+    height: 40px;
+    fill: white;
+}
+
+.channel-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+}
+
+.channel-stats {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--text-light);
+}
+
+.subscribe-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #FF0000;
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.subscribe-btn:hover {
+    background: #CC0000;
+}
+
+.subscribe-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: white;
+}
+
+.video-placeholder {
+    margin-top: 32px;
+    padding: 40px 24px;
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--border);
+}
+
+.video-placeholder p {
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.video-placeholder a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* ========================================
    工作方式
    ======================================== */
 .how {
