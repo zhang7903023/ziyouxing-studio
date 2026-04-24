@@ -209,8 +209,17 @@ a {
     font-size: 18px;
     color: var(--text-light);
     max-width: 520px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+
+.hero-desc {
+    font-size: 15px;
+    color: var(--text-light);
+    max-width: 480px;
     margin: 0 auto 32px;
     line-height: 1.7;
+    opacity: 0.85;
 }
 
 .hero-btns {
