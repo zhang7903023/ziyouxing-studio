@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zhang7903023.github.io/ziyouxing-studio/sitemap.xml
