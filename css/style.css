@@ -853,3 +853,126 @@ a {
 .form-success p {
     color: var(--text-light);
 }
+
+/* ========================================
+   服务详情页扩展
+   ======================================== */
+.service-intro {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.app-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.app-tag {
+    padding: 8px 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+}
+
+.faq-list li {
+    padding-left: 0;
+    margin-bottom: 16px;
+}
+
+.faq-list li::before {
+    display: none;
+}
+
+.faq-list li strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.faq-list li {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.related-services {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+}
+
+.related-services h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.related-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.related-links a:hover {
+    color: var(--text);
+}
+
+.service-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.service-actions .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.service-actions .btn-outline:hover {
+    border-color: var(--text);
+}
+
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-outline:hover {
+    border-color: var(--text);
+}
