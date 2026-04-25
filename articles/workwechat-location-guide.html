@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业微信打卡改定位完全指南：海外考勤无忧 | 自由行Studio</title>
+    <meta name="description" content="企业微信打卡改定位教程，兼容iOS 26和安卓全版本。海外华人、在外出差必备，支持WiFi打卡和GPS打卡两种模式。">
+    <meta name="keywords" content="企业微信打卡改定位,企微打卡,企业微信定位修改,海外考勤,远程打卡">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zhang7903023.github.io/ziyouxing-studio/articles/workwechat-location-guide.html">
+
+    <meta property="og:title" content="企业微信打卡改定位完全指南 | 自由行Studio">
+    <meta property="og:description" content="iOS 26+安卓双平台支持，企微打卡改定位实战教程。">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230a0a0a'/><circle cx='50' cy='50' r='20' fill='none' stroke='%23ff6b35' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='%23ff6b35'/><path d='M50 10 L55 25 L50 22 L45 25 Z' fill='%23ff6b35'/></svg>">
+</head>
+<body>
+    <header class="article-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">首页</a> / <a href="index.html">文章</a> / 企业微信打卡
+            </nav>
+            <div class="tag-row">
+                <span class="tag">企业微信</span>
+                <span class="tag">打卡</span>
+                <span class="tag">改定位</span>
+                <span class="tag">2026年更新</span>
+            </div>
+            <h1>企业微信打卡改定位完全指南</h1>
+            <p class="subtitle">iOS 26 + 安卓双平台支持 · GPS/WiFi双模式 · 海外考勤无忧</p>
+            <div class="meta">
+                <span>2026-04-25</span>
+                <span>约 1600 字</span>
+                <span>阅读约 5 分钟</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="article-body">
+        <div class="container">
+
+            <div class="toc">
+                <h2>目录</h2>
+                <ul>
+                    <li><a href="#背景">一、背景与痛点</a></li>
+                    <li><a href="#types">二、企业微信打卡方式盘点</a></li>
+                    <li><a href="#原理">三、改定位的原理</a></li>
+                    <li><a href="#ios">四、iOS 26操作步骤</a></li>
+                    <li><a href="#android">五、安卓操作步骤</a></li>
+                    <li><a href="#qa">六、常见问题</a></li>
+                </ul>
+            </div>
+
+            <h2 id="背景">一、背景与痛点</h2>
+
+            <p>企业微信（Work WeChat）是腾讯为企业打造的办公通讯工具，考勤打卡是其中最核心的功能之一。对在国内公司任职、但因各种原因（外派、旅游、探亲）身在海外的人来说，每天准时打卡成了一个头疼的问题。</p>
+
+            <p>2026年的企业微信打卡系统已经接入了多重验证：</p>
+
+            <ul>
+                <li><strong>GPS定位验证：</strong>打卡时必须处于公司设定的地理围栏范围内</li>
+                <li><strong>WiFi网络验证：</strong>部分公司要求必须连接公司内网WiFi才能打卡</li>
+                <li><strong>IP地址检测：</strong>异常IP（如海外IP访问国内考勤系统）会触发告警</li>
+                <li><strong>设备指纹：</strong>企业微信会记录登录设备信息，频繁更换设备可能被标记</li>
+            </ul>
+
+            <p>海外用户面临的挑战是：人在海外，GPS在海外，但打卡系统要求你在国内——这个矛盾需要通过虚拟定位来解决。</p>
+
+            <h2 id="types">二、企业微信打卡方式盘点</h2>
+
+            <p>在动手之前，先搞清楚公司的打卡方式，不同方式对应不同的解决方案：</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>打卡方式</th>
+                            <th>原理</th>
+                            <th>改定位难度</th>
+                            <th>推荐方案</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>纯GPS打卡</td>
+                            <td>靠手机GPS坐标判断位置</td>
+                            <td>⭐⭐ 低</td>
+                            <td>Xcode注入 / 安卓Mock模块</td>
+                        </tr>
+                        <tr>
+                            <td>WiFi打卡</td>
+                            <td>检测是否连接公司WiFi</td>
+                            <td>⭐⭐⭐ 中</td>
+                            <td>WiFi模拟器设备</td>
+                        </tr>
+                        <tr>
+                            <td>GPS + WiFi 双重</td>
+                            <td>两个条件必须同时满足</td>
+                            <td>⭐⭐⭐⭐ 高</td>
+                            <td>定制系统 / WiFi+GPS双方案</td>
+                        </tr>
+                        <tr>
+                            <td>人脸识别打卡</td>
+                            <td>GPS + 面部识别</td>
+                            <td>⭐⭐⭐⭐⭐ 很高</td>
+                            <td>需单独评估</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>大多数公司的企业微信打卡属于第一种或第二种，建议先联系HR或IT部门确认公司的打卡配置，再选择对应方案。</p>
+
+            <h2 id="原理">三、改定位的原理</h2>
+
+            <h3>iOS平台</h3>
+            <p>企业微信读取的是iOS系统级的CoreLocation API返回值。通过Xcode注入GPX文件，可以覆盖系统返回的GPS坐标，让企业微信认为你就在目标位置。</p>
+
+            <p><strong>重要：</strong>iOS 26之后，苹果进一步收紧了定位权限，但CoreLocation API本身没有被移除，虚拟定位仍然可行。</p>
+
+            <h3>安卓平台</h3>
+            <p>安卓的虚拟定位方案相对成熟，可以通过以下方式实现：</p>
+
+            <ul>
+                <li><strong>开发者选项Mock模块：</strong>开启"选择模拟位置信息应用"后，指定虚拟定位App接管GPS数据</li>
+                <li><strong>Xposed框架插件：</strong>对特定App进行定位拦截，适合企业微信这类有防作弊检测的应用</li>
+                <li><strong>定制ROM：</strong>直接修改系统底层GPS数据，最稳定但需要技术支持</li>
+            </ul>
+
+            <h2 id="ios">四、iOS 26操作步骤</h2>
+
+            <h3>Step 1：确认公司打卡方式</h3>
+            <p>打开企业微信 → 工作台 → 打卡 → 查看打卡规则。记录下"打卡地点"设置，是GPS还是WiFi还是两者都有。</p>
+
+            <h3>Step 2：获取公司坐标</h3>
+            <p>用百度地图或高德地图打开公司地址，点击地图任意位置获取坐标（格式如：39.9042, 116.4074）。记下这个数字。</p>
+
+            <h3>Step 3：创建GPX文件</h3>
+            <p>新建一个文本文件，命名为 <code>company_location.gpx</code>，内容如下：</p>
+
+            <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;gpx version="1.1"&gt;
+  &lt;wpt lat="39.9042" lon="116.4074"&gt;
+    &lt;name&gt;公司位置&lt;/name&gt;
+  &lt;/wpt&gt;
+&lt;/gpx&gt;</code></pre>
+
+            <p>将39.9042和116.4074替换为你公司的实际坐标。</p>
+
+            <h3>Step 4：注入位置</h3>
+            <p>Mac上打开Xcode → 连接iPhone → Window → Devices → 选择你的设备 → Debug → Simulate Location → Add GPX File → 选择刚创建的gpx文件。</p>
+
+            <h3>Step 5：打开企业微信打卡</h3>
+            <p>注入完成后，打开企业微信，进入打卡页面。如果当前位置显示为公司地址，点击"打卡"即可。</p>
+
+            <div class="callout callout-warning">
+                <strong>注意：</strong>每次iPhone重启后需要重新注入。建议保持设备不关机，或联系我们的技术支持获取长期方案。
+            </div>
+
+            <h2 id="android">五、安卓操作步骤</h2>
+
+            <h3>基础方法（开发者选项）</h3>
+            <ol>
+                <li>打开手机"设置" → "关于手机" → 连续点击"版本号"7次开启开发者模式</li>
+                <li>返回"设置" → "系统" → "开发者选项"</li>
+                <li>找到"选择模拟位置信息应用"，选择你的虚拟定位App</li>
+                <li>打开虚拟定位App，设置目标位置（输入公司地址或坐标）</li>
+                <li>打开企业微信打卡，确认位置正确后打卡</li>
+            </ol>
+
+            <h3>进阶方法（免ROOT定制方案）</h3>
+            <p>如果手机无法开启ROOT或不想折腾，可以联系我们获取免ROOT定制方案，安装后自动接管企业微信的定位模块，无需每次手动设置。</p>
+
+            <h2 id="qa">六、常见问题</h2>
+
+            <div class="faq">
+                <div class="faq-item">
+                    <h3>Q：公司同时有GPS和WiFi打卡，怎么处理？</h3>
+                    <p>需要同时解决两个问题：GPS改为公司位置 + WiFi检测为公司内网。可以购买我们的WiFi模拟器设备，插上即可模拟公司WiFi环境，配合虚拟定位一起使用。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：企业微信打卡会记录IP地址吗？会被发现吗？</h3>
+                    <p>企业微信服务器会记录登录IP。如果你的VPN或网络出口IP与GPS位置不匹配（例如GPS显示北京但IP在美国），会触发异常告警。建议使用与目标城市一致的网络环境。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：改了定位之后会被公司发现吗？</h3>
+                    <p>正常使用情况下不会被发现。但建议不要频繁修改位置，每次修改间隔至少几天。另外保持设备稳定，不要频繁换手机登录。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：iPhone 16系列支持吗？</h3>
+                    <p>支持。iOS 26.4覆盖iPhone XS至iPhone 16全系列，iPhone 16系列完全兼容。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：安卓哪个版本最稳定？</h3>
+                    <p>安卓10至安卓14最稳定，定制ROM方案对各版本兼容性最好。安卓15及以上由于权限收紧，建议用定制方案。</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>需要帮助？</h2>
+                <p>如果不确定自己公司的打卡配置，或者需要iOS+WiFi双重方案，联系我们获取评估。</p>
+                <a href="../contact.html" class="btn-primary">立即联系 →</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../services.html">服务</a>
+                <a href="index.html">文章</a>
+                <a href="../contact.html">联系</a>
+            </div>
+            <p>&copy; 2026 自由行Studio · 专注虚拟定位技术</p>
+        </div>
+    </footer>
+</body>
+</html>

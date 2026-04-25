@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日水印相机改定位教程：外勤拍照定位修改 | 自由行Studio</title>
+    <meta name="description" content="今日水印相机改定位教程，支持iOS 26和安卓。适用于工程监理、外勤销售、巡检记录等场景，解决海外无法实地拍照的痛点。">
+    <meta name="keywords" content="今日水印相机改定位,水印相机定位修改,外勤拍照定位,工程监理打卡,iOS改定位">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="今日水印相机改定位教程 | 自由行Studio">
+    <meta property="og:description" content="今日水印相机GPS定位修改实战，iOS 26+安卓双平台支持，5分钟搞定外勤定位。">
+    <meta property="og:type" content="article">
+
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230a0a0a'/><circle cx='50' cy='50' r='20' fill='none' stroke='%23ff6b35' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='%23ff6b35'/><path d='M50 10 L55 25 L50 22 L45 25 Z' fill='%23ff6b35'/></svg>">
+</head>
+<body>
+    <header class="article-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">首页</a> / <a href="index.html">文章</a> / 今日水印相机
+            </nav>
+            <div class="tag-row">
+                <span class="tag">今日水印相机</span>
+                <span class="tag">外勤</span>
+                <span class="tag">改定位</span>
+                <span class="tag">2026年更新</span>
+            </div>
+            <h1>今日水印相机改定位教程</h1>
+            <p class="subtitle">GPS定位修改 · 适用工程/外勤/巡检 · iOS 26 + 安卓双平台</p>
+            <div class="meta">
+                <span>2026-04-25</span>
+                <span>约 1300 字</span>
+                <span>阅读约 4 分钟</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="article-body">
+        <div class="container">
+
+            <div class="toc">
+                <h2>目录</h2>
+                <ul>
+                    <li><a href="#what">一、什么是今日水印相机</a></li>
+                    <li><a href="#why">二、为什么需要改定位</a></li>
+                    <li><a href="#ios">三、iOS 26修改步骤</a></li>
+                    <li><a href="#android">四、安卓修改步骤</a></li>
+                    <li><a href="#qa">五、常见问题</a></li>
+                </ul>
+            </div>
+
+            <h2 id="what">一、什么是今日水印相机</h2>
+
+            <p>今日水印相机（也有叫"水印相机"、"工程水印相机"的同类App）是一款给照片添加时间、地点、项目名称等水印信息的拍摄工具，广泛应用于：</p>
+
+            <ul>
+                <li><strong>工程建设：</strong>监理人员拍照记录施工进度，水印自动记录时间地点</li>
+                <li><strong>物业巡检：</strong>保安/物业拍照签到，证明已到岗巡查</li>
+                <li><strong>外勤销售：</strong>拜访客户时拍照记录拜访地点和时间</li>
+                <li><strong>物流验收：</strong>快递/物流人员拍照证明已送达指定地点</li>
+                <li><strong>现场取证：</strong>各类需要留存地理位置证据的场景</li>
+            </ul>
+
+            <p>今日水印相机的核心价值在于：照片上的水印包含精确的时间、地点坐标，无法手动修改，具有法律效力。正因如此，当事人如果不在现场就无法正常拍照——这就是虚拟定位的刚需所在。</p>
+
+            <h2 id="why">二、为什么需要改定位</h2>
+
+            <p>典型的海外华人痛点场景：</p>
+
+            <div class="callout callout-warning">
+                <strong>场景：</strong>你在美国加州，但公司要求你每天用今日水印相机拍摄国内某工地的施工照片，用于工程监理报告。你不可能每天飞回国拍照，但不打卡就算旷工。
+            </div>
+
+            <p>解决方案是：修改iPhone或安卓手机的GPS定位，让今日水印相机读取到的是国内目标工地的坐标，这样拍出来的照片水印显示的就是正确的地点。</p>
+
+            <h2 id="ios">三、iOS 26修改步骤</h2>
+
+            <p>iOS 26的今日水印相机直接读取系统CoreLocation的GPS数据，改定位的核心思路是覆盖系统GPS输出。</p>
+
+            <h3>方法一：Xcode注入法（推荐）</h3>
+
+            <h4>Step 1：确认目标坐标</h4>
+            <p>用百度地图打开目标工地地址，记录下坐标（经纬度）。例如北京某工地可能是：39.9149, 116.3912。</p>
+
+            <h4>Step 2：创建GPX文件</h4>
+            <p>用文本编辑器（Mac自带TextEdit或Windows记事本）创建文件：</p>
+
+            <pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;gpx version="1.1"&gt;
+  &lt;wpt lat="39.9149" lon="116.3912"&gt;
+    &lt;name&gt;目标工地&lt;/name&gt;
+  &lt;/wpt&gt;
+&lt;/gpx&gt;</code></pre>
+
+            <p>将坐标替换为实际目标位置，保存为 <code>site.gpx</code>。</p>
+
+            <h4>Step 3：Xcode注入</h4>
+            <p>Mac打开Xcode → 连接iPhone → Window → Devices → 选设备 → Debug → Simulate Location → Add GPX File → 选择site.gpx。</p>
+
+            <h4>Step 4：验证并拍照</h4>
+            <p>打开今日水印相机，进入拍照界面，确认屏幕上显示的定位位置已变为目标地点，然后拍摄即可。拍出来的照片水印会自动使用注入的GPS坐标。</p>
+
+            <h3>方法二：免电脑自动方案</h3>
+            <p>如果不想每次用电脑注入，可以联系我们获取iOS自动续命方案，一次设置后长期生效，无需重复操作。</p>
+
+            <h2 id="android">四、安卓修改步骤</h2>
+
+            <h3>方法一：开发者选项（无需ROOT）</h3>
+            <ol>
+                <li>设置 → 关于手机 → 连续点击版本号7次开启开发者模式</li>
+                <li>设置 → 系统 → 开发者选项 → 开启"允许模拟位置"</li>
+                <li>选择"选择模拟位置信息应用" → 选择虚拟定位App</li>
+                <li>打开虚拟定位App，搜索目标地址并设置为当前位置</li>
+                <li>打开今日水印相机，验证位置后拍照</li>
+            </ol>
+
+            <h3>方法二：ROOT + Xposed（更稳定）</h3>
+            <p>如果手机已ROOT，可以安装Xposed框架 + 虚拟定位模块，实现系统级GPS伪造，今日水印相机会读取伪造后的坐标，效果更稳定。</p>
+
+            <h3>方法三：定制ROM（企业用户推荐）</h3>
+            <p>对于有批量外勤团队的企业，可以定制专属安卓ROM，将目标GPS坐标写入系统底层，开机即用，无需任何设置，适合管理10人以上团队。</p>
+
+            <h2 id="qa">五、常见问题</h2>
+
+            <div class="faq">
+                <div class="faq-item">
+                    <h3>Q：改定位后拍的照片会被看出来是假的吗？</h3>
+                    <p>不会。今日水印相机读取的是系统级GPS坐标，照片EXIF信息里的经纬度就是真实的修改后坐标，和人工实拍没有任何区别。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：今日水印相机的水印位置可以手动改吗？</h3>
+                    <p>可以部分修改文字内容（水印模板），但GPS坐标是系统自动读取的，无法在App内手动输入，必须通过虚拟定位方式修改。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：iOS 26.4下今日水印相机有闪退问题吗？</h3>
+                    <p>目前实测正常。部分较老版本的今日水印相机App可能在iOS 26上有兼容性问题，建议更新到App Store最新版本后再操作。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：多个工地需要切换不同位置怎么办？</h3>
+                    <p>可以准备多个GPX文件，每次切换工地前在Xcode里重新注入即可。或者联系我们获取App方案，在手机上直接切换位置，无需电脑。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：今日水印相机的照片有法律效力吗？</h3>
+                    <p>正规工程场景下，水印照片具有证据效力。但请注意，通过虚拟定位方式拍摄的照片在法律层面存在争议，如果是重要工程证据，建议与公司提前沟通。</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>需要帮助？</h2>
+                <p>有多个工地需要管理，或需要批量部署方案，联系我们获取技术支持。</p>
+                <a href="../contact.html" class="btn-primary">立即联系 →</a>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="article-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="../services.html">服务</a>
+                <a href="index.html">文章</a>
+                <a href="../contact.html">联系</a>
+            </div>
+            <p>&copy; 2026 自由行Studio · 专注虚拟定位技术</p>
+        </div>
+    </footer>
+</body>
+</html>

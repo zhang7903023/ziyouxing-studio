@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章与教程 | 自由行Studio - 虚拟定位 · 远程打卡 · 海外社媒运营</title>
+    <meta name="description" content="自由行Studio原创虚拟定位教程，覆盖iOS 26、iPhone改定位、钉钉打卡、企业微信打卡、今日水印相机、小红书/抖音运营等全场景。">
+    <meta name="keywords" content="iOS改定位教程,钉钉打卡,企业微信打卡,海外华人,iOS 26,今日水印相机,小红书改定位">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="文章与教程 | 自由行Studio">
+    <meta property="og:description" content="iOS 26改定位 · 考勤打卡 · 社媒运营，海外华人必备指南。">
+    <meta property="og:type" content="website">
+
+    <link rel="canonical" href="https://zhang7903023.github.io/ziyouxing-studio/articles/">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230a0a0a'/><circle cx='50' cy='50' r='20' fill='none' stroke='%23ff6b35' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='%23ff6b35'/><path d='M50 10 L55 25 L50 22 L45 25 Z' fill='%23ff6b35'/></svg>">
+
+    <style>
+        /* ── 重置 ── */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --bg: #0a0a0a;
+            --bg2: #111;
+            --bg3: #1a1a1a;
+            --text: #f0ede8;
+            --text2: #8a8580;
+            --accent: #ff6b35;
+            --accent2: #ff8f66;
+            --border: #222;
+            --radius: 12px;
+            --font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ── 导航 ── */
+        header {
+            background: rgba(10,10,10,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--text); }
+
+        nav { display: flex; gap: 28px; }
+
+        nav a {
+            font-size: 14px;
+            color: var(--text2);
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active { color: var(--text); }
+
+        /* ── Hero ── */
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 24px 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 4px 14px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text2);
+            max-width: 560px;
+            margin: 0 auto 32px;
+        }
+
+        /* ── 分类标签 ── */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 56px;
+        }
+
+        .filter-btn {
+            font-size: 13px;
+            padding: 7px 18px;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text2);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: var(--font);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(255,107,53,0.08);
+        }
+
+        /* ── 文章列表 ── */
+        .articles-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 24px;
+        }
+
+        .article-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: all 0.25s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            border-color: rgba(255,107,53,0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255,107,53,0.08);
+        }
+
+        .card-top {
+            padding: 28px 28px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .card-top .tag {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-ios { background: rgba(0,122,255,0.15); color: #5ac8fa; }
+        .tag-android { background: rgba(52,199,89,0.15); color: #34c759; }
+        .tag-dingtalk { background: rgba(88,86,214,0.15); color: #a78bfa; }
+        .tag-wechat { background: rgba(0,122,255,0.15); color: #5ac8fa; }
+        .tag-social { background: rgba(255,107,53,0.15); color: var(--accent); }
+        .tag-guide { background: rgba(255,193,7,0.12); color: #ffd060; }
+        .tag-qa { background: rgba(0,122,255,0.12); color: #88baff; }
+        .tag-2026 { background: rgba(52,199,89,0.1); color: #34c759; }
+
+        .card-body { padding: 20px 28px 0; flex: 1; }
+
+        .card-body h2 {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+
+        .card-body p {
+            font-size: 14px;
+            color: var(--text2);
+            line-height: 1.65;
+        }
+
+        .card-footer {
+            padding: 20px 28px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text2);
+        }
+
+        .read-link {
+            font-size: 13px;
+            color: var(--accent);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap 0.2s;
+        }
+
+        .article-card:hover .read-link { gap: 8px; }
+
+        .read-link svg { width: 14px; height: 14px; }
+
+        /* ── 没有分类样式，手动加 ── */
+        .tag-workwechat { background: rgba(0,122,255,0.15); color: #5ac8fa; }
+        .tag-camera { background: rgba(255,107,53,0.15); color: var(--accent); }
+        .tag-feishu { background: rgba(88,86,214,0.15); color: #a78bfa; }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text2);
+        }
+
+        footer a { color: var(--text2); margin: 0 12px; transition: color 0.2s; }
+        footer a:hover { color: var(--accent); }
+
+        /* ── 响应式 ── */
+        @media (max-width: 640px) {
+            nav { display: none; }
+            .articles-grid { grid-template-columns: 1fr; }
+            .hero { padding: 48px 24px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="logo">自由行<span>Studio</span></a>
+            <nav>
+                <a href="../index.html">首页</a>
+                <a href="../services.html">服务</a>
+                <a href="index.html" class="active">文章</a>
+                <a href="../contact.html">联系</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">知识库</div>
+        <h1>找到你需要的那篇 <em>教程</em></h1>
+        <p>原创内容，深入浅出，覆盖iOS 26全系列与企业考勤、社媒运营全场景。</p>
+
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterArticles('all')">全部</button>
+            <button class="filter-btn" onclick="filterArticles('ios')">iOS 26</button>
+            <button class="filter-btn" onclick="filterArticles('android')">安卓</button>
+            <button class="filter-btn" onclick="filterArticles('dingtalk')">钉钉/飞书</button>
+            <button class="filter-btn" onclick="filterArticles('workwechat')">企业微信</button>
+            <button class="filter-btn" onclick="filterArticles('camera')">水印相机</button>
+            <button class="filter-btn" onclick="filterArticles('social')">社媒运营</button>
+        </div>
+    </section>
+
+    <main class="articles-grid">
+
+        <!-- iOS 26 改定位 -->
+        <a href="ios-26-location-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-ios">iOS 26</span>
+                <span class="tag tag-guide">攻略</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>iOS 26 改定位完全指南</h2>
+                <p>iOS 26.4免越狱改定位实战，覆盖钉钉、企业微信、今日水印相机等主流考勤应用，兼容iPhone XS至16全系列。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1800字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 企业微信 -->
+        <a href="workwechat-location-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-workwechat">企业微信</span>
+                <span class="tag tag-guide">教程</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>企业微信打卡改定位完全指南</h2>
+                <p>GPS + WiFi双模式支持，iOS 26和安卓双平台覆盖。海外考勤无忧，支持纯GPS打卡和双重验证场景。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1600字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 今日水印相机 -->
+        <a href="water-mark-camera-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-camera">水印相机</span>
+                <span class="tag tag-guide">教程</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>今日水印相机改定位教程</h2>
+                <p>工程监理、外勤销售、巡检记录的必备指南。GPS定位修改，iOS 26和安卓双平台，5分钟上手。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1300字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 飞书钉钉 -->
+        <a href="feishu-dingtalk-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-feishu">飞书/钉钉</span>
+                <span class="tag tag-guide">教程</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>飞书 / 钉钉多平台打卡改定位指南</h2>
+                <p>两家平台防作弊机制深度解析，GPS/WiFi/蓝牙三种打卡方式全覆盖。飞书更简单，钉钉稍复杂，对症下药。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1700字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 小红书抖音 -->
+        <a href="xiaohongshu-douyin-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-social">社媒运营</span>
+                <span class="tag tag-guide">教程</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>小红书 / 抖音海外定位修改指南</h2>
+                <p>发笔记定位、直播定位、团购功能全面覆盖。GPS+IP双重修改，海外华人内容运营必备指南。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1400字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- iOS改定位 旧版 -->
+        <a href="ios-location-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-ios">iOS</span>
+                <span class="tag tag-guide">攻略</span>
+            </div>
+            <div class="card-body">
+                <h2>iOS 改定位免越狱教程</h2>
+                <p>无需越狱，通过Mac/Xcode注入GPX文件实现iPhone全局定位修改，适合有Mac的用户。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1500字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 安卓改定位 -->
+        <a href="android-location-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-android">安卓</span>
+                <span class="tag tag-guide">教程</span>
+            </div>
+            <div class="card-body">
+                <h2>安卓免ROOT改定位全攻略</h2>
+                <p>无需ROOT，用开发者选项内置功能实现虚拟定位。安卓10到安卓14稳定兼容，附详细操作截图说明。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1100字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 海外钉钉打卡 -->
+        <a href="overseas-dingtalk.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-dingtalk">钉钉</span>
+                <span class="tag tag-guide">教程</span>
+            </div>
+            <div class="card-body">
+                <h2>海外钉钉打卡异常？3种方案解决</h2>
+                <p>人在海外、钉钉打卡定位异常的三种应对方案。WiFi打卡、GPS打卡、外勤打卡分别怎么处理，一看就懂。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1200字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 微信定位 -->
+        <a href="wechat-location-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-wechat">微信</span>
+                <span class="tag tag-qa">问答</span>
+            </div>
+            <div class="card-body">
+                <h2>微信定位能改吗？实测结果</h2>
+                <p>朋友圈位置、微信直播定位、微信小程序定位能不能改？iOS和安卓分别实测，给你准确答案。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1000字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 海外直播指南 -->
+        <a href="overseas-live-guide.html" class="article-card">
+            <div class="card-top">
+                <span class="tag tag-social">直播</span>
+                <span class="tag tag-guide">指南</span>
+            </div>
+            <div class="card-body">
+                <h2>抖音/小红书海外直播权限开通指南</h2>
+                <p>海外华人想在抖音/小红书开播，实名认证、权限开通、GPS定位三重门槛怎么过，一文讲清楚。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-04-25 · 约1200字</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+    </main>
+
+    <footer>
+        <div>
+            <a href="../index.html">首页</a>
+            <a href="../services.html">服务</a>
+            <a href="index.html">文章</a>
+            <a href="../contact.html">联系</a>
+        </div>
+        <p style="margin-top:12px;">&copy; 2026 自由行Studio · 专注虚拟定位技术</p>
+    </footer>
+
+    <script>
+        function filterArticles(category) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

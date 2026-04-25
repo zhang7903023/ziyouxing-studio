@@ -247,13 +247,13 @@ a {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }
 
 .service-card {
     display: block;
-    padding: 28px;
+    padding: 32px 28px;
     background: var(--bg);
     border-radius: var(--radius-lg);
     transition: var(--transition);
@@ -698,6 +698,95 @@ a {
     .float-consult {
         bottom: 16px;
         right: 16px;
+    }
+}
+
+/* ========================================
+   相关教程区块
+   ======================================== */
+.guides-section {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+}
+
+.guides-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.guide-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: var(--transition);
+    color: var(--text);
+}
+
+.guide-item:hover {
+    border-color: rgba(255,107,53,0.5);
+    background: rgba(255,107,53,0.04);
+}
+
+.guide-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.guide-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.guide-item strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+.guide-item small {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.guides-more {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.guides-more:hover {
+    opacity: 0.75;
+}
+
+@media (max-width: 768px) {
+    .guides-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .guides-grid {
+        grid-template-columns: 1fr;
     }
 }
 
