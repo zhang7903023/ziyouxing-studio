@@ -2,6 +2,10 @@ backend:
   name: git-gateway
   branch: main
 
+site_url: https://frabjous-puffpuff-ee7cda.netlify.app
+display_url: https://frabjous-puffpuff-ee7cda.netlify.app
+logo_url: https://frabjous-puffpuff-ee7cda.netlify.app/favicon.png
+
 media_folder: images
 public_folder: /images
 
