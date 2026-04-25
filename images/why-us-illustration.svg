@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <!-- 背景网格 -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.8" fill="#2A3A4A" opacity="0.5"/>
+    </pattern>
+    <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A3A4A"/>
+      <stop offset="100%" stop-color="#1A1A2E"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00D4AA"/>
+      <stop offset="100%" stop-color="#00B894"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="400" height="320" fill="#0D1117"/>
+  <rect width="400" height="320" fill="url(#grid)"/>
+  
+  <!-- 装饰圆环 -->
+  <circle cx="200" cy="160" r="120" stroke="#1E2A3A" stroke-width="1" fill="none" opacity="0.6"/>
+  <circle cx="200" cy="160" r="80" stroke="#1E2A3A" stroke-width="1" fill="none" opacity="0.4"/>
+  
+  <!-- 连接线 -->
+  <line x1="80" y1="80" x2="140" y2="120" stroke="#00D4AA" stroke-width="1" opacity="0.3"/>
+  <line x1="320" y1="80" x2="260" y2="120" stroke="#00D4AA" stroke-width="1" opacity="0.3"/>
+  <line x1="80" y1="240" x2="140" y2="200" stroke="#00D4AA" stroke-width="1" opacity="0.3"/>
+  <line x1="320" y1="240" x2="260" y2="200" stroke="#00D4AA" stroke-width="1" opacity="0.3"/>
+  
+  <!-- 手机主体 -->
+  <rect x="155" y="95" width="90" height="160" rx="12" fill="url(#phoneGrad)" stroke="#2A3A4A" stroke-width="1"/>
+  <!-- 手机屏幕 -->
+  <rect x="162" y="110" width="76" height="130" rx="4" fill="#0D1117" opacity="0.8"/>
+  <!-- 手机刘海 -->
+  <rect x="185" y="102" width="30" height="6" rx="3" fill="#2A3A4A"/>
+  <!-- 手机按钮指示 -->
+  <circle cx="200" cy="245" r="8" stroke="#2A3A4A" stroke-width="1" fill="none"/>
+  
+  <!-- 定位图标在屏幕上 -->
+  <g transform="translate(175, 135)">
+    <!-- 定位针 -->
+    <path d="M25 8 C25 4, 21 0, 17 0 C13 0, 9 4, 9 8 C9 15, 17 25, 17 25 C17 25, 25 15, 25 8Z" fill="url(#accentGrad)" filter="url(#glow)"/>
+    <circle cx="17" cy="8" r="3" fill="white" opacity="0.9"/>
+  </g>
+  
+  <!-- 扫描波纹 -->
+  <circle cx="200" cy="160" r="45" stroke="#00D4AA" stroke-width="1" fill="none" opacity="0.2">
+    <animate attributeName="r" values="45;65;45" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0;0.2" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="200" cy="160" r="55" stroke="#00D4AA" stroke-width="1" fill="none" opacity="0.15">
+    <animate attributeName="r" values="55;80;55" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.15;0;0.15" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- 左侧装饰：数据点 -->
+  <circle cx="60" cy="100" r="4" fill="#00D4AA" opacity="0.8"/>
+  <circle cx="45" cy="140" r="3" fill="#00D4AA" opacity="0.5"/>
+  <circle cx="70" cy="180" r="5" fill="#00D4AA" opacity="0.6"/>
+  <circle cx="50" cy="220" r="3" fill="#00D4AA" opacity="0.4"/>
+  
+  <!-- 右侧装饰：数据点 -->
+  <circle cx="340" cy="100" r="4" fill="#00D4AA" opacity="0.8"/>
+  <circle cx="355" cy="140" r="3" fill="#00D4AA" opacity="0.5"/>
+  <circle cx="330" cy="180" r="5" fill="#00D4AA" opacity="0.6"/>
+  <circle cx="350" cy="220" r="3" fill="#00D4AA" opacity="0.4"/>
+  
+  <!-- 顶部装饰线 -->
+  <line x1="100" y1="50" x2="300" y2="50" stroke="#1E2A3A" stroke-width="1"/>
+  <line x1="150" y1="50" x2="150" y2="60" stroke="#00D4AA" stroke-width="2" opacity="0.5"/>
+  
+  <!-- 底部装饰线 -->
+  <line x1="100" y1="270" x2="300" y2="270" stroke="#1E2A3A" stroke-width="1"/>
+  <line x1="250" y1="270" x2="250" y2="280" stroke="#00D4AA" stroke-width="2" opacity="0.5"/>
+</svg>
