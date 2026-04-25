@@ -1,0 +1,44 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: images
+public_folder: /images
+
+collections:
+  - name: "首页 & 服务"
+    label: "首页 & 服务"
+    files:
+      - label: "首页"
+        name: "home"
+        file: "index.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+      - label: "服务"
+        name: "services"
+        file: "services.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+      - label: "联系"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "description", widget: "string"}
+
+  - name: "文章"
+    label: "文章"
+    folder: "articles/"
+    extension: html
+    format: "html"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "日期", name: "date", widget: "datetime", format: "YYYY-MM-DD"}
+      - {label: "分类", name: "category", widget: "string"}
+      - {label: "内容", name: "body", widget: "markdown"}
