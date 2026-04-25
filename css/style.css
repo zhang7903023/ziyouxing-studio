@@ -353,8 +353,8 @@ a {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
 .service-card {
@@ -820,6 +820,7 @@ a {
     
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
     
     .how-grid {
@@ -842,6 +843,13 @@ a {
     .float-consult {
         bottom: 16px;
         right: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
     }
 }
 
