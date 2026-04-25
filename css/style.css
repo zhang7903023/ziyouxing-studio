@@ -1119,21 +1119,21 @@ a {
     content: '⚠️ ';
 }
 
-/* 👀 注意 / 提示 — 蓝色 */
+/* 👀 注意 / 提示 — 同绿色风格，简化颜色 */
 .aside-note {
-    background: #eff6ff;
-    border-color: #3b82f6;
-    color: #1d4ed8;
+    background: #f0fdf4;
+    border-color: #22c55e;
+    color: #15803d;
 }
 .aside-note::before {
     content: '👀 ';
 }
 
-/* 📌 核心提示 — 紫色 */
+/* 📌 核心提示 — 同橙色风格，简化颜色 */
 .aside-tip {
-    background: #f5f3ff;
-    border-color: #8b5cf6;
-    color: #6d28d9;
+    background: #fffbeb;
+    border-color: #f59e0b;
+    color: #92400e;
 }
 .aside-tip::before {
     content: '📌 ';
