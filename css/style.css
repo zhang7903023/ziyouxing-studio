@@ -619,9 +619,9 @@ a {
 
 .contact-icons {
     display: flex;
-    gap: 24px;
+    gap: 16px;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .contact-icon-item {
@@ -629,11 +629,11 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 28px 20px;
+    padding: 20px 24px;
     background: white;
     border: 1px solid var(--border);
     border-radius: 16px;
-    min-width: 140px;
+    min-width: 120px;
     text-decoration: none;
     transition: all 0.2s ease;
 }
@@ -830,12 +830,13 @@ a {
     .contact-icons {
         flex-direction: column;
         align-items: center;
-        gap: 16px;
+        flex-wrap: wrap;
+        gap: 12px;
     }
     
     .contact-icon-item {
         width: 100%;
-        max-width: 280px;
+        max-width: 320px;
     }
     
     .float-consult {
