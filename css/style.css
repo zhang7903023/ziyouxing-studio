@@ -483,6 +483,24 @@ a {
     text-decoration: underline;
 }
 
+.video-embed {
+    margin-top: 16px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: #000;
+}
+
+.video-embed iframe {
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .video-embed iframe {
+        height: 220px;
+    }
+}
+
 /* ========================================
    平台 Logo 区
    ======================================== */
