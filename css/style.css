@@ -1076,74 +1076,33 @@ a {
 }
 
 /* ========================================
-   语义化强调区块（Notion 风格）
+   强调区块 — 简洁风格（无彩色背景）
    ======================================== */
 
-/* 通用 aside 区块 */
-.aside-block {
+/* 通用区块：白底 + 细线边框 + 小字标签 */
+.info-block {
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 14px 18px;
+    padding: 14px 16px;
     margin: 16px 0;
-    border-left: 3px solid;
     font-size: 14px;
     line-height: 1.65;
+    background: white;
 }
 
-/* ✅ 适用 / 优点 — 绿色 */
-.aside-yes {
-    background: #f0fdf4;
-    border-color: #22c55e;
-    color: #15803d;
-}
-.aside-yes::before {
-    content: '✅ ';
-}
-
-/* 🚫 不适用 / 警告 — 红色 */
-.aside-no {
-    background: #fef2f2;
-    border-color: #ef4444;
-    color: #b91c1c;
-}
-.aside-no::before {
-    content: '🚫 ';
+.info-block-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-light);
+    margin-bottom: 8px;
+    opacity: 0.7;
 }
 
-/* ⚠️ 重要提醒 — 橙色 */
-.aside-warn {
-    background: #fffbeb;
-    border-color: #f59e0b;
-    color: #92400e;
-}
-.aside-warn::before {
-    content: '⚠️ ';
-}
-
-/* 👀 注意 / 提示 — 同绿色风格，简化颜色 */
-.aside-note {
-    background: #f0fdf4;
-    border-color: #22c55e;
-    color: #15803d;
-}
-.aside-note::before {
-    content: '👀 ';
-}
-
-/* 📌 核心提示 — 同橙色风格，简化颜色 */
-.aside-tip {
-    background: #fffbeb;
-    border-color: #f59e0b;
-    color: #92400e;
-}
-.aside-tip::before {
-    content: '📌 ';
-}
-
-/* 💬 联系方式 — 灰色 */
-.aside-contact {
-    background: #f9fafb;
-    border-color: #6b7280;
-    color: #374151;
+.info-block strong {
+    font-weight: 600;
+    color: var(--text);
 }
 
 /* ========================================
@@ -1301,61 +1260,38 @@ a {
 }
 
 /* ========================================
-   App 卡片网格（3 列）
+   功能特点网格（3 列）
    ======================================== */
-.app-cards {
+.feature-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin: 16px 0;
+    margin: 0 0 8px;
 }
 
-.app-card {
+.feature-item {
+    text-align: center;
+    padding: 20px 12px;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 14px;
-    transition: var(--transition);
 }
 
-.app-card:hover {
-    border-color: var(--text-light);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-.app-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.feature-icon {
+    font-size: 24px;
     margin-bottom: 8px;
 }
 
-.app-card-name {
+.feature-name {
     font-size: 14px;
     font-weight: 600;
     color: var(--text);
+    margin-bottom: 4px;
 }
 
-.app-card-status {
-    font-size: 12px;
-    padding: 2px 8px;
-    border-radius: 10px;
-    background: #f0fdf4;
-    color: #15803d;
-    font-weight: 500;
-}
-
-.app-card-desc {
+.feature-desc {
     font-size: 12px;
     color: var(--text-light);
-    line-height: 1.5;
-    margin-bottom: 8px;
-}
-
-.app-card-level {
-    font-size: 11px;
-    color: var(--text-light);
-    opacity: 0.7;
 }
 
 /* ========================================
@@ -1433,7 +1369,7 @@ a {
    ======================================== */
 .device-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 12px;
     margin: 16px 0;
 }
@@ -1444,7 +1380,7 @@ a {
     color: var(--text);
     margin-bottom: 8px;
     padding-bottom: 6px;
-    border-bottom: 2px solid var(--text);
+    border-bottom: 1px solid var(--border);
 }
 
 .device-col ul {
@@ -1463,19 +1399,13 @@ a {
    响应式增强
    ======================================== */
 @media (max-width: 768px) {
-    .app-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .price-cards {
-        grid-template-columns: repeat(2, 1fr);
+    .feature-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 480px) {
-    .app-cards {
+    .feature-grid {
         grid-template-columns: 1fr;
-    }
-    .price-cards {
-        grid-template-columns: 1fr 1fr;
     }
 }
