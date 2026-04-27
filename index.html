@@ -105,11 +105,73 @@
     }
     </script>
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "iPhone 改定位需要越狱吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。iOS 17/18/26 均支持免越狱方案，通过系统级 GPS 注入实现定位修改，不影响手机正常使用和保修。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "安卓改定位需要 ROOT 吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不需要。安卓 10 及以上版本可以通过开发者选项的模拟定位功能实现，无需 ROOT，支持华为、小米、OPPO、vivo、三星等主流品牌。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "钉钉/企业微信打卡改定位会被发现吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "系统级 GPS 注入的模拟程度高，正常使用情况下不会触发异常告警。但如果同时存在 IP 地址与 GPS 位置严重不匹配的情况，部分企业考勤系统可能产生预警。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "配置需要多长时间？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "远程一对一配置，通常 15-30 分钟完成。配置完成后即可正常使用，后续有问题可随时联系。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "支持哪些 App 的定位修改？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "覆盖钉钉、企业微信、飞书、今日水印相机、微信（朋友圈定位/位置共享）、小红书、抖音等主流应用。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "海外可以远程配置吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "可以。通过 WhatsApp 或微信远程协助，全球任何地区都可以完成配置。已有大量美国、加拿大、澳大利亚、日本、欧洲等地区用户成功使用。"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://img.youtube.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/article.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/article.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/article.css"></noscript>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT98VFM7QJ"></script>
 <script>
@@ -223,7 +285,7 @@
             
             <div class="services-grid">
                 <!-- 手机虚拟定位 -->
-                <a href="services.html#location" class="service-card">
+                <a href="virtual-location.html" class="service-card">
                     <div class="service-icon">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="12" y="4" width="12" height="22" rx="2" stroke="currentColor" stroke-width="1.5"/>
@@ -240,7 +302,7 @@
                 </a>
 
                 <!-- 社媒账号增长 -->
-                <a href="services.html#fans" class="service-card">
+                <a href="social-media-growth.html" class="service-card">
                     <div class="service-icon">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <polyline points="6,28 14,18 20,22 30,8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -253,7 +315,7 @@
                 </a>
 
                 <!-- 海外直播权限开通 -->
-                <a href="services.html#overseas" class="service-card">
+                <a href="overseas-live.html" class="service-card">
                     <div class="service-icon">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"/>
@@ -270,7 +332,7 @@
                 </a>
 
                 <!-- 聚光开通 / 专业号认证 -->
-                <a href="services.html#light" class="service-card">
+                <a href="platform-auth.html" class="service-card">
                     <div class="service-icon">
                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18 4l4 8h8l-6 6 2 10-8-5-8 5 2-10-6-6h8l4-8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
@@ -448,6 +510,39 @@
                     <h3 data-i18n="how.3.title">后续还能继续</h3>
                     <p data-i18n="how.3.desc">不是发完就结束。后续有问题，直接联系继续确认。</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>iPhone 改定位需要越狱吗？</summary>
+                    <p>不需要。iOS 17/18/26 均支持免越狱方案，通过系统级 GPS 注入实现定位修改，不影响手机正常使用和保修。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>安卓改定位需要 ROOT 吗？</summary>
+                    <p>不需要。安卓 10 及以上版本可以通过开发者选项的模拟定位功能实现，无需 ROOT，支持华为、小米、OPPO、vivo、三星等主流品牌。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>钉钉/企业微信打卡改定位会被发现吗？</summary>
+                    <p>系统级 GPS 注入的模拟程度高，正常使用情况下不会触发异常告警。但如果同时存在 IP 地址与 GPS 位置严重不匹配的情况，部分企业考勤系统可能产生预警。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>配置需要多长时间？</summary>
+                    <p>远程一对一配置，通常 15-30 分钟完成。配置完成后即可正常使用，后续有问题可随时联系。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>支持哪些 App 的定位修改？</summary>
+                    <p>覆盖钉钉、企业微信、飞书、今日水印相机、微信（朋友圈定位/位置共享）、小红书、抖音等主流应用。具体支持场景可查看我们的<a href="articles/">详细教程</a>。</p>
+                </details>
+                <details class="faq-item">
+                    <summary>海外可以远程配置吗？</summary>
+                    <p>可以。通过 WhatsApp 或微信远程协助，全球任何地区都可以完成配置。已有大量美国、加拿大、澳大利亚、日本、欧洲等地区用户成功使用。</p>
+                </details>
             </div>
         </div>
     </section>
