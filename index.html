@@ -74,10 +74,42 @@
     }
     </script>
 
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://zhang7903023.github.io/ziyouxing-studio/"
+        }
+      ]
+    }
+    </script>
+
+    <!-- WebSite Schema (站内搜索) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "自由行Studio",
+      "url": "https://zhang7903023.github.io/ziyouxing-studio/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.google.com/search?q=site:zhang7903023.github.io/ziyouxing-studio+{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/article.css">
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT98VFM7QJ"></script>
 <script>
@@ -297,7 +329,7 @@
                         </div>
                     </a>
                 </div>
-                <a href="articles/ios-26-location-guide.html" class="guides-more">查看全部教程 →</a>
+                <a href="articles/" class="guides-more">查看全部教程 →</a>
             </div>
         </div>
     </section>
@@ -327,20 +359,20 @@
             </div>
             
             <div class="video-grid">
-                <a href="https://www.youtube.com/watch?v=vUeoIt3avfs" target="_blank" class="video-thumb">
-                    <img src="https://img.youtube.com/vi/vUeoIt3avfs/maxresdefault.jpg" alt="视频1" onerror="this.src='https://img.youtube.com/vi/vUeoIt3avfs/hqdefault.jpg'">
+                <a href="https://www.youtube.com/watch?v=vUeoIt3avfs" target="_blank" class="video-thumb" title="iOS 26虚拟定位教程">
+                    <img src="https://img.youtube.com/vi/vUeoIt3avfs/hqdefault.jpg" alt="iOS 26虚拟定位教程视频" loading="lazy" onerror="this.src='https://img.youtube.com/vi/vUeoIt3avfs/mqdefault.jpg'">
                     <div class="play-icon">▶</div>
                 </a>
-                <a href="https://www.youtube.com/watch?v=gn3-fAgekf0" target="_blank" class="video-thumb">
-                    <img src="https://img.youtube.com/vi/gn3-fAgekf0/maxresdefault.jpg" alt="视频2" onerror="this.src='https://img.youtube.com/vi/gn3-fAgekf0/hqdefault.jpg'">
+                <a href="https://www.youtube.com/watch?v=gn3-fAgekf0" target="_blank" class="video-thumb" title="钉钉打卡改定位教程">
+                    <img src="https://img.youtube.com/vi/gn3-fAgekf0/hqdefault.jpg" alt="钉钉打卡改定位教程视频" loading="lazy" onerror="this.src='https://img.youtube.com/vi/gn3-fAgekf0/mqdefault.jpg'">
                     <div class="play-icon">▶</div>
                 </a>
-                <a href="https://www.youtube.com/watch?v=eWU6ouj7NFs" target="_blank" class="video-thumb">
-                    <img src="https://img.youtube.com/vi/eWU6ouj7NFs/maxresdefault.jpg" alt="视频3" onerror="this.src='https://img.youtube.com/vi/eWU6ouj7NFs/hqdefault.jpg'">
+                <a href="https://www.youtube.com/watch?v=eWU6ouj7NFs" target="_blank" class="video-thumb" title="海外直播开通教程">
+                    <img src="https://img.youtube.com/vi/eWU6ouj7NFs/hqdefault.jpg" alt="海外直播开通教程视频" loading="lazy" onerror="this.src='https://img.youtube.com/vi/eWU6ouj7NFs/mqdefault.jpg'">
                     <div class="play-icon">▶</div>
                 </a>
-                <a href="https://www.youtube.com/watch?v=Bs3lCMmX9U0" target="_blank" class="video-thumb">
-                    <img src="https://img.youtube.com/vi/Bs3lCMmX9U0/maxresdefault.jpg" alt="视频4" onerror="this.src='https://img.youtube.com/vi/Bs3lCMmX9U0/hqdefault.jpg'">
+                <a href="https://www.youtube.com/watch?v=Bs3lCMmX9U0" target="_blank" class="video-thumb" title="虚拟定位教程合集">
+                    <img src="https://img.youtube.com/vi/Bs3lCMmX9U0/hqdefault.jpg" alt="虚拟定位教程合集视频" loading="lazy" onerror="this.src='https://img.youtube.com/vi/Bs3lCMmX9U0/mqdefault.jpg'">
                     <div class="play-icon">▶</div>
                 </a>
             </div>
