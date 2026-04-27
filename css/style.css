@@ -1292,6 +1292,19 @@ a {
     color: var(--text);
 }
 
+.related-articles {
+    margin: 40px 0;
+    padding: 24px;
+    background: var(--bg-soft, #f8f9fa);
+    border-radius: var(--radius);
+}
+
+.related-articles h3 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 16px;
+}
+
 .service-actions {
     display: flex;
     gap: 12px;
