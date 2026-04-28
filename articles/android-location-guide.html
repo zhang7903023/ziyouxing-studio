@@ -92,17 +92,29 @@
                 <p>实际上，免ROOT改定位已经有了成熟的解决方案。这篇文章说清楚。</p>
             </div>
 
+            <!-- 目录 -->
+            <div class="article-toc">
+                <h2>目录</h2>
+                <ol>
+                    <li><a href="#s1">为什么传统方法要ROOT</a></li>
+                    <li><a href="#s2">免ROOT改定位原理</a></li>
+                    <li><a href="#s3">支持的场景</a></li>
+                    <li><a href="#s4">套餐选择建议</a></li>
+                    <li><a href="#s5">常见问题</a></li>
+                </ol>
+            </div>
+
             <div class="article-body">
 
-                <h2>一、为什么传统方法要ROOT</h2>
+                <h2 id="s1">一、为什么传统方法要ROOT</h2>
                 <p>安卓系统的定位服务运行在较高权限层级。传统改定位需要Hook系统API，这需要ROOT权限才能实现。</p>
                 <p>但随着虚拟定位需求的增长，市面上出现了基于无障碍服务和开发者选项的免ROOT方案。</p>
 
-                <h2>二、免ROOT改定位原理</h2>
+                <h2 id="s2">二、免ROOT改定位原理</h2>
                 <p>通过安卓系统的"模拟位置应用"接口（Mock Location API），在不修改系统文件的前提下，让指定App读取虚拟GPS信号。</p>
                 <p>关键前提：手机需要开启开发者选项中的"允许模拟位置"开关。</p>
 
-                <h2>三、支持的场景</h2>
+                <h2 id="s3">三、支持的场景</h2>
 
                 <div class="article-list">
                     <div class="list-item">
@@ -123,7 +135,7 @@
                     </div>
                 </div>
 
-                <h2>四、套餐选择建议</h2>
+                <h2 id="s4">四、套餐选择建议</h2>
                 <p>免ROOT定位服务通常按时间周期收费：</p>
 
                 <div class="compare-table">
@@ -155,7 +167,7 @@
                     </table>
                 </div>
 
-                <h2>五、常见问题</h2>
+                <h2 id="s5">五、常见问题</h2>
 
                 <div class="faq-block">
                     <div class="faq-item">

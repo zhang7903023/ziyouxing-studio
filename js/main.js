@@ -105,6 +105,22 @@ if (mobileMenuBtn && mobileMenu) {
     });
 }
 
+// 咨询浮窗
+function toggleContact(btn) {
+    btn.classList.toggle('active');
+    btn.nextElementSibling.classList.toggle('show');
+}
+
+// 点击页面其他区域关闭浮窗
+document.addEventListener('click', (e) => {
+    const popup = document.querySelector('.consult-popup.show');
+    if (popup && !e.target.closest('.float-consult')) {
+        popup.classList.remove('show');
+        const btn = document.querySelector('.consult-btn.active');
+        if (btn) btn.classList.remove('active');
+    }
+});
+
 // 页面加载时初始化语言
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(currentLang);
