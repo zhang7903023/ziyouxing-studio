@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSC 批量索引提交助手</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #0E1116; color: #e0e0e0; padding: 40px 20px; }
+.container { max-width: 700px; margin: 0 auto; }
+h1 { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+.subtitle { color: #888; font-size: 14px; margin-bottom: 32px; line-height: 1.6; }
+.url-list { list-style: none; }
+.url-item { 
+  display: flex; align-items: center; gap: 12px; 
+  padding: 12px 16px; margin-bottom: 6px; 
+  background: #161b22; border: 1px solid #2d333b; border-radius: 6px;
+  transition: opacity 0.3s;
+}
+.url-item.done { opacity: 0.4; }
+.url-item.done .url-text { text-decoration: line-through; }
+.url-number { 
+  min-width: 24px; height: 24px; border-radius: 50%; 
+  background: #21262d; display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; color: #6C8FB8;
+}
+.url-item.done .url-number { background: #1a3a2a; color: #3fb950; }
+.url-text { 
+  flex: 1; font-family: monospace; font-size: 13px; color: #c9d1d9;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.url-text a { color: #6C8FB8; text-decoration: none; }
+.url-text a:hover { text-decoration: underline; }
+.btn-copy { 
+  padding: 4px 10px; font-size: 11px; border: 1px solid #2d333b; 
+  background: transparent; color: #6C8FB8; border-radius: 4px; cursor: pointer;
+}
+.btn-copy:hover { background: #21262d; }
+.btn-done {
+  padding: 4px 10px; font-size: 11px; border: 1px solid #2d333b;
+  background: transparent; color: #3fb950; border-radius: 4px; cursor: pointer;
+  display: none;
+}
+.url-item.done .btn-copy { display: none; }
+.url-item.done .btn-done { display: inline-block; }
+.badge { font-size: 10px; padding: 2px 6px; border-radius: 3px; font-weight: 600; }
+.badge-done { background: #1a3a2a; color: #3fb950; }
+.badge-indexed { background: #1a2a3a; color: #6C8FB8; }
+.section-label { font-size: 13px; color: #6C8FB8; font-weight: 600; margin: 20px 0 10px; padding-left: 4px; }
+.progress { font-size: 13px; color: #888; margin-bottom: 20px; }
+.gsc-link { 
+  display: inline-block; padding: 10px 20px; margin-top: 20px;
+  background: #6C8FB8; color: #0E1116; font-weight: 600; font-size: 14px;
+  border-radius: 6px; text-decoration: none;
+}
+.gsc-link:hover { background: #8ba8cb; }
+.steps { background: #161b22; border: 1px solid #2d333b; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
+.steps ol { padding-left: 20px; font-size: 13px; line-height: 2; color: #c9d1d9; }
+.steps strong { color: #6C8FB8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🔧 GSC 批量索引提交助手</h1>
+  <p class="subtitle">打开 Google Search Console，依次复制下面的 URL 粘贴到顶部搜索框，点击"请求编入索引"。</p>
+  
+  <div class="steps">
+    <ol>
+      <li>点击下方按钮 <strong>打开 Google Search Console</strong></li>
+      <li>复制下面的 URL</li>
+      <li>在 GSC 顶部搜索框粘贴，回车</li>
+      <li>点击 <strong>"请求编入索引"</strong> 按钮</li>
+      <li>回来点 <strong>"✓ 完成"</strong>，继续下一个</li>
+    </ol>
+  </div>
+  
+  <div class="progress"><span id="count">0</span> / <span id="total">14</span> 已完成（已收录 3 + 已提交 1）</div>
+
+  <div class="section-label">📋 剩余待提交</div>
+  <ul class="url-list" id="todo-list">
+  </ul>
+</div>
+
+<script>
+const urls = [
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/services.html', label: '服务总览页' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/social-media-growth.html', label: '社媒增长服务页' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/overseas-live.html', label: '海外直播服务页' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/phone-clone.html', label: 'App分身服务页' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/platform-auth.html', label: '平台认证服务页' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/contact.html', label: '联系页' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/', label: '文章列表页' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/overseas-dingtalk.html', label: '海外钉钉打卡教程' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/workwechat-location-guide.html', label: '企业微信改定位教程' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/water-mark-camera-guide.html', label: '水印相机改定位教程' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/feishu-dingtalk-guide.html', label: '飞书钉钉打卡教程' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/xiaohongshu-douyin-guide.html', label: '小红书抖音运营教程' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/wechat-location-guide.html', label: '微信改定位教程' },
+  { url: 'https://zhang7903023.github.io/ziyouxing-studio/articles/overseas-live-guide.html', label: '海外直播开通教程' },
+];
+
+function createItem(data, index) {
+  const li = document.createElement('li');
+  li.className = 'url-item';
+  li.innerHTML = `
+    <span class="url-number">${index}</span>
+    <span class="url-text" title="${data.label}"><a href="${data.url}" target="_blank">${data.url}</a></span>
+    <button class="btn-copy" onclick="copyUrl(this, '${data.url}')">复制</button>
+    <button class="btn-done" onclick="markDone(this)">✓ 完成</button>
+  `;
+  return li;
+}
+
+function copyUrl(btn, url) {
+  navigator.clipboard.writeText(url).then(() => {
+    btn.textContent = '已复制 ✓';
+    setTimeout(() => btn.textContent = '复制', 1500);
+  });
+}
+
+function markDone(btn) {
+  btn.closest('.url-item').classList.add('done');
+  updateCount();
+}
+
+function updateCount() {
+  const done = document.querySelectorAll('.url-item.done').length;
+  document.getElementById('count').textContent = done;
+  if (done === 14) {
+    document.querySelector('.gsc-link').textContent = '🎉 全部完成！';
+    document.querySelector('.gsc-link').style.background = '#3fb950';
+  }
+}
+
+const list = document.getElementById('todo-list');
+urls.forEach((u, i) => list.appendChild(createItem(u, i + 1)));
+
+// 自动加载
+const saved = JSON.parse(localStorage.getItem('gsc-done') || '[]');
+if (saved.length) {
+  document.querySelectorAll('.url-item').forEach((item, i) => {
+    if (saved.includes(i)) item.classList.add('done');
+  });
+  updateCount();
+}
+
+// 保存状态
+const origMarkDone = markDone;
+window.markDone = function(btn) {
+  origMarkDone(btn);
+  const items = [...document.querySelectorAll('.url-item')];
+  const doneIdx = items.filter(i => i.classList.contains('done')).map(i => items.indexOf(i));
+  localStorage.setItem('gsc-done', JSON.stringify(doneIdx));
+};
+</script>
+</body>
+</html>
