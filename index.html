@@ -182,7 +182,7 @@
   gtag('config', 'G-MT98VFM7QJ');
 </script>
 </head>
-<body>
+<body class="home-page">
     <!-- 顶部导航 -->
     <header class="header">
         <div class="container header-inner">
@@ -631,6 +631,13 @@
 
     <script src="js/main.js"></script>
     <script>
+        const siteHeader = document.querySelector('.header');
+        function updateHeaderState() {
+            siteHeader.classList.toggle('scrolled', window.scrollY > 24);
+        }
+        updateHeaderState();
+        window.addEventListener('scroll', updateHeaderState, { passive: true });
+
         function copyText(text, btn) {
             navigator.clipboard.writeText(text);
             btn.textContent = '已复制';
