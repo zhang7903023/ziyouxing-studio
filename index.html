@@ -219,13 +219,34 @@
 
     <!-- Hero 区域 -->
     <section class="hero">
-        <div class="container">
-            <h1>自由行 Studio</h1>
-            <p class="hero-subtitle">安卓 / 苹果手机虚拟定位<br>抖音 / 小红书 / 视频号海外直播权限开通</p>
-            <p class="hero-desc">提供手机虚拟定位，以及抖音、小红书、视频号海外直播权限开通相关咨询与协助服务。</p>
-            <div class="hero-btns">
-                <a href="services.html" class="btn btn-primary">查看服务</a>
-                <a href="contact.html" class="btn btn-outline">立即联系</a>
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h1>自由行 Studio</h1>
+                <p class="hero-subtitle">安卓 / 苹果手机虚拟定位<br>抖音 / 小红书 / 视频号海外直播权限开通</p>
+                <p class="hero-desc">提供手机虚拟定位，以及抖音、小红书、视频号海外直播权限开通相关咨询与协助服务。</p>
+                <div class="hero-btns">
+                    <a href="services.html" class="btn btn-primary">查看服务</a>
+                    <a href="contact.html" class="btn btn-outline">立即联系</a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+                    <!-- 抽象定位概念：细线圈 + 信号弧线 + 中心圆点 -->
+                    <circle cx="200" cy="180" r="120" stroke="#6C8FB8" stroke-width="1" fill="none" opacity="0.35"/>
+                    <circle cx="200" cy="180" r="80"  stroke="#6C8FB8" stroke-width="1" fill="none" opacity="0.5"/>
+                    <circle cx="200" cy="180" r="40"  stroke="#6C8FB8" stroke-width="1.5" fill="none" opacity="0.7"/>
+                    <circle cx="200" cy="180" r="4"  fill="#6C8FB8"/>
+                    <!-- 信号弧线 -->
+                    <path d="M95 180 A105 105 0 0 1 305 180" stroke="#6C8FB8" stroke-width="0.8" fill="none" opacity="0.25"/>
+                    <path d="M80 180 A120 120 0 0 1 320 180" stroke="#6C8FB8" stroke-width="0.6" fill="none" opacity="0.18"/>
+                    <!-- 极细水平装饰线 -->
+                    <line x1="40" y1="340" x2="360" y2="340" stroke="#6C8FB8" stroke-width="0.5" opacity="0.2"/>
+                    <line x1="80" y1="355" x2="320" y2="355" stroke="#6C8FB8" stroke-width="0.3" opacity="0.12"/>
+                    <!-- 极小的装饰点 -->
+                    <circle cx="310" cy="90"  r="2"   fill="#6C8FB8" opacity="0.35"/>
+                    <circle cx="120" cy="280" r="1.5" fill="#6C8FB8" opacity="0.25"/>
+                    <circle cx="290" cy="260" r="1"   fill="#6C8FB8" opacity="0.2"/>
+                </svg>
             </div>
         </div>
     </section>
@@ -350,42 +371,78 @@
                 <h3 class="guides-title">相关教程</h3>
                 <div class="guides-grid">
                     <a href="articles/ios-26-location-guide.html" class="guide-item">
-                        <span class="guide-icon">📍</span>
+                        <span class="guide-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#6C8FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="14" cy="10" r="7"/>
+                                <path d="M10 16l-3 8h14l-3-8"/>
+                                <circle cx="14" cy="10" r="2" fill="#6C8FB8" stroke="none"/>
+                            </svg>
+                        </span>
                         <div>
                             <strong>iOS 26 改定位指南</strong>
                             <small>iOS 17/18/26免越狱，覆盖钉钉/企微/水印相机</small>
                         </div>
                     </a>
                     <a href="articles/feishu-dingtalk-guide.html" class="guide-item">
-                        <span class="guide-icon">⏰</span>
+                        <span class="guide-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#6C8FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="14" cy="14" r="10"/>
+                                <path d="M14 8v6l4 2"/>
+                            </svg>
+                        </span>
                         <div>
                             <strong>飞书/钉钉打卡改定位</strong>
                             <small>GPS+WiFi双模式，防作弊机制解析</small>
                         </div>
                     </a>
                     <a href="articles/workwechat-location-guide.html" class="guide-item">
-                        <span class="guide-icon">💼</span>
+                        <span class="guide-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#6C8FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="6" y="8" width="16" height="12" rx="2"/>
+                                <path d="M6 12h16"/>
+                                <path d="M10 4v4"/>
+                                <path d="M18 4v4"/>
+                            </svg>
+                        </span>
                         <div>
                             <strong>企业微信打卡改定位</strong>
                             <small>iOS 26全系列支持，海外考勤无忧</small>
                         </div>
                     </a>
                     <a href="articles/water-mark-camera-guide.html" class="guide-item">
-                        <span class="guide-icon">📷</span>
+                        <span class="guide-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#6C8FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="4" y="10" width="20" height="12" rx="2"/>
+                                <path d="M10 10V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                                <circle cx="14" cy="16" r="3"/>
+                            </svg>
+                        </span>
                         <div>
                             <strong>今日水印相机改定位</strong>
                             <small>工程/外勤/巡检，拍照水印位置修改</small>
                         </div>
                     </a>
                     <a href="articles/xiaohongshu-douyin-guide.html" class="guide-item">
-                        <span class="guide-icon">🎵</span>
+                        <span class="guide-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#6C8FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 4v8l-4 4"/>
+                                <path d="M20 4a10 10 0 1 1-20 0"/>
+                                <circle cx="14" cy="14" r="10"/>
+                            </svg>
+                        </span>
                         <div>
                             <strong>小红书/抖音定位修改</strong>
                             <small>发笔记定位，直播定位，团购功能</small>
                         </div>
                     </a>
                     <a href="articles/android-location-guide.html" class="guide-item">
-                        <span class="guide-icon">🤖</span>
+                        <span class="guide-icon">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#6C8FB8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="6" y="4" width="16" height="20" rx="3"/>
+                                <path d="M11 22h6"/>
+                                <circle cx="14" cy="14" r="3"/>
+                            </svg>
+                        </span>
                         <div>
                             <strong>安卓免ROOT改定位</strong>
                             <small>开发者选项内置功能，安卓10-16稳定</small>
