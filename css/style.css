@@ -1719,3 +1719,18 @@ form {
         gap: 8px 14px;
     }
 }
+
+/* ===== 产品展示图 ===== */
+.product-showcase {
+    padding: 48px 0;
+    background: #F4F5F7;
+    text-align: center;
+}
+
+.product-image {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
