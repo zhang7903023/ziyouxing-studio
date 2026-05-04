@@ -270,6 +270,19 @@ a {
     margin-bottom: 20px;
     padding-bottom: 12px;
     border-bottom: 2px solid var(--border);
+    padding-left: 16px;
+    border-left: 3px solid var(--primary);
+    margin-left: -19px;
+}
+
+.article-body h2::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 6px;
+    background: #E53E3E;
+    margin-bottom: 14px;
+    border-radius: 3px;
 }
 
 .article-body h2:first-child {
