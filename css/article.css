@@ -280,9 +280,10 @@ a {
     display: block;
     width: 80px;
     height: 6px;
-    background: #E53E3E;
+    background: var(--primary);
     margin-bottom: 14px;
     border-radius: 3px;
+    margin-left: 16px;
 }
 
 .article-body h2:first-child {
