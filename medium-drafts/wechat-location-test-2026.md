@@ -87,10 +87,10 @@
 ## 延伸阅读
 
 如果你需要改的是钉钉打卡或企业微信考勤，我们另有实测教程：
-🔗 https://zhang7903023.github.io/ziyouxing-studio/articles/overseas-dingtalk.html
+🔗 https://zyxstudio.net/articles/overseas-dingtalk.html
 
 iOS 26 免越狱改定位的完整操作指南（含截图）：
-🔗 https://zhang7903023.github.io/ziyouxing-studio/articles/ios-26-location-guide.html
+🔗 https://zyxstudio.net/articles/ios-26-location-guide.html
 
 ---
 

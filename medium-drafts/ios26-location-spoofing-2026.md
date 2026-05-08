@@ -146,14 +146,14 @@ It depends on your employment contract and local laws. This guide is for informa
 
 **Q: Where can I get a pre-configured automated solution?**
 We maintain a detailed step-by-step guide (with screenshots) here:
-🔗 https://zhang7903023.github.io/ziyouxing-studio/articles/ios-26-location-guide.html
+🔗 https://zyxstudio.net/articles/ios-26-location-guide.html
 
 ---
 
 ## Further Reading
 
 If you're dealing with Android instead of iPhone, we also have a hands-on comparison of 5 Android GPS spoofing tools (Fake GPS, GPS Emulator, Mock Location, and others):
-🔗 https://zhang7903023.github.io/ziyouxing-studio/articles/android-gps-tools-compare.html
+🔗 https://zyxstudio.net/articles/android-gps-tools-compare.html
 
 ---
 

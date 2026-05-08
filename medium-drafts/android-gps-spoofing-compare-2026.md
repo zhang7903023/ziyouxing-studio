@@ -45,7 +45,7 @@ This isn't an app — it's a method. You connect your phone to a computer via US
 **Score: 9.5/10**
 
 Full setup guide here:
-🔗 https://zhang7903023.github.io/ziyouxing-studio/articles/android-location-guide.html
+🔗 https://zyxstudio.net/articles/android-location-guide.html
 
 ---
 
@@ -153,10 +153,10 @@ If you need GPS spoofing for work purposes (attendance, check-in apps), there's 
 The Play Store apps work fine for casual use — changing your location on Google Maps, testing apps, games — but the moment an app actively checks for mock location, they fall apart.
 
 For a complete step-by-step guide on the system-level method (with screenshots):
-🔗 https://zhang7903023.github.io/ziyouxing-studio/articles/android-location-guide.html
+🔗 https://zyxstudio.net/articles/android-location-guide.html
 
 And if you're on iPhone, we have a similar guide for iOS 26:
-🔗 https://zhang7903023.github.io/ziyouxing-studio/articles/ios-26-location-guide.html
+🔗 https://zyxstudio.net/articles/ios-26-location-guide.html
 
 ---
 
