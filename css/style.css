@@ -1551,11 +1551,38 @@ form,
     background: var(--bg-subtle);
 }
 
+.service-page-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.service-page-head p {
+    max-width: 520px;
+    color: var(--text-light);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.service-hub-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
 .service-block {
     margin-bottom: 32px;
     padding: var(--card-padding);
     border-radius: var(--radius-lg);
     transition: box-shadow var(--transition), transform var(--transition), border-color var(--transition);
+}
+
+.service-hub-grid .service-block {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
 }
 
 .service-block:hover {
@@ -1570,6 +1597,10 @@ form,
     font-size: 24px;
     font-weight: 600;
     line-height: 1.25;
+}
+
+.service-block .result-tag {
+    width: fit-content;
 }
 
 .service-block ul {
@@ -1639,6 +1670,49 @@ form,
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 20px;
+}
+
+.service-hub-grid .service-actions {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.services-intake {
+    margin-top: var(--section-space);
+}
+
+.service-detail-page .related-articles {
+    margin-top: var(--section-space);
+    padding: 24px;
+    background: var(--bg-white);
+    box-shadow: var(--shadow-card);
+}
+
+.related-articles h3 {
+    margin-bottom: 14px;
+    color: var(--text);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+}
+
+.related-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.related-links a::after {
+    content: "→";
+    margin-left: 6px;
 }
 
 .app-tag {
@@ -1950,6 +2024,7 @@ form {
     .compat-grid,
     .result-grid,
     .proof-strip-inner,
+    .service-hub-grid,
     .services-grid,
     .video-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2012,12 +2087,14 @@ form {
 
     .compat-header,
     .final-cta-inner,
+    .service-page-head,
     .intake-card,
     .result-grid {
         grid-template-columns: 1fr;
     }
 
     .compat-header,
+    .service-page-head,
     .final-cta-inner {
         display: grid;
     }
@@ -2059,6 +2136,10 @@ form {
         grid-template-columns: 1fr;
     }
 
+    .service-hub-grid {
+        grid-template-columns: 1fr;
+    }
+
     .intake-copy h2 {
         font-size: 30px;
     }
@@ -2089,6 +2170,7 @@ form {
 @media (max-width: 560px) {
     .compat-grid,
     .result-grid,
+    .service-hub-grid,
     .services-grid,
     .video-grid {
         grid-template-columns: 1fr;
