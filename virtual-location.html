@@ -2,20 +2,17 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>iPhone/安卓虚拟定位配置｜微信/钉钉/水印相机 GPS 定位调整 - 自由行Studio</title>
     <meta name="description" content="iPhone免越狱、安卓免ROOT虚拟定位配置评估：微信、钉钉、企业微信、水印相机、抖音、小红书等 GPS 坐标定位场景，先判断机型、系统版本、目标 App 和校验规则，再一对一远程协助。">
     <meta name="keywords" content="iPhone虚拟定位,iOS改定位,安卓虚拟定位,安卓改定位,iOS虚拟定位,苹果免越狱改定位,安卓免ROOT改定位,朋友圈定位修改,微信定位修改,微博定位修改,位置穿越,微信GPS定位,水印相机定位,钉钉定位配置,企业微信定位配置,小红书定位,抖音定位,GPS定位调整">
     <meta name="author" content="自由行Studio">
     <meta name="robots" content="index, follow">
-
     <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
     <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
     <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-
     <link rel="canonical" href="https://zyxstudio.net/virtual-location.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://zyxstudio.net/virtual-location.html">
@@ -24,534 +21,377 @@
     <meta property="og:image" content="https://zyxstudio.net/favicon/og-image.png">
     <meta property="og:site_name" content="自由行Studio">
     <meta property="og:locale" content="zh_CN">
-
     <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MT98VFM7QJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MT98VFM7QJ');
-</script>
-
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://zyxstudio.net/"},{"@type":"ListItem","position":2,"name":"虚拟定位","item":"https://zyxstudio.net/virtual-location.html"}]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"iPhone 虚拟定位需要越狱吗？","acceptedAnswer":{"@type":"Answer","text":"多数常见场景可以先评估免越狱配置，但最终要看机型、iOS版本、目标App和使用规则。建议先发设备信息和截图判断。"}},{"@type":"Question","name":"安卓虚拟定位需要 ROOT 吗？","acceptedAnswer":{"@type":"Answer","text":"很多安卓场景可以先评估免ROOT方案，但不同品牌系统、权限限制和目标App差异很大，需要按设备实际情况判断。"}},{"@type":"Question","name":"改 GPS 定位和改 IP 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"GPS 是经纬度坐标，影响地图、打卡、水印和基于位置的功能；IP 是网络出口地区，影响网站和部分平台的网络判断。两者不是一回事。"}},{"@type":"Question","name":"支持哪些 App 先评估？","acceptedAnswer":{"@type":"Answer","text":"可以先评估微信、钉钉、企业微信、飞书、今日水印相机、抖音、小红书等常见定位场景，具体以App版本和规则为准。"}},{"@type":"Question","name":"使用前需要注意什么？","acceptedAnswer":{"@type":"Answer","text":"定位配置不等于解除账号、IP、设备或平台风控。建议先确认目标App的校验方式，并避免系统或App频繁更新导致兼容性变化。"}}]}
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT98VFM7QJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MT98VFM7QJ');
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://zyxstudio.net/"},{"@type":"ListItem","position":2,"name":"虚拟定位","item":"https://zyxstudio.net/virtual-location.html"}]}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"iPhone 虚拟定位需要越狱吗？","acceptedAnswer":{"@type":"Answer","text":"多数常见场景可以先评估免越狱配置，但最终要看机型、iOS版本、目标App和使用规则。建议先发设备信息和截图判断。"}},{"@type":"Question","name":"安卓虚拟定位需要 ROOT 吗？","acceptedAnswer":{"@type":"Answer","text":"很多安卓场景可以先评估免ROOT方案，但不同品牌系统、权限限制和目标App差异很大，需要按设备实际情况判断。"}},{"@type":"Question","name":"改 GPS 定位和改 IP 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"GPS 是经纬度坐标，影响地图、打卡、水印和基于位置的功能；IP 是网络出口地区，影响网站和部分平台的网络判断。两者不是一回事。"}},{"@type":"Question","name":"支持哪些 App 先评估？","acceptedAnswer":{"@type":"Answer","text":"可以先评估微信、钉钉、企业微信、飞书、今日水印相机、抖音、小红书等常见定位场景，具体以App版本和规则为准。"}},{"@type":"Question","name":"使用前需要注意什么？","acceptedAnswer":{"@type":"Answer","text":"定位配置不等于解除账号、IP、设备或平台风控。建议先确认目标App的校验方式，并避免系统或App频繁更新导致兼容性变化。"}}]}
+    </script>
 </head>
 <body>
-    <!-- 顶部导航 -->
-    <header class="header">
-        <div class="container header-inner">
-            <a href="index.html" class="logo">自由行Studio</a>
-            <nav class="nav">
-                <a href="index.html" class="nav-link">首页</a>
-                <a href="services.html" class="nav-link">服务</a>
-                <a href="articles/" class="nav-link">教程</a>
-                <a href="contact.html" class="nav-link">联系</a>
-            </nav>
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="zh">中文</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
-            <button class="mobile-menu-btn" aria-label="菜单">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
 
-    <div class="mobile-menu">
-        <a href="index.html">首页</a>
-        <a href="services.html">服务</a>
-        <a href="articles/">教程</a>
-        <a href="contact.html">联系</a>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">自由行<span>Studio</span></a>
+    <nav class="nav">
+      <a href="services.html">服务</a>
+      <a href="articles/">教程</a>
+      <a href="contact.html">联系</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label">GPS 坐标配置 · 先判断设备和 App</div>
+    <h1>iPhone / 安卓虚拟定位，先看系统版本和目标 App</h1>
+    <p>适合微信、钉钉、企业微信、水印相机、抖音、小红书等基于 GPS 坐标的场景。先确认机型、系统、App 版本和校验规则，再给远程配置建议。</p>
+  </div>
+</section>
+
+<section style="padding:40px 0;text-align:center;">
+  <div class="container">
+    <img src="product-hardware.jpg" alt="iPhone 虚拟定位硬件设备" style="max-width:600px;width:100%;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+  </div>
+</section>
+
+<section>
+  <div class="container" style="max-width:820px;">
+
+    <div class="service-block">
+      <h2>iPhone 苹果手机虚拟定位（免越狱）</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin:12px 0 20px;">需要把 iPhone 的 GPS 坐标定位修改到指定城市/地点，用于定位测试、外勤/打卡场景、LBS 功能测试等（不是改 IP）。</p>
+
+      <div style="background:var(--bg-alt);border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+        <strong style="color:var(--text);">咨询 / 下单：</strong><br>
+        微信：<strong>yes1974g</strong>（备注：iPhone定位 + 机型 + iOS 版本 + 目标 App）<br>
+        邮箱：zhang7903023@gmail.com<br>
+        售后：每天 9:00–23:00（北京时间）
+      </div>
+
+      <h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;">设备兼容</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:20px;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">适用机型</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">iPhone 6 → iPhone 17 Pro Max</td>
+        </tr>
+        <tr>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">系统兼容</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">iOS 12 – iOS 26.4</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">典型场景</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">企业微信 / 钉钉 / 微信 / 抖音 / 小红书 / Facebook / Instagram / 地图等</td>
+        </tr>
+      </table>
+
+      <h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;">核心特点</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin-bottom:20px;">
+        <div style="background:var(--bg-alt);border-radius:12px;padding:20px;text-align:center;">
+          <div style="font-size:28px;margin-bottom:8px;">🔧</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:4px;">无需越狱</div>
+          <div style="font-size:13px;color:var(--text-muted);">直接远程配置</div>
+        </div>
+        <div style="background:var(--bg-alt);border-radius:12px;padding:20px;text-align:center;">
+          <div style="font-size:28px;margin-bottom:8px;">⚡</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:4px;">即插即用</div>
+          <div style="font-size:13px;color:var(--text-muted);">插上设备按步骤操作</div>
+        </div>
+        <div style="background:var(--bg-alt);border-radius:12px;padding:20px;text-align:center;">
+          <div style="font-size:28px;margin-bottom:8px;">⏱</div>
+          <div style="font-weight:600;font-size:14px;margin-bottom:4px;">1–2 分钟上手</div>
+          <div style="font-size:13px;color:var(--text-muted);">快速完成定位修改</div>
+        </div>
+      </div>
+
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">适用 / 不适用</summary>
+        <div style="padding:12px 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <tr style="background:var(--bg-alt);">
+              <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">适用</th>
+              <td style="padding:10px 14px;border:1px solid var(--border);">主要依赖 GPS/坐标定位的 App<br>打卡、外勤、拍照水印<br>地图、运动轨迹、LBS 测试</td>
+            </tr>
+            <tr>
+              <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">不适用</th>
+              <td style="padding:10px 14px;border:1px solid var(--border);">只看 IP、运营商、账号风控、设备环境来判断地区的场景<br>这类不是本设备可解决范围</td>
+            </tr>
+          </table>
+        </div>
+      </details>
+
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">为什么一直强调「GPS 不是 IP」？</summary>
+        <div style="padding:12px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+          <ul style="padding-left:20px;">
+            <li><strong>GPS 定位（本设备）：</strong>修改经纬度坐标，可精确到具体位置点</li>
+            <li><strong>IP 定位（非本设备）：</strong>网络出口 IP 的城市/区域判断，常用于网站识别与风控</li>
+          </ul>
+          <p style="margin-top:10px;font-weight:600;">结论：本设备修改的是 GPS 坐标定位，不是改 IP。</p>
+        </div>
+      </details>
+
+      <h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;">使用步骤（1–2 分钟）</h3>
+      <div style="background:var(--bg-alt);border-radius:12px;padding:20px;margin-bottom:20px;font-size:14px;line-height:1.8;">
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">1</span> 将设备插入 iPhone 充电口</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">2</span> 打开配套软件</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">3</span> 搜索需要修改的位置</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">4</span> 一键完成定位修改</div>
+      </div>
+
+      <div style="background:var(--bg-alt);border-left:3px solid var(--accent);padding:14px 18px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+        <strong style="color:var(--text);">注意：</strong>手机系统、以及相关的打卡/定位类 App（包含配套软件）尽量不要随意更新，避免版本变化导致不兼容，打破当前稳定状态。
+      </div>
+
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">各版本权益详情</summary>
+        <div style="padding:12px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+          <ul style="padding-left:20px;">
+            <li><strong>标准版（国内 · 1 年售后）：</strong>定位修改设备 + 使用教程 + 技术支持</li>
+            <li><strong>高级版（国内 · 2 年售后）：</strong>定位修改设备 + 使用教程 + 技术支持 + 2 年内设备问题免费换新</li>
+            <li><strong>厂家质保版：</strong>设备本体 + 厂家提供 1 年质保（仅厂家质保，我这里不提供换新服务）</li>
+          </ul>
+        </div>
+      </details>
+
+      <h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;">支持设备（全系列）</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:20px;">
+        <div style="background:var(--bg-alt);border-radius:8px;padding:14px;"><div style="font-weight:600;font-size:14px;margin-bottom:8px;">iPhone 6 系列</div><div style="font-size:13px;color:var(--text-secondary);">iPhone 6 / 6s / 6s Plus</div></div>
+        <div style="background:var(--bg-alt);border-radius:8px;padding:14px;"><div style="font-weight:600;font-size:14px;margin-bottom:8px;">iPhone 7–8 系列</div><div style="font-size:13px;color:var(--text-secondary);">iPhone 7 / 7 Plus<br>iPhone 8 / 8 Plus</div></div>
+        <div style="background:var(--bg-alt);border-radius:8px;padding:14px;"><div style="font-weight:600;font-size:14px;margin-bottom:8px;">iPhone X 系列</div><div style="font-size:13px;color:var(--text-secondary);">iPhone X / XR / XS / XS Max</div></div>
+        <div style="background:var(--bg-alt);border-radius:8px;padding:14px;"><div style="font-weight:600;font-size:14px;margin-bottom:8px;">iPhone 11–16 系列</div><div style="font-size:13px;color:var(--text-secondary);">iPhone 11 / 12 / 13 / 14 / 15 / 16 系列</div></div>
+        <div style="background:var(--bg-alt);border-radius:8px;padding:14px;"><div style="font-weight:600;font-size:14px;margin-bottom:8px;">iPhone 17 系列</div><div style="font-size:13px;color:var(--text-secondary);">iPhone 17 / 17 Air / 17 Pro / 17 Pro Max</div></div>
+      </div>
+
+      <div style="background:var(--bg-alt);border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px;color:var(--text-secondary);line-height:1.7;">
+        <strong style="color:var(--text);">售后服务包含：</strong>使用教程 · 安装指导 · 技术支持 · 常见问题处理 · 远程协助
+      </div>
+
+      <a href="contact.html" class="btn btn-primary" style="margin-top:8px;">立即咨询 →</a>
     </div>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container page-hero-inner">
-            <div class="page-hero-text">
-                <div class="hero-kicker">GPS 坐标配置 · 先判断设备和 App</div>
-                <h1>iPhone / 安卓虚拟定位，先看系统版本和目标 App</h1>
-                <p>适合微信、钉钉、企业微信、水印相机、抖音、小红书等基于 GPS 坐标的场景。先确认机型、系统、App 版本和校验规则，再给远程配置建议。</p>
-                <div class="hero-btns">
-                    <a href="https://wa.me/14154251293" target="_blank" class="btn btn-primary">WhatsApp 发截图</a>
-                    <a href="contact.html" class="btn btn-outline">查看微信联系方式</a>
-                </div>
-            </div>
-            <div class="page-hero-visual" aria-hidden="true">
-                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="page-hero-svg">
-                    <!-- 手机轮廓 -->
-                    <rect x="140" y="80" width="120" height="220" rx="16" stroke="#6C8FB8" stroke-width="1.2" fill="none" opacity="0.4"/>
-                    <circle cx="200" cy="95" r="4" stroke="#6C8FB8" stroke-width="0.8" fill="none" opacity="0.35"/>
-                    <line x1="170" y1="278" x2="230" y2="278" stroke="#6C8FB8" stroke-width="0.8" opacity="0.25"/>
-                    <!-- 定位圆圈 -->
-                    <circle cx="200" cy="185" r="60" stroke="#6C8FB8" stroke-width="1" fill="none" opacity="0.3"/>
-                    <circle cx="200" cy="185" r="35" stroke="#6C8FB8" stroke-width="1" fill="none" opacity="0.45"/>
-                    <circle cx="200" cy="185" r="12" stroke="#6C8FB8" stroke-width="1.2" fill="none" opacity="0.6"/>
-                    <circle cx="200" cy="185" r="4" fill="#6C8FB8"/>
-                    <!-- 信号弧 -->
-                    <path d="M130 160 A80 80 0 0 1 270 160" stroke="#6C8FB8" stroke-width="0.7" fill="none" opacity="0.2"/>
-                    <path d="M115 150 A95 95 0 0 1 285 150" stroke="#6C8FB8" stroke-width="0.5" fill="none" opacity="0.14"/>
-                    <!-- 装饰 -->
-                    <line x1="60" y1="340" x2="340" y2="340" stroke="#6C8FB8" stroke-width="0.4" opacity="0.15"/>
-                    <circle cx="100" cy="110" r="1.5" fill="#6C8FB8" opacity="0.2"/>
-                    <circle cx="310" cy="130" r="2" fill="#6C8FB8" opacity="0.18"/>
-                    <circle cx="90" cy="260" r="1" fill="#6C8FB8" opacity="0.15"/>
-                </svg>
-            </div>
+    <hr style="border:none;border-top:1px solid var(--border);margin:40px 0;">
+
+    <!-- 安卓虚拟定位 -->
+    <div class="service-block">
+      <h2>安卓手机虚拟定位（免ROOT）</h2>
+      <p style="font-size:15px;color:var(--text-secondary);margin:12px 0 20px;">通过「创建分身 App」实现分身内定位修改，修改的是 GPS 坐标，只对分身生效。</p>
+
+      <div style="background:var(--bg-alt);border-radius:12px;padding:16px 20px;margin-bottom:20px;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+        <strong style="color:var(--text);">咨询 / 下单：</strong><br>
+        微信：<strong>yes1974g</strong>（备注：安卓分身定位）<br>
+        邮箱：zhang7903023@gmail.com<br>
+        售后：每天 9:00–23:00（北京时间）<br>
+        YouTube：<a href="https://youtube.com/@fakelocation777" target="_blank">自由行科技频道</a>
+      </div>
+
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">方案原理（务必看）</summary>
+        <div style="padding:12px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+          <ul style="padding-left:20px;">
+            <li>在软件内创建目标 App 的 <strong>分身版本</strong></li>
+            <li>在 <strong>分身环境</strong> 中设置定位</li>
+            <li>修改的是 <strong>GPS / 坐标</strong></li>
+            <li>不是改 IP，也不等于解除风控</li>
+          </ul>
         </div>
-    </section>
+      </details>
 
-    <!-- 产品展示 -->
-    <section class="product-showcase">
-        <div class="container">
-            <img src="product-hardware.jpg" alt="iPhone 虚拟定位硬件设备" class="product-image">
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">适用 / 不适用</summary>
+        <div style="padding:12px 0;">
+          <table style="width:100%;border-collapse:collapse;font-size:14px;">
+            <tr style="background:var(--bg-alt);">
+              <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">适用</th>
+              <td style="padding:10px 14px;border:1px solid var(--border);">主要依赖 GPS/坐标定位的场景<br>打卡、外勤、拍照水印、部分地图导航等</td>
+            </tr>
+            <tr>
+              <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">不适用</th>
+              <td style="padding:10px 14px;border:1px solid var(--border);">只看 IP / 运营商 / 账号风控 / 设备环境来判断地区的场景<br>这类不是本方案可解决范围</td>
+            </tr>
+          </table>
         </div>
-    </section>
+      </details>
 
-    <section class="service-detail-page">
-        <div class="container">
+      <h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;">使用步骤</h3>
+      <div style="background:var(--bg-alt);border-radius:12px;padding:20px;margin-bottom:20px;font-size:14px;line-height:1.8;">
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">1</span> <strong>安装：</strong>下载安装软件</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">2</span> <strong>创建分身：</strong>打开软件，进入创建分身 / 应用分身</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">3</span> <strong>选择应用：</strong>选择目标 App，创建一个分身版</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">4</span> <strong>设置位置：</strong>打开分身版 App，在分身内设置你要的地点</div>
+        <div style="display:flex;gap:12px;margin-bottom:10px;"><span style="background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;">5</span> <strong>验证生效：</strong>回到分身版 App 刷新页面，或重启分身版验证是否生效</div>
+      </div>
 
-            <!-- ========== iPhone 虚拟定位 ========== -->
-            <div class="service-block">
-                <h2>iPhone 苹果手机虚拟定位（免越狱）</h2>
-
-                <p style="font-size:15px;color:var(--text-light);margin:12px 0 20px;">需要把 iPhone 的 GPS 坐标定位修改到指定城市/地点，用于定位测试、外勤/打卡场景、LBS 功能测试等（不是改 IP）。</p>
-
-                <!-- 联系方式 -->
-                <div class="info-block">
-                    <div class="info-block-label">咨询 / 下单</div>
-                    微信：<strong>yes1974g</strong>（备注：iPhone定位 + 机型 + iOS 版本 + 目标 App）<br>
-                    邮箱：<a href="mailto:zhang7903023@gmail.com">zhang7903023@gmail.com</a><br>
-                    售后：每天 9:00–23:00（北京时间）
-                </div>
-
-                <!-- 设备兼容 -->
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>适用机型</th>
-                                <th>iPhone 6 → iPhone 17 Pro Max</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>系统兼容</td>
-                                <td>iOS 12 – iOS 26.4</td>
-                            </tr>
-                            <tr>
-                                <td>典型场景</td>
-                                <td>企业微信 / 钉钉 / 微信 / 抖音 / 小红书 / Facebook / Instagram / 地图等</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- 核心特点 -->
-                <h3 style="font-size:15px;font-weight:600;margin:24px 0 12px;">核心特点</h3>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">🔧</div>
-                        <div class="feature-name">无需越狱</div>
-                        <div class="feature-desc">直接远程配置</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">⚡</div>
-                        <div class="feature-name">即插即用</div>
-                        <div class="feature-desc">插上设备按步骤操作</div>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">⏱</div>
-                        <div class="feature-name">1–2 分钟上手</div>
-                        <div class="feature-desc">快速完成定位修改</div>
-                    </div>
-                </div>
-
-                <!-- 适用 / 不适用 -->
-                <div class="table-wrap" style="margin-top:8px;">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>适用</th>
-                                <th>不适用</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>主要依赖 GPS/坐标定位的 App<br>打卡、外勤、拍照水印<br>地图、运动轨迹、LBS 测试</td>
-                                <td>只看 IP、运营商、账号风控、设备环境来判断地区的场景<br>这类不是本设备可解决范围</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- GPS vs IP -->
-                <details class="details-block">
-                    <summary>为什么一直强调「GPS 不是 IP」？</summary>
-                    <div class="details-content">
-                        <ul>
-                            <li><strong>GPS 定位（本设备）：</strong>修改经纬度坐标，可精确到具体位置点</li>
-                            <li><strong>IP 定位（非本设备）：</strong>网络出口 IP 的城市/区域判断，常用于网站识别与风控</li>
-                        </ul>
-                        <p style="margin-top:10px;font-weight:600;">结论：本设备修改的是 GPS 坐标定位，不是改 IP。</p>
-                    </div>
-                </details>
-
-                <!-- 使用步骤 -->
-                <h3 style="font-size:15px;font-weight:600;margin:20px 0 12px;">使用步骤（1–2 分钟）</h3>
-                <ol class="step-list">
-                    <li>将设备插入 iPhone 充电口</li>
-                    <li>打开配套软件</li>
-                    <li>搜索需要修改的位置</li>
-                    <li>一键完成定位修改</li>
-                </ol>
-
-                <div class="info-block" style="margin-top:8px;">
-                    <div class="info-block-label">注意</div>
-                    手机系统、以及相关的打卡/定位类 App（包含配套软件）尽量不要随意更新，避免版本变化导致不兼容，打破当前稳定状态。
-                </div>
-
-                <!-- 版本权益 -->
-                <div class="info-block">
-                    <div class="info-block-label">版本说明</div>
-                    设备本体永久可使用。版本差异主要来自适用地区与售后服务时长。
-                </div>
-
-                <details class="details-block">
-                    <summary>各版本权益详情</summary>
-                    <div class="details-content">
-                        <ul>
-                            <li><strong>标准版（国内 · 1 年售后）：</strong>定位修改设备 + 使用教程 + 技术支持</li>
-                            <li><strong>高级版（国内 · 2 年售后）：</strong>定位修改设备 + 使用教程 + 技术支持 + 2 年内设备问题免费换新</li>
-                            <li><strong>厂家质保版：</strong>设备本体 + 厂家提供 1 年质保（仅厂家质保，我这里不提供换新服务）</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <!-- 设备列表 -->
-                <h3 style="font-size:15px;font-weight:600;margin:20px 0 12px;">支持设备（全系列）</h3>
-                <div class="device-grid">
-                    <div class="device-col">
-                        <h4>iPhone 6 系列</h4>
-                        <ul>
-                            <li>iPhone 6</li>
-                            <li>iPhone 6s</li>
-                            <li>iPhone 6s Plus</li>
-                        </ul>
-                    </div>
-                    <div class="device-col">
-                        <h4>iPhone 7–8 系列</h4>
-                        <ul>
-                            <li>iPhone 7 / 7 Plus</li>
-                            <li>iPhone 8 / 8 Plus</li>
-                        </ul>
-                    </div>
-                    <div class="device-col">
-                        <h4>iPhone X 系列</h4>
-                        <ul>
-                            <li>iPhone X / XR / XS / XS Max</li>
-                        </ul>
-                    </div>
-                    <div class="device-col">
-                        <h4>iPhone 11–16 系列</h4>
-                        <ul>
-                            <li>iPhone 11 / 12 / 13 / 14 / 15 / 16 系列</li>
-                        </ul>
-                    </div>
-                    <div class="device-col">
-                        <h4>iPhone 17 系列</h4>
-                        <ul>
-                            <li>iPhone 17 / 17 Air / 17 Pro / 17 Pro Max</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="info-block">
-                    <div class="info-block-label">售后服务包含</div>
-                    使用教程 · 安装指导 · 技术支持 · 常见问题处理 · 远程协助
-                </div>
-
-                <a href="contact.html" class="btn btn-primary" style="margin-top:8px;">立即咨询 →</a>
-            </div>
-
-            <hr style="border:none;border-top:1px solid var(--border);margin:40px 0;">
-
-            <!-- ========== 安卓虚拟定位 ========== -->
-            <div class="service-block">
-                <h2>安卓手机虚拟定位（免ROOT）</h2>
-
-                <p style="font-size:15px;color:var(--text-light);margin:12px 0 20px;">通过「创建分身 App」实现分身内定位修改，修改的是 GPS 坐标，只对分身生效。</p>
-
-                <!-- 联系方式 -->
-                <div class="info-block">
-                    <div class="info-block-label">咨询 / 下单</div>
-                    微信：<strong>yes1974g</strong>（备注：安卓分身定位）<br>
-                    邮箱：<a href="mailto:zhang7903023@gmail.com">zhang7903023@gmail.com</a><br>
-                    售后：每天 9:00–23:00（北京时间）<br>
-                    YouTube：<a href="https://youtube.com/@fakelocation777" target="_blank">自由行科技频道</a>
-                </div>
-
-                <!-- 方案原理 -->
-                <details class="details-block">
-                    <summary>方案原理（务必看）</summary>
-                    <div class="details-content">
-                        <ul>
-                            <li>在软件内创建目标 App 的 <strong>分身版本</strong></li>
-                            <li>在 <strong>分身环境</strong> 中设置定位</li>
-                            <li>修改的是 <strong>GPS / 坐标</strong></li>
-                            <li>不是改 IP，也不等于解除风控</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <div class="info-block">
-                    <div class="info-block-label">注意</div>
-                    手机系统、以及相关的打卡/定位类 App（含分身软件本体）尽量不要随意更新，避免因版本变动导致功能失效或打破当前稳定状态。
-                </div>
-
-                <!-- 适用范围 -->
-                <div class="table-wrap" style="margin-top:8px;">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>适用</th>
-                                <th>不适用</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>主要依赖 GPS/坐标定位的场景<br>打卡、外勤、拍照水印、部分地图导航等</td>
-                                <td>只看 IP / 运营商 / 账号风控 / 设备环境来判断地区的场景<br>这类不是本方案可解决范围</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- 使用步骤 -->
-                <h3 style="font-size:15px;font-weight:600;margin:20px 0 12px;">使用步骤</h3>
-                <ol class="step-list">
-                    <li><strong>安装：</strong>下载安装软件</li>
-                    <li><strong>创建分身：</strong>打开软件，进入创建分身 / 应用分身</li>
-                    <li><strong>选择应用：</strong>选择目标 App，创建一个分身版</li>
-                    <li><strong>设置位置：</strong>打开分身版 App，在分身内设置你要的地点</li>
-                    <li><strong>验证生效：</strong>回到分身版 App 刷新页面，或重启分身版验证是否生效</li>
-                </ol>
-
-                <!-- 验证方法 -->
-                <details class="details-block">
-                    <summary>如何验证是否生效</summary>
-                    <div class="details-content">
-                        <ul>
-                            <li><strong>方法 1：</strong>在分身里打开地图类 App，查看当前位置是否变化</li>
-                            <li><strong>方法 2：</strong>在分身里打开会显示位置/地址的页面（例如水印相机、外勤类 App），刷新对比位置</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <!-- 服务说明 -->
-                <div class="info-block">
-                    <div class="info-block-label">注意</div>
-                    仅提供按时长套餐使用，不提供永久版。
-                </div>
-
-                <details class="details-block">
-                    <summary>服务包含</summary>
-                    <div class="details-content">
-                        <ul>
-                            <li><strong>维护更新：</strong>持续适配系统与 App 更新</li>
-                            <li><strong>售后支持：</strong>使用期内问题排查与指导</li>
-                            <li><strong>避坑提醒：</strong>部分同类产品以「低价/永久」做噱头引流，后续常以升级、维护或服务追加收费</li>
-                            <li><strong>稳定优先：</strong>选择长期维护渠道，避免停更带来不稳定或无法使用</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <!-- 适配说明 -->
-                <h3 style="font-size:15px;font-weight:600;margin:20px 0 12px;">适配说明（v1.5）</h3>
-                <p style="font-size:14px;color:var(--text-light);margin-bottom:8px;">特别适配：今日水印相机、施工现场服务</p>
-                <p style="font-size:14px;color:var(--text-light);">其它适配（部分示例）：钉钉 · 企业微信 · 今日水印相机 · 外勤365 · 纷享销客CRM · 云之家 · 勤策 · 超感动 · 移动办公m3 · 决策易 · 普服监督 · 吉意宝 · 新时代销售 · 贝壳 · 电中在线 · 移动彩云 · i人事 · i通微 · E-Mobile7 · 精准扶贫 · 门店管家 · 学驾考一件事 · 恒大促销管理 · 福家e站 · 十分到家 · 邮政员工自助 · TransferWise · 海销通 · 红圈CRM · 格力云派工 · 得力e+ · 金红叶sfa · 五征crm · 江西执业药师 · 太平慧眼 · 蓝月亮sfa · 开源相机 · 汇商云crm · 十荟团app · 海尔员工版</p>
-
-                <!-- 恢复定位 -->
-                <details class="details-block">
-                    <summary>恢复真实定位 / 清理方法</summary>
-                    <div class="details-content">
-                        <ul>
-                            <li>关闭软件里的定位功能（如有开关）</li>
-                            <li>删除或卸载 <strong>分身版 App</strong>，再打开原版 App</li>
-                            <li>仍异常：重启手机后再试</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <!-- 常见问题 -->
-                <details class="details-block">
-                    <summary>常见问题</summary>
-                    <div class="details-content">
-                        <p style="font-weight:600;margin-bottom:8px;">分身打不开或闪退怎么办？</p>
-                        <ul>
-                            <li>先更新到最新版（1.5），再重新创建分身</li>
-                            <li>仍不行：更换机型测试，或关闭系统省电/后台限制后再试</li>
-                        </ul>
-                        <p style="font-weight:600;margin:12px 0 8px;">定位不生效怎么办？</p>
-                        <ul>
-                            <li>确认是在 <strong>分身版 App</strong> 里操作，不要在原版 App 里测试</li>
-                            <li>必要时：重启分身，或删除后重新创建分身</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <a href="contact.html" class="btn btn-primary" style="margin-top:8px;">立即咨询 →</a>
-            </div>
-
-            <hr style="border:none;border-top:1px solid var(--border);margin:40px 0;">
-
-            <!-- ========== 支持的 App 平台 ========== -->
-            <div class="service-block">
-                <h2>支持的 App 平台（示例）</h2>
-                <div class="table-wrap">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>类别</th>
-                                <th>示例</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>办公协同</td>
-                                <td>企业微信（WeCom） · 钉钉（DingTalk）</td>
-                            </tr>
-                            <tr>
-                                <td>社交与内容</td>
-                                <td>微信 · 抖音 · 小红书 · Facebook · Instagram</td>
-                            </tr>
-                            <tr>
-                                <td>地图导航（国内）</td>
-                                <td>高德地图（Amap）</td>
-                            </tr>
-                            <tr>
-                                <td>地图导航（国外）</td>
-                                <td>Apple Maps · Google Maps</td>
-                            </tr>
-                            <tr>
-                                <td>其他</td>
-                                <td>其他基于 GPS 的应用</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- ========== 联系方式 ========== -->
-            <div class="service-block">
-                <h2>联系方式</h2>
-                <ul class="contact-list">
-                    <li><span class="contact-emoji">💬</span>微信：<strong>yes1974g</strong></li>
-                    <li><span class="contact-emoji">✉️</span>邮箱：<a href="mailto:zhang7903023@gmail.com">zhang7903023@gmail.com</a></li>
-                    <li><span class="contact-emoji">🕘</span>售后：每天 9:00–23:00（北京时间）</li>
-                    <li><span class="contact-emoji">📺</span>YouTube：<a href="https://youtube.com/@fakelocation777" target="_blank">自由行科技</a></li>
-                    <li><span class="contact-emoji">💬</span>Telegram：@zyxkj</li>
-                </ul>
-            </div>
-
-            <!-- ========== 相关服务 ========== -->
-            <div class="related-services">
-                <h3>相关服务</h3>
-                <div class="related-links">
-                    <a href="remote-checkin.html">钉钉/企业微信远程打卡 →</a>
-                    <a href="overseas-live.html">抖音海外直播权限 →</a>
-                </div>
-            </div>
-
-            <!-- 相关教程 -->
-            <div class="related-articles">
-                <h3>相关教程</h3>
-                <div class="related-links">
-                    <a href="articles/ios-26-location-guide.html">iOS 26 改定位完全指南 →</a>
-                    <a href="articles/ios-location-guide.html">iOS 17/18 改定位免越狱攻略 →</a>
-                    <a href="articles/android-location-guide.html">安卓免ROOT改定位全攻略 →</a>
-                    <a href="articles/wechat-location-guide.html">微信定位能改吗？实测结果 →</a>
-                    <a href="articles/xiaohongshu-douyin-guide.html">小红书/抖音海外定位修改 →</a>
-                </div>
-            </div>
-
-            <!-- 免责声明 -->
-            <p style="font-size:12px;color:var(--text-light);margin-top:32px;opacity:0.6;">本内容仅用于学习测试与技术交流，请勿用于任何违法违规用途。</p>
-
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">如何验证是否生效</summary>
+        <div style="padding:12px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+          <ul style="padding-left:20px;">
+            <li><strong>方法 1：</strong>在分身里打开地图类 App，查看当前位置是否变化</li>
+            <li><strong>方法 2：</strong>在分身里打开会显示位置/地址的页面（例如水印相机、外勤类 App），刷新对比位置</li>
+          </ul>
         </div>
-    </section>
+      </details>
 
+      <div style="background:var(--bg-alt);border-radius:8px;padding:14px 18px;margin:16px 0;font-size:13px;color:var(--text-secondary);line-height:1.7;">
+        <strong style="color:var(--text);">注意：</strong>仅提供按时长套餐使用，不提供永久版。
+      </div>
 
-    <!-- 联系区 -->
-    <section class="contact-section">
-        <div class="container">
-            <h2 class="section-title">直接联系我</h2>
-            <p class="contact-desc">把设备、平台和当前问题简单发过来。我会先判断，再告诉你怎么沟通更有效。</p>
-            <div class="contact-cards">
-                <div class="contact-card">
-                    <span class="contact-label">微信</span>
-                    <span class="contact-value">yes1974g</span>
-                    <button class="copy-btn" onclick="copyText('yes1974g', this)">复制</button>
-                </div>
-                <div class="contact-card">
-                    <span class="contact-label">WhatsApp</span>
-                    <span class="contact-value">+14154251293</span>
-                    <a href="https://wa.me/14154251293" target="_blank" class="contact-link">打开</a>
-                </div>
-                <div class="contact-card">
-                    <span class="contact-label">邮箱</span>
-                    <span class="contact-value">zhang7903023@gmail.com</span>
-                    <a href="mailto:zhang7903023@gmail.com" class="contact-link">写信</a>
-                </div>
-            </div>
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">服务包含</summary>
+        <div style="padding:12px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+          <ul style="padding-left:20px;">
+            <li><strong>维护更新：</strong>持续适配系统与 App 更新</li>
+            <li><strong>售后支持：</strong>使用期内问题排查与指导</li>
+            <li><strong>避坑提醒：</strong>部分同类产品以「低价/永久」做噱头引流，后续常以升级、维护或服务追加收费</li>
+            <li><strong>稳定优先：</strong>选择长期维护渠道，避免停更带来不稳定或无法使用</li>
+          </ul>
         </div>
-    </section>
+      </details>
 
-    <!-- 页脚 -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-brand">
-                <p class="footer-name">自由行Studio</p>
-                <p class="footer-tagline">一对一设备环境配置与技术支持</p>
-            </div>
-            <div class="footer-links">
-                <p>微信：yes1974g</p>
-                <p>邮箱：zhang7903023@gmail.com</p>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 自由行Studio</p>
-            </div>
-        </div>
-    </footer>
+      <h3 style="font-size:16px;font-weight:600;margin:24px 0 12px;">适配说明（v1.5）</h3>
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:8px;">特别适配：今日水印相机、施工现场服务</p>
+      <p style="font-size:14px;color:var(--text-secondary);">其它适配（部分示例）：钉钉 · 企业微信 · 今日水印相机 · 外勤365 · 纷享销客CRM · 云之家 · 勤策 · 超感动 · 移动办公m3 · 决策易 · 普服监督 · 吉意宝 · 新时代销售 · 贝壳 · 电中在线 · 移动彩云 · i人事 · i通微 · E-Mobile7 · 精准扶贫 · 门店管家 · 学驾考一件事 · 恒大促销管理 · 福家e站 · 十分到家 · 邮政员工自助 · TransferWise · 海销通 · 红圈CRM · 格力云派工 · 得力e+ · 金红叶sfa · 五征crm · 江西执业药师 · 太平慧眼 · 蓝月亮sfa · 开源相机 · 汇商云crm · 十荟团app · 海尔员工版</p>
 
-    <!-- 悬浮咨询按钮 -->
-    <div class="float-consult">
-        <button class="consult-btn" onclick="toggleContact(this)">咨询</button>
-        <div class="consult-popup">
-            <a href="https://wa.me/14154251293" target="_blank">WhatsApp</a>
-            <a href="contact.html">微信</a>
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">恢复真实定位 / 清理方法</summary>
+        <div style="padding:12px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+          <ul style="padding-left:20px;">
+            <li>关闭软件里的定位功能（如有开关）</li>
+            <li>删除或卸载 <strong>分身版 App</strong>，再打开原版 App</li>
+            <li>仍异常：重启手机后再试</li>
+          </ul>
         </div>
+      </details>
+
+      <details style="margin:16px 0;">
+        <summary style="cursor:pointer;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);">常见问题</summary>
+        <div style="padding:12px 0;font-size:14px;line-height:1.7;color:var(--text-secondary);">
+          <p style="font-weight:600;margin-bottom:8px;">分身打不开或闪退怎么办？</p>
+          <ul style="padding-left:20px;">
+            <li>先更新到最新版（1.5），再重新创建分身</li>
+            <li>仍不行：更换机型测试，或关闭系统省电/后台限制后再试</li>
+          </ul>
+          <p style="font-weight:600;margin:12px 0 8px;">定位不生效怎么办？</p>
+          <ul style="padding-left:20px;">
+            <li>确认是在 <strong>分身版 App</strong> 里操作，不要在原版 App 里测试</li>
+            <li>必要时：重启分身，或删除后重新创建分身</li>
+          </ul>
+        </div>
+      </details>
+
+      <a href="contact.html" class="btn btn-primary" style="margin-top:8px;">立即咨询 →</a>
     </div>
 
-    <script src="js/main.js"></script>
-    <script>
-        function copyText(text, btn) {
-            navigator.clipboard.writeText(text);
-            btn.textContent = '已复制';
-            setTimeout(() => btn.textContent = '复制', 2000);
-        }
-        function toggleContact(btn) {
-            btn.classList.toggle('active');
-            btn.nextElementSibling.classList.toggle('show');
-        }
-    </script>
+    <hr style="border:none;border-top:1px solid var(--border);margin:40px 0;">
+
+    <!-- 支持的 App 平台 -->
+    <div class="service-block">
+      <h2>支持的 App 平台（示例）</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin-bottom:20px;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">类别</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">办公协同</td>
+        </tr>
+        <tr>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">示例</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">企业微信（WeCom） · 钉钉（DingTalk）</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">社交与内容</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">微信 · 抖音 · 小红书 · Facebook · Instagram</td>
+        </tr>
+        <tr>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">地图导航（国内）</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">高德地图（Amap）</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">地图导航（国外）</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">Apple Maps · Google Maps</td>
+        </tr>
+        <tr>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">其他</th>
+          <td style="padding:10px 14px;border:1px solid var(--border);">其他基于 GPS 的应用</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 联系方式 -->
+    <div class="service-block">
+      <h2>联系方式</h2>
+      <div style="font-size:14px;line-height:1.7;color:var(--text-secondary);">
+        微信：<strong>yes1974g</strong><br>
+        邮箱：zhang7903023@gmail.com<br>
+        售后：每天 9:00–23:00（北京时间）<br>
+        YouTube：<a href="https://www.youtube.com/@ziyouxingstudio" target="_blank">自由行科技</a><br>
+        Telegram：@zyxkj
+      </div>
+    </div>
+
+    <!-- 相关服务 -->
+    <div style="margin:32px 0;">
+      <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;">相关服务</h3>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="remote-checkin.html" style="color:var(--accent);font-size:14px;font-weight:600;">钉钉/企业微信远程打卡 →</a>
+        <a href="overseas-live.html" style="color:var(--accent);font-size:14px;font-weight:600;">抖音海外直播权限 →</a>
+      </div>
+    </div>
+
+    <!-- 相关教程 -->
+    <div style="margin:32px 0;">
+      <h3 style="font-size:16px;font-weight:600;margin-bottom:12px;">相关教程</h3>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <a href="articles/ios-26-location-guide.html" style="color:var(--accent);font-size:14px;">iOS 26 改定位完全指南 →</a>
+        <a href="articles/ios-location-guide.html" style="color:var(--accent);font-size:14px;">iOS 17/18 改定位免越狱攻略 →</a>
+        <a href="articles/android-location-guide.html" style="color:var(--accent);font-size:14px;">安卓免ROOT改定位全攻略 →</a>
+        <a href="articles/wechat-location-guide.html" style="color:var(--accent);font-size:14px;">微信定位能改吗？实测结果 →</a>
+        <a href="articles/xiaohongshu-douyin-guide.html" style="color:var(--accent);font-size:14px;">小红书/抖音海外定位修改 →</a>
+      </div>
+    </div>
+
+    <p style="font-size:12px;color:var(--text-muted);margin-top:32px;opacity:0.6;">本内容仅用于学习测试与技术交流，请勿用于任何违法违规用途。</p>
+
+  </div>
+</section>
+
+</section>
+
+<!-- Contact CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>直接把情况发过来</h2>
+    <p>把设备型号、系统版本、目标 App、报错截图、你想达到的效果一起发过来。我会先判断，再告诉你下一步。</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4>WhatsApp</h4>
+        <p>+1 415 425 1293</p>
+      </div>
+      <div class="contact-card">
+        <h4>微信</h4>
+        <p>yes1974g</p>
+      </div>
+      <div class="contact-card">
+        <h4>邮箱</h4>
+        <p>zhang7903023@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p>自由行 Studio</p>
+    <p>一对一设备配置与技术支持 · 2026</p>
+  </div>
+</footer>
+
 </body>
 </html>

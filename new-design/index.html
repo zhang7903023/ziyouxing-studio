@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自由行 Studio</title>
+<style>
+/* === Reset === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* === Root & Base === */
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f7f7f7;
+  --text: #211922;
+  --text-secondary: #555555;
+  --text-muted: #ababab;
+  --accent: #e60023;
+  --border: #efefef;
+  --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --radius: 16px;
+  --transition: all 0.2s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { text-decoration: none; color: inherit; }
+img { display: block; width: 100%; height: auto; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
+
+/* === Header === */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+.site-header .container {
+  display: flex; align-items: center; height: 64px;
+}
+.logo { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; }
+.logo span { color: var(--accent); }
+.nav { display: flex; gap: 28px; margin-left: 48px; }
+.nav a { font-size: 14px; font-weight: 500; color: var(--text); transition: color 0.15s; }
+.nav a:hover { color: var(--accent); }
+
+/* === Hero / Top Section === */
+.top-section { background: var(--bg-alt); padding: 80px 0 60px; }
+.top-section .container { display: flex; align-items: center; gap: 60px; }
+.top-text { flex: 1; }
+.top-text .label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;
+}
+.top-text h1 {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 700;
+  line-height: 1.18; letter-spacing: -0.025em;
+  margin-bottom: 16px; color: var(--text);
+}
+.top-text p { font-size: 15px; line-height: 1.65; color: var(--text-secondary); margin-bottom: 28px; max-width: 440px; }
+.btn {
+  display: inline-block; padding: 12px 24px;
+  border-radius: 24px; font-size: 14px; font-weight: 600;
+  cursor: pointer; border: none; transition: var(--transition);
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #ad081b; }
+.btn-outline { background: transparent; color: var(--text); border: 2px solid var(--text); margin-left: 12px; }
+.btn-outline:hover { background: var(--text); color: #fff; }
+.top-visual { flex: 1; display: flex; justify-content: center; }
+.placeholder-box {
+  width: 100%; max-width: 420px; aspect-ratio: 4/3;
+  background: #efefef; border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); font-size: 13px;
+}
+
+/* === Section Shared === */
+section { padding: 72px 0; }
+.section-upper { margin-bottom: 36px; }
+.section-label {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;
+}
+.section-title {
+  font-size: clamp(22px, 3vw, 32px); font-weight: 700;
+  line-height: 1.22; letter-spacing: -0.02em; color: var(--text);
+}
+
+/* === Cards Grid === */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+.card {
+  border-radius: var(--radius); overflow: hidden;
+  background: #fff; border: 1px solid var(--border);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.card:hover { box-shadow: var(--card-shadow); transform: translateY(-3px); }
+.card-img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  background: var(--bg-alt);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); font-size: 12px;
+}
+.card-body { padding: 18px 20px 22px; }
+.card-body h3 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; line-height: 1.35; }
+.card-body p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.card-link { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 600; color: var(--accent); }
+.card-link:hover { text-decoration: underline; }
+
+/* === Two-Column Section === */
+.two-col {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+}
+.col-text .label { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+.col-text h2 { font-size: clamp(20px, 2.8vw, 28px); font-weight: 700; line-height: 1.25; letter-spacing: -0.02em; margin-bottom: 12px; color: var(--text); }
+.col-text p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+.col-img { border-radius: var(--radius); overflow: hidden; background: var(--bg-alt); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 12px; }
+
+/* === FAQ === */
+.faq-list { max-width: 720px; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; cursor: pointer; }
+.faq-item summary {
+  font-size: 15px; font-weight: 600; color: var(--text);
+  list-style: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.faq-item summary::after { content: "+"; font-size: 18px; font-weight: 400; color: var(--text-muted); margin-left: 16px; }
+.faq-item[open] summary::after { content: "−"; }
+.faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-top: 12px; }
+
+/* === CTA Section === */
+.cta-section { background: var(--bg-alt); padding: 72px 0; text-align: center; }
+.cta-section h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 700; letter-spacing: -0.02em; color: var(--text); margin-bottom: 12px; }
+.cta-section p { font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+/* === Contact Grid === */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px; max-width: 720px; margin: 0 auto;
+}
+.contact-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+.contact-card h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.contact-card p { font-size: 13px; color: var(--text-secondary); }
+
+/* === Footer === */
+.site-footer { border-top: 1px solid var(--border); padding: 40px 0; text-align: center; font-size: 13px; color: var(--text-muted); }
+.site-footer p:first-child { font-weight: 600; color: var(--text); font-size: 14px; margin-bottom: 4px; }
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .top-section .container, .two-col { grid-template-columns: 1fr; flex-direction: column; }
+  .top-section { padding: 48px 0 40px; }
+  section { padding: 48px 0; }
+  .nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">自由行<span>Studio</span></a>
+    <nav class="nav">
+      <a href="services.html">服务</a>
+      <a href="articles/">教程</a>
+      <a href="contact.html">联系</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero / Top Section -->
+<section class="top-section">
+  <div class="container">
+    <div class="top-text">
+      <div class="label">ZI YOU XING STUDIO</div>
+      <h1>虚拟定位 &amp; 远程打卡<br>一对一配置支持</h1>
+      <p>iPhone 免越狱，安卓免 ROOT。钉钉、企业微信、飞书、抖音、小红书全覆盖。先判断设备环境，再给方案，15–30 分钟完成配置。</p>
+      <div>
+        <a href="services.html" class="btn btn-primary">查看服务</a>
+        <a href="contact.html" class="btn btn-outline">立即联系</a>
+      </div>
+    </div>
+    <div class="top-visual">
+      <div class="placeholder-box">页面主图位置</div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="container">
+    <div class="section-upper">
+      <div class="section-label">服务内容</div>
+      <div class="section-title">我们能做什么</div>
+    </div>
+    <div class="cards-grid">
+      <a href="virtual-location.html" class="card">
+        <div class="card-img" style="background:#fce4ec;color:#e60023;font-size:32px;">📍</div>
+        <div class="card-body">
+          <h3>虚拟定位</h3>
+          <p>iPhone/iOS 免越狱，安卓免 ROOT，系统级方案，支持微信/钉钉/抖音等主流 App。</p>
+          <span class="card-link">了解详情 →</span>
+        </div>
+      </a>
+      <a href="remote-checkin.html" class="card">
+        <div class="card-img" style="background:#e8f5e9;color:#2e7d32;font-size:32px;">🏠️</div>
+        <div class="card-body">
+          <h3>远程打卡</h3>
+          <p>钉钉 GPS/WiFi、企业微信、飞书，覆盖主流考勤系统，配置完成即可使用。</p>
+          <span class="card-link">了解详情 →</span>
+        </div>
+      </a>
+      <a href="overseas-live.html" class="card">
+        <div class="card-img" style="background:#e3f2fd;color:#1565c0;font-size:32px;">📺</div>
+        <div class="card-body">
+          <h3>海外直播开通</h3>
+          <p>抖音、小红书、视频号，海外用户直播权限协助开通，正规渠道。</p>
+          <span class="card-link">了解详情 →</span>
+        </div>
+      </a>
+      <a href="platform-auth.html" class="card">
+        <div class="card-img" style="background:#f3e5f5;color:#7b1fa2;font-size:32px;">✅</div>
+        <div class="card-body">
+          <h3>平台认证 / 聚光</h3>
+          <p>小红书专业号认证、抖音聚光平台开通，一站式协助。</p>
+          <span class="card-link">了解详情 →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Two-col: How it works -->
+<section style="background:var(--bg-alt);">
+  <div class="container two-col">
+    <div class="col-img">工作流程示意图</div>
+    <div class="col-text">
+      <div class="label">工作方式</div>
+      <h2>先判断，再给方案</h2>
+      <p>不是直接回复"可以"。先了解你的机型、系统版本、使用场景，再告诉你怎么处理最有效。需要远程配置的，直接帮你搞定，不需要自己研究教程。</p>
+      <a href="contact.html" class="btn btn-primary">开始咨询</a>
+    </div>
+  </div>
+</section>
+
+<!-- YouTube / Articles -->
+<section id="articles">
+  <div class="container">
+    <div class="section-upper">
+      <div class="section-label">视频教程</div>
+      <div class="section-title">YouTube 频道</div>
+    </div>
+    <p style="color:var(--text-secondary);font-size:14px;margin-bottom:32px;max-width:520px;">所有服务均有配套视频教程，先看再决定。频道持续更新，覆盖 iOS/安卓最新版本。</p>
+    <div class="cards-grid">
+      <a href="#" class="card">
+        <div class="card-img">视频缩略图 1</div>
+        <div class="card-body">
+          <h3>iOS 26 虚拟定位教程</h3>
+          <p>免越狱，支持微信/钉钉，覆盖最新系统。</p>
+        </div>
+      </a>
+      <a href="#" class="card">
+        <div class="card-img">视频缩略图 2</div>
+        <div class="card-body">
+          <h3>钉钉打卡改定位</h3>
+          <p>GPS + WiFi 双模式，防作弊机制解析。</p>
+        </div>
+      </a>
+      <a href="#" class="card">
+        <div class="card-img">视频缩略图 3</div>
+        <div class="card-body">
+          <h3>海外直播开通教程</h3>
+          <p>抖音/小红书/视频号，海外用户适用。</p>
+        </div>
+      </a>
+    </div>
+    <div style="margin-top:32px;">
+      <a href="https://www.youtube.com/@ziyouxingstudio" target="_blank" class="btn btn-outline">订阅 YouTube 频道 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--bg-alt);">
+  <div class="container">
+    <div class="section-upper">
+      <div class="section-label">常见问题</div>
+      <div class="section-title">你可能想问的</div>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>iPhone 改定位需要越狱吗？</summary>
+        <p>不需要。iOS 17/18/26 均支持免越狱方案，不影响手机正常使用和保修。</p>
+      </details>
+      <details class="faq-item">
+        <summary>配置需要多长时间？</summary>
+        <p>远程一对一配置，通常 15–30 分钟完成。配置完成后即可正常使用，后续有问题可随时联系。</p>
+      </details>
+      <details class="faq-item">
+        <summary>海外可以远程配置吗？</summary>
+        <p>可以。通过 WhatsApp 或微信远程协助，全球任何地区都可以完成配置。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Contact CTA -->
+<section id="contact" class="cta-section">
+  <div class="container">
+    <h2>直接联系我</h2>
+    <p>把设备型号、系统版本、目标需求发过来，我先判断，再告诉你怎么做最有效。</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h4>WhatsApp</h4>
+        <p>+1 415 425 1293</p>
+      </div>
+      <div class="contact-card">
+        <h4>微信</h4>
+        <p>yes1974g</p>
+      </div>
+      <div class="contact-card">
+        <h4>邮箱</h4>
+        <p>zhang7903023@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <p>自由行 Studio</p>
+    <p>一对一设备配置与技术支持 · 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
