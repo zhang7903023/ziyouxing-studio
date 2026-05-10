@@ -5,10 +5,9 @@ function setText(selector, value) {
     if (node && value) node.textContent = value;
 }
 
-function createEl(tag, className, text) {
+function createEl(tag, className) {
     const node = document.createElement(tag);
     if (className) node.className = className;
-    if (text) node.textContent = text;
     return node;
 }
 
@@ -18,61 +17,53 @@ function renderNav() {
 }
 
 function renderHero() {
-    setText('.brand', data.brand);
-    setText('[data-field="hero.eyebrow"]', data.hero.eyebrow);
-    setText('[data-field="hero.title"]', data.hero.title);
+    setText('[data-brand]', data.brand);
+    setText('[data-field="hero.badge"]', data.hero.badge);
+    setText('[data-field="hero.titlePrefix"]', data.hero.titlePrefix);
+    setText('[data-field="hero.name"]', data.hero.name);
+    setText('[data-field="hero.role"]', data.hero.role);
+    setText('[data-field="hero.focusPrefix"]', data.hero.focusPrefix);
+    setText('[data-field="hero.focus"]', data.hero.focus);
     setText('[data-field="hero.lead"]', data.hero.lead);
     setText('[data-field="hero.note"]', data.hero.note);
-    setText('.hero-actions .button-dark', data.hero.primaryCta);
-    setText('.hero-actions .button-light', data.hero.secondaryCta);
+    setText('[data-field="hero.avatarLabel"]', data.hero.avatarLabel);
+    setText('.hero-actions .button-primary', data.hero.primaryCta);
+    setText('.hero-actions .button-secondary', data.hero.secondaryCta);
 
     document.querySelectorAll('[data-action="whatsapp"]').forEach(link => {
         link.href = data.contact.whatsappUrl;
     });
-
-    const stats = document.querySelector('.hero-stats');
-    stats.innerHTML = '';
-    data.hero.stats.forEach(item => {
-        const row = createEl('div', 'stat-row');
-        row.innerHTML = `<strong>${item.value}</strong><span>${item.label}</span>`;
-        stats.appendChild(row);
-    });
 }
 
 function renderProof() {
-    const proof = document.querySelector('.proof-row');
-    proof.innerHTML = data.proof.map(item => `<span>${item}</span>`).join('');
+    const proof = document.querySelector('.proof-strip');
+    proof.innerHTML = '';
+    data.proof.forEach((item, index) => {
+        const badge = createEl('span', 'proof-pill');
+        badge.innerHTML = `<small>${String(index + 1).padStart(2, '0')}</small>${item}`;
+        proof.appendChild(badge);
+    });
 }
 
 function renderServices() {
     const grid = document.querySelector('.services-grid');
     grid.innerHTML = '';
     data.services.forEach((service, index) => {
-        const card = createEl('a', 'service-card');
+        const card = createEl('a', `service-card tone-${service.tone || 'pink'}`);
         card.href = service.href;
         card.innerHTML = `
-            <span class="service-index">${String(index + 1).padStart(2, '0')}</span>
-            <span class="service-tag">${service.tag}</span>
-            <h3>${service.title}</h3>
-            <p>${service.description}</p>
-            <div class="service-meta">
-                <span>${service.price}</span>
-                <span>查看详情</span>
+            <div class="service-visual" aria-hidden="true">
+                <span>${String(index + 1).padStart(2, '0')}</span>
             </div>
-        `;
-        grid.appendChild(card);
-    });
-}
-
-function renderScenarios() {
-    const grid = document.querySelector('.scenario-grid');
-    grid.innerHTML = '';
-    data.scenarios.forEach(item => {
-        const card = createEl('article', 'scenario-card');
-        card.innerHTML = `
-            <span>${item.label}</span>
-            <h3>${item.title}</h3>
-            <p>${item.text}</p>
+            <div class="service-copy">
+                <span class="service-tag">${service.tag}</span>
+                <h3>${service.title}</h3>
+                <p>${service.description}</p>
+                <div class="service-meta">
+                    <strong>${service.price}</strong>
+                    <span>View case</span>
+                </div>
+            </div>
         `;
         grid.appendChild(card);
     });
@@ -117,7 +108,6 @@ function init() {
     renderHero();
     renderProof();
     renderServices();
-    renderScenarios();
     renderProcess();
     renderFaq();
     renderContact();

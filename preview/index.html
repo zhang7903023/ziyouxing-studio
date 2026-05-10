@@ -4,95 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>自由行Studio 预览版｜高级工作室风格</title>
-    <meta name="description" content="自由行Studio 新版视觉预览：虚拟定位、远程打卡、海外直播权限和账号环境配置。">
+    <title>自由行Studio Paperfolio 预览版</title>
+    <meta name="description" content="自由行Studio Paperfolio 风格预览：虚拟定位、远程打卡、海外直播权限和账号环境配置。">
     <link rel="icon" type="image/png" sizes="48x48" href="../favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
     <header class="site-header">
-        <a class="brand" href="../">自由行Studio</a>
+        <a class="brand" href="../" aria-label="返回正式首页">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span data-brand>自由行Studio</span>
+        </a>
         <nav class="site-nav" aria-label="页面导航"></nav>
-        <a class="header-cta" href="../wa/">WhatsApp</a>
+        <a class="header-icon" data-action="whatsapp" href="../wa/" aria-label="WhatsApp 联系">WA</a>
     </header>
 
     <main>
-        <section class="hero section-shell">
+        <section class="hero">
             <div class="hero-copy">
-                <p class="eyebrow" data-field="hero.eyebrow">一对一远程配置 / 先判断再处理</p>
-                <h1 data-field="hero.title">把复杂的定位、打卡和账号环境问题，交给一个真正能判断的人。</h1>
+                <p class="template-badge" data-field="hero.badge">Paperfolio preview</p>
+                <h1 class="hero-title">
+                    <span data-field="hero.titlePrefix">我是</span>
+                    <mark class="highlight highlight-pink" data-field="hero.name">自由行Studio</mark><br>
+                    <span data-field="hero.role">远程配置顾问</span><br>
+                    <span data-field="hero.focusPrefix">专做</span>
+                    <mark class="highlight highlight-blue" data-field="hero.focus">定位打卡</mark>
+                </h1>
                 <p class="hero-lead" data-field="hero.lead">iPhone / 安卓虚拟定位、钉钉 / 企业微信远程打卡、海外直播权限、App 分身和平台认证。</p>
                 <div class="hero-actions">
-                    <a class="button button-dark" data-action="whatsapp" href="../wa/">WhatsApp 发截图</a>
-                    <a class="button button-light" href="#services">查看服务范围</a>
+                    <a class="button button-primary" data-action="whatsapp" href="../wa/">WhatsApp 发截图</a>
+                    <a class="button button-secondary" href="#services">View services</a>
                 </div>
                 <p class="hero-note" data-field="hero.note">建议直接发：手机型号、系统版本、目标 App、当前报错截图。</p>
             </div>
-            <aside class="hero-card" aria-label="服务摘要">
-                <div class="hero-card-top">
-                    <span>Studio Note</span>
-                    <span>2026</span>
+
+            <aside class="portrait-card" aria-label="自由行Studio 视觉头像">
+                <div class="portrait">
+                    <span class="hair"></span>
+                    <span class="face"></span>
+                    <span class="ear"></span>
+                    <span class="beard"></span>
+                    <span class="neck"></span>
+                    <span class="sweater"></span>
+                    <span class="dot dot-one"></span>
+                    <span class="dot dot-two"></span>
+                    <span class="dot dot-three"></span>
+                    <span class="dot dot-four"></span>
                 </div>
-                <p>先把情况说清楚，再决定值不值得做。少试错，比多装几个工具更重要。</p>
-                <div class="hero-stats"></div>
+                <p data-field="hero.avatarLabel">Remote setup specialist</p>
             </aside>
         </section>
 
-        <section class="proof-row" aria-label="服务特点"></section>
+        <section class="proof-strip" aria-label="服务特点"></section>
 
         <section class="intro section-shell">
             <div>
-                <p class="section-kicker">What I actually do</p>
+                <p class="section-kicker">About</p>
                 <h2>不是卖一个万能工具，而是帮你判断哪条路最稳。</h2>
             </div>
-            <p>定位、考勤、账号环境这些问题，看起来都像“改位置”，实际经常牵涉系统版本、App 风控、WiFi 规则、账号地区和设备权限。新版视觉会把这些说清楚，让客户更容易直接发截图咨询。</p>
+            <div class="intro-copy">
+                <p>定位、考勤、账号环境这些问题，看起来都像“改位置”，实际经常牵涉系统版本、App 风控、WiFi 规则、账号地区和设备权限。</p>
+                <p>新版视觉会把服务讲得更像作品集：每一项服务都是一个清晰案例，客户能更快判断自己该发什么截图。</p>
+            </div>
         </section>
 
         <section id="services" class="services section-shell">
             <div class="section-head">
-                <p class="section-kicker">Services</p>
-                <h2>核心服务</h2>
+                <p class="section-kicker">Portfolio</p>
+                <h2>Selected services</h2>
             </div>
             <div class="services-grid"></div>
         </section>
 
-        <section class="scenarios section-shell">
-            <div class="section-head compact">
-                <p class="section-kicker">Real cases</p>
-                <h2>客户通常卡在这些地方</h2>
-            </div>
-            <div class="scenario-grid"></div>
-        </section>
-
         <section id="process" class="process section-shell">
-            <div class="section-head compact">
+            <div class="section-head">
                 <p class="section-kicker">Process</p>
-                <h2>合作流程</h2>
+                <h2>先看图，再判断，再处理。</h2>
             </div>
             <div class="process-list"></div>
         </section>
 
-        <section class="intake section-shell">
-            <div>
-                <p class="section-kicker">Before contacting</p>
-                <h2>你发得越具体，我判断越快。</h2>
-            </div>
-            <div class="intake-card">
-                <p>直接复制这段发我：</p>
-                <pre>手机型号：
-系统版本：
-目标 App：
-想达到的效果：
-当前报错截图：</pre>
-            </div>
-        </section>
-
         <section id="faq" class="faq section-shell">
-            <div class="section-head compact">
+            <div class="section-head">
                 <p class="section-kicker">FAQ</p>
                 <h2>常见问题</h2>
             </div>
@@ -100,9 +94,9 @@
         </section>
 
         <section id="contact" class="contact section-shell">
-            <div>
+            <div class="contact-copy">
                 <p class="section-kicker">Contact</p>
-                <h2>别先问“能不能做”，先把截图发过来。</h2>
+                <h2>把截图发来，我先帮你判断。</h2>
                 <p>手机型号、系统版本、目标 App、报错页面，这四样最重要。</p>
             </div>
             <div class="contact-panel">
@@ -111,11 +105,11 @@
                     <strong data-contact="whatsapp">+1 415 425 1293</strong>
                 </a>
                 <div class="contact-line">
-                    <span>微信</span>
+                    <span>WeChat</span>
                     <strong data-contact="wechat">yes1974g</strong>
                 </div>
                 <a class="contact-line" data-contact-link="email" href="mailto:zhang7903023@gmail.com">
-                    <span>邮箱</span>
+                    <span>Email</span>
                     <strong data-contact="email">zhang7903023@gmail.com</strong>
                 </a>
             </div>
