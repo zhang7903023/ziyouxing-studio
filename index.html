@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>自由行 Studio</title>
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=20260514">
 </head>
 <body>
 
@@ -91,6 +91,56 @@
       <h2>先判断，再给方案</h2>
       <p>不是直接回复"可以"。先了解你的机型、系统版本、使用场景，再告诉你怎么处理最有效。需要远程配置的，直接帮你搞定，不需要自己研究教程。</p>
       <a href="contact.html" class="btn btn-primary">开始咨询</a>
+    </div>
+  </div>
+</section>
+
+<!-- Trust records -->
+<section class="trust-section">
+  <div class="container">
+    <div class="section-upper">
+      <div class="section-label">脱敏记录</div>
+      <div class="section-title">真实沟通里，通常先看这些问题</div>
+    </div>
+    <div class="trust-grid">
+      <article class="trust-card">
+        <span>01</span>
+        <h3>钉钉提示不在范围内</h3>
+        <p>先确认考勤规则，区分纯 GPS、GPS + WiFi、外勤拍照三种情况，再判断能不能远程处理。</p>
+      </article>
+      <article class="trust-card">
+        <span>02</span>
+        <h3>小红书 / 抖音城市不对</h3>
+        <p>先看账号地区、App 版本、网络环境，再决定是否需要同时处理 GPS 和 IP。</p>
+      </article>
+      <article class="trust-card">
+        <span>03</span>
+        <h3>系统更新后方案失效</h3>
+        <p>先确认 iOS / 安卓小版本和目标 App 是否更新，再给恢复或替代方案。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Intake template -->
+<section class="intake-section">
+  <div class="container intake-box">
+    <div>
+      <div class="section-label">咨询前准备</div>
+      <h2>把这几项一次发来，我判断会快很多</h2>
+      <p>最有效的沟通方式不是只问“能不能做”，而是把设备、系统、目标 App、报错截图和想实现的效果一起发过来。</p>
+    </div>
+    <div class="template-card">
+      <div class="template-head">
+        <strong>可直接复制这段发我</strong>
+        <button class="copy-template" type="button" data-copy="手机型号：&#10;系统版本：&#10;目标 App：&#10;当前问题 / 报错：&#10;想实现的效果：&#10;方便远程的时间：">复制模板</button>
+      </div>
+      <pre>手机型号：
+系统版本：
+目标 App：
+当前问题 / 报错：
+想实现的效果：
+方便远程的时间：</pre>
     </div>
   </div>
 </section>
@@ -185,6 +235,19 @@
     <p>一对一设备配置与技术支持 · 2026</p>
   </div>
 </footer>
+
+<script>
+document.addEventListener('click', function (event) {
+  const button = event.target.closest('.copy-template');
+  if (!button) return;
+
+  navigator.clipboard.writeText(button.dataset.copy || '');
+  button.textContent = '已复制';
+  setTimeout(function () {
+    button.textContent = '复制模板';
+  }, 1800);
+});
+</script>
 
 </body>
 </html>
