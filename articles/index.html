@@ -33,6 +33,110 @@
             padding-top: 60px;
         }
 
+        /* ── 教程页导航：覆盖主站新旧导航差异 ── */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        .header .container {
+            max-width: 1100px;
+            padding: 0 24px;
+        }
+
+        .header-inner {
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo {
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+
+        .header .nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            margin-left: auto;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-white);
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            width: 18px;
+            height: 2px;
+            border-radius: 999px;
+            background: var(--text);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            padding: 10px 24px 16px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .mobile-menu.show {
+            display: grid;
+            gap: 4px;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 12px 0;
+            color: var(--text);
+            font-size: 15px;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: 0;
+        }
+
         /* ── Hero 区域 ── */
         .articles-hero {
             text-align: center;
@@ -207,6 +311,14 @@
 
         /* ── 响应式 ── */
         @media (max-width: 768px) {
+            .header .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
             .articles-hero {
                 padding: 40px 24px 24px;
             }
