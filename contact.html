@@ -130,8 +130,8 @@
       <button type="submit" class="btn btn-primary">发送</button>
     </form>
     <div id="formSuccess" style="display:none;margin-top:24px;padding:16px;background:var(--bg-alt);border-radius:12px;text-align:center;">
-      <h3 style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px;">已收到</h3>
-      <p style="font-size:14px;color:var(--text-secondary);">我会尽快回复你。</p>
+      <h3 style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px;">已生成咨询消息</h3>
+      <p style="font-size:14px;color:var(--text-secondary);">请在打开的 WhatsApp 页面发送，我会尽快回复你。</p>
     </div>
   </div>
 </section>
@@ -147,6 +147,15 @@
 <script>
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
+    const data = new FormData(this);
+    const message = [
+      '你好，我想咨询自由行Studio服务',
+      '称呼：' + (data.get('name') || ''),
+      '联系方式：' + (data.get('contact') || ''),
+      '服务类型：' + (data.get('service') || ''),
+      '情况说明：' + (data.get('message') || '')
+    ].join('\n');
+    window.open('https://wa.me/14154251293?text=' + encodeURIComponent(message), '_blank');
     this.style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
   });

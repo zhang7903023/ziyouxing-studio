@@ -39,6 +39,13 @@
     }
 
     document.addEventListener('click', function (event) {
+        var copyButton = event.target.closest && event.target.closest('button');
+        if (copyButton && /复制|copy/i.test(cleanText(copyButton.textContent || copyButton.getAttribute('aria-label') || ''))) {
+            sendEvent('copy_contact_click', {
+                button_text: cleanText(copyButton.textContent || copyButton.getAttribute('aria-label') || '')
+            });
+        }
+
         var link = event.target.closest && event.target.closest('a[href]');
         if (!link) return;
 
