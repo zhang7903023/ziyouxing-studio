@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /new-design/
 
 Sitemap: https://zyxstudio.net/sitemap.xml
