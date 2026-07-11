@@ -311,6 +311,15 @@ section { padding: 72px 0; }
   .copy-template { width: 100%; }
   .top-section { padding: 48px 0 40px; }
   section { padding: 48px 0; }
-  .nav { display: none; }
+  .site-header .container { min-height: 64px; height: auto; padding-top: 10px; padding-bottom: 10px; }
+  .logo { flex: 0 0 auto; }
+  .nav {
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-left: 20px;
+  }
+  .nav a { padding: 8px 0; }
   .article-body { padding: 0 20px; }
 }
