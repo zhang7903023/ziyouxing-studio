@@ -1,0 +1,32 @@
+name: Check site links
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 3 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check sitemap pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          sitemap="https://zyxstudio.net/sitemap.xml"
+          urls=$(curl --fail --silent --show-error --location "$sitemap" | sed -n 's:.*<loc>\(.*\)</loc>.*:\1:p')
+          test -n "$urls"
+          failed=0
+          while IFS= read -r url; do
+            code=$(curl --silent --show-error --location --output /dev/null --max-time 20 --write-out '%{http_code}' "$url" || true)
+            echo "$code $url"
+            if [[ ! "$code" =~ ^2|3 ]]; then
+              failed=1
+            fi
+          done <<< "$urls"
+          exit "$failed"
