@@ -41,7 +41,7 @@
 </script>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"iOS 26.4会不会封堵虚拟定位？","acceptedAnswer":{"@type":"Answer","text":"目前没有封堵。苹果的政策是收紧新App的权限申请，对已安装的App影响有限，但我们建议尽早使用，不要等到被封。"}},{"@type":"Question","name":"改了定位之后钉钉打卡会被公司发现吗？","acceptedAnswer":{"@type":"Answer","text":"正常操作情况下不会。但如果你同时连着公司WiFi（IP在国内）却GPS显示在国外，会触发异常检测。建议配合VPN使用。"}},{"@type":"Question","name":"今日水印相机改定位后照片会被看出来吗？","acceptedAnswer":{"@type":"Answer","text":"不会。今日水印相机读取的是系统级GPS坐标，改完以后拍出来的照片水印显示的就是修改后的位置，肉眼看不出来。"}},{"@type":"Question","name":"企业微信打卡改定位后，每次打开都要重新设置吗？","acceptedAnswer":{"@type":"Answer","text":"基础方案需要每次注入，但我们的自动方案可以一次设置长期生效，无需重复操作。"}},{"@type":"Question","name":"支持iPhone 15/16系列吗？","acceptedAnswer":{"@type":"Answer","text":"支持。iOS 26.4覆盖iPhone XS及之后所有机型，iPhone 15/16系列完全兼容。"}},{"@type":"Question","name":"iOS 26改定位需要越狱吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。iOS 26全系免越狱修改GPS定位，通过电脑工具直接注入GPX文件即可，安全稳定不影响保修。"}},{"@type":"Question","name":"iPhone改定位软件哪个靠谱？","acceptedAnswer":{"@type":"Answer","text":"建议选择系统级GPS注入方案，而非App Store里的模拟定位App。系统级方案兼容性更好，对钉钉、企微等考勤App都有效。"}},{"@type":"Question","name":"手机改定位后地图App显示正常吗？","acceptedAnswer":{"@type":"Answer","text":"正常。修改后打开高德地图、百度地图、Google Maps都会显示你设置的虚拟位置，GPS坐标完全一致。"}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"iOS 26.4是否支持虚拟定位？","acceptedAnswer":{"@type":"Answer","text":"支持情况取决于具体机型、系统小版本和所用工具，操作前建议先确认兼容性。"}},{"@type":"Question","name":"改定位会被应用或管理方发现吗？","acceptedAnswer":{"@type":"Answer","text":"无法承诺不会被识别。应用可能综合GPS、网络、设备与行为数据判断异常，使用前应了解相关规则。"}},{"@type":"Question","name":"今日水印相机改定位后照片会显示什么位置？","acceptedAnswer":{"@type":"Answer","text":"部分版本会读取系统定位，但应用也可能使用网络或其他数据校验，实际结果需按设备和版本测试。"}},{"@type":"Question","name":"企业微信改定位后是否需要重新设置？","acceptedAnswer":{"@type":"Answer","text":"是否需要重新设置取决于使用方案、设备状态和系统版本，重启或系统更新后可能需要重新配置。"}},{"@type":"Question","name":"支持iPhone 15/16系列吗？","acceptedAnswer":{"@type":"Answer","text":"部分机型和系统版本可支持，需提供具体型号与iOS版本后确认。"}},{"@type":"Question","name":"iOS 26改定位需要越狱吗？","acceptedAnswer":{"@type":"Answer","text":"部分方案无需越狱，但工具、系统版本和操作方式不同，可能影响稳定性；建议操作前备份数据。"}},{"@type":"Question","name":"iPhone改定位软件怎么选？","acceptedAnswer":{"@type":"Answer","text":"应根据机型、系统版本和目标App选择，并先进行兼容性测试，不建议仅凭宣传判断。"}},{"@type":"Question","name":"手机改定位后地图App会怎样显示？","acceptedAnswer":{"@type":"Answer","text":"部分地图App可能显示设置的位置，但也可能结合网络和缓存数据，具体表现以实际测试为准。"}}]}
 </script>
 </head>
 <body>
@@ -242,24 +242,24 @@
 
             <div class="faq">
                 <div class="faq-item">
-                    <h3>Q：iOS 26.4会不会封堵虚拟定位？</h3>
-                    <p>目前没有封堵。苹果的政策是收紧新App的权限申请，对已安装的App影响有限，但我们建议尽早使用，不要等到被封。</p>
+                    <h3>Q：iOS 26.4是否支持虚拟定位？</h3>
+                    <p>支持情况取决于具体机型、系统小版本和所用工具，操作前建议先确认兼容性。</p>
                 </div>
                 <div class="faq-item">
-                    <h3>Q：改了定位之后钉钉打卡会被公司发现吗？</h3>
-                    <p>正常操作情况下不会。但如果你同时连着公司WiFi（IP在国内）却GPS显示在国外，会触发异常检测。建议配合VPN使用。</p>
+                    <h3>Q：改定位会被应用或管理方发现吗？</h3>
+                    <p>无法承诺不会被识别。应用可能综合GPS、网络、设备与行为数据判断异常，使用前应了解相关规则。</p>
                 </div>
                 <div class="faq-item">
                     <h3>Q：今日水印相机改定位后照片会被看出来吗？</h3>
-                    <p>不会。今日水印相机读取的是系统级GPS坐标，改完以后拍出来的照片水印显示的就是修改后的位置，肉眼看不出来。</p>
+                    <p>部分版本会读取系统定位，但应用也可能使用网络或其他数据校验，实际结果需按设备和版本测试。</p>
                 </div>
                 <div class="faq-item">
                     <h3>Q：企业微信打卡改定位后，每次打开都要重新设置吗？</h3>
-                    <p>基础方案需要每次注入，但我们的自动方案可以一次设置长期生效，无需重复操作。</p>
+                    <p>是否需要重新设置取决于使用方案、设备状态和系统版本，重启或系统更新后可能需要重新配置。</p>
                 </div>
                 <div class="faq-item">
                     <h3>Q：支持iPhone 15/16系列吗？</h3>
-                    <p>支持。iOS 26.4覆盖iPhone XS及之后所有机型，iPhone 15/16系列完全兼容。</p>
+                    <p>部分机型和系统版本可支持，需提供具体型号与iOS版本后确认。</p>
                 </div>
             </div>
 
