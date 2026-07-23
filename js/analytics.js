@@ -1,4 +1,10 @@
 (function () {
+    if (typeof window.gtag === 'function') {
+        window.gtag('set', 'linker', {
+            domains: ['zyxstudio.net', 'www.gexiv.com']
+        });
+    }
+
     function sendEvent(name, params) {
         if (typeof window.gtag !== 'function') return;
         window.gtag('event', name, Object.assign({
@@ -13,6 +19,13 @@
     function classifyLink(link) {
         var href = link.getAttribute('href') || '';
         var text = cleanText(link.textContent || link.getAttribute('aria-label') || '');
+
+        if (/gexiv\.com/i.test(href)) {
+            return {
+                event: 'store_outbound_click',
+                channel: 'gexiv_store'
+            };
+        }
 
         if (/wa\.me|whatsapp/i.test(href + ' ' + text)) {
             return {

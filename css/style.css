@@ -386,8 +386,19 @@ section { padding: 88px 0; }
 .minimal-header .nav { margin-left: 56px; gap: 36px; }
 .minimal-header .nav a { color: #1d1d1f; font-size: 14px; font-weight: 600; line-height: 1; letter-spacing: -0.01em; }
 .minimal-header .nav a:hover { color: #000; }
+.minimal-header .nav .nav-store { color: #0066cc; }
+.minimal-header .nav .nav-store:hover { color: #004f9e; }
 .minimal-header .header-cta { padding: 10px 18px; background: #1d1d1f; font-size: 14px; font-weight: 600; line-height: 1; letter-spacing: -0.01em; }
 .minimal-header .header-cta:hover { background: #000; }
+.site-connection { border-top: 1px solid #ededee; border-bottom: 1px solid #e5e5e7; background: #f5f5f7; }
+.site-connection .container { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.site-connection p { display: flex; align-items: baseline; gap: 12px; }
+.site-connection p strong { color: #1d1d1f; font-size: 14px; font-weight: 650; }
+.site-connection p span { color: #6e6e73; font-size: 13px; }
+.site-connection a { display: flex; align-items: center; gap: 14px; color: #1d1d1f; font-size: 13px; }
+.site-connection a > span { color: #6e6e73; }
+.site-connection a strong { color: #0066cc; font-weight: 650; }
+.site-connection a:hover strong { text-decoration: underline; }
 .home-minimal main section[id] { scroll-margin-top: 68px; }
 
 .home-minimal section { padding: 120px 0; }
@@ -658,6 +669,11 @@ section { padding: 88px 0; }
   }
   .minimal-header .nav::-webkit-scrollbar { display: none; }
   .minimal-header .nav a { flex: 0 0 auto; padding: 14px 12px; font-size: 13px; }
+  .site-connection .container { min-height: 0; padding-top: 13px; padding-bottom: 13px; gap: 16px; }
+  .site-connection p { display: block; }
+  .site-connection p span { display: none; }
+  .site-connection a { margin-left: auto; }
+  .site-connection a > span { display: none; }
   .home-minimal main section[id] { scroll-margin-top: 108px; }
   .home-minimal section { padding: 56px 0; }
   .minimal-services, .minimal-sim, .minimal-accounts { padding-top: 56px !important; padding-bottom: 56px !important; }
