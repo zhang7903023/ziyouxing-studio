@@ -146,11 +146,13 @@
             setButtonLabel(btn, '已复制');
             announce('已复制');
             if (statusBox) statusBox.textContent = '已复制：' + text + '。请打开微信添加好友继续沟通。';
+            if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'page-copy-btn', ok: true });
             if (btn) scheduleRestore(btn, original, 2200);
         }).catch(function () {
             setButtonLabel(btn, '复制失败');
             announce('复制失败，请手动复制');
             if (statusBox) statusBox.textContent = '复制失败。微信号：' + text + '，请手动复制。';
+            if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'page-copy-btn', ok: false });
             if (btn) scheduleRestore(btn, original, 2600);
         });
     }

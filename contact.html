@@ -237,6 +237,18 @@
         'account-auth': '账号与认证',
         'other': '其他服务'
     };
+    // 具体服务：保留访客点进来的原始入口，不合并成大类
+    var SERVICE_DETAILS = {
+        'virtual-location': { label: '虚拟定位配置', hintExtra: '另外说明想调整哪些 App 的定位场景。' },
+        'remote-checkin': { label: '远程打卡配置', hintExtra: '另外说明考勤规则（GPS / WiFi / 拍照打卡）和看到的报错提示。' },
+        'phone-clone': { label: '苹果手机分身 / 多账号', hintExtra: '另外说明想多开的 App 和 iPhone 机型、系统版本。' },
+        'overseas-live': { label: '海外直播', hintExtra: '' },
+        'overseas-sim': { label: '海外手机卡', hintExtra: '' },
+        'platform-auth': { label: '平台认证（巨量引擎 / 专业号 / 互选）', hintExtra: '' },
+        'social-media-growth': { label: '粉丝与互动服务', hintExtra: '' },
+        'device-location': { label: '设备与定位', hintExtra: '' },
+        'account-auth': { label: '账号与认证', hintExtra: '' }
+    };
     var SERVICE_HINT = {
         'device-location': '填写提示：手机型号、系统版本、使用的 App、当前问题（例如哪个功能异常、看到什么报错提示）。',
         'overseas-live': '填写提示：平台（抖音 / 小红书 / 视频号）、所在国家或地区、使用的设备、当前问题（例如开播入口或权限提示）。',
@@ -259,9 +271,11 @@
 
     function updateServiceUi() {
         var key = currentService();
-        hint.textContent = SERVICE_HINT[key] || SERVICE_HINT['other'];
+        var detail = (rawService && SERVICE_ALIAS[rawService] === key) ? SERVICE_DETAILS[rawService] : null;
+        var hintExtra = detail && detail.hintExtra ? ' ' + detail.hintExtra : '';
+        hint.textContent = (SERVICE_HINT[key] || SERVICE_HINT['other']) + hintExtra;
         messageField.setAttribute('placeholder', key ? '请按上方提示补充说明' : '简单说明你的设备和需求');
-        preselectNote.innerHTML = '当前咨询：<b>' + (SERVICE_LABEL[key] || '未选择服务类型') + '</b>';
+        preselectNote.innerHTML = '当前咨询：<b>' + (detail ? detail.label : (SERVICE_LABEL[key] || '未选择服务类型')) + '</b>';
     }
 
     // 读取 URL 参数（兼容 ?service= 与 ?s=）
@@ -270,10 +284,15 @@
         return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
     }
     var raw = readParam('service') || readParam('s') || '';
+    var rawService = (raw && SERVICE_DETAILS[raw]) ? raw : '';
     var key = SERVICE_ALIAS[raw] || (raw === 'other' ? 'other' : '');
     if (key) serviceSelect.value = key;
     updateServiceUi();
-    serviceSelect.addEventListener('change', updateServiceUi);
+    serviceSelect.addEventListener('change', function () {
+        // 用户手动改了服务类型：放弃 URL 带进来的具体服务，跟随用户选择
+        rawService = '';
+        updateServiceUi();
+    });
 
     /* ---------- 微信复制状态（等待剪贴板结果后再反馈，不提前报成功） ---------- */
     var wechatCopyBtn = document.getElementById('wechatCopy');
@@ -282,10 +301,12 @@
         copyTextToClipboard('yes1974g',
             function () {
                 wechatCopyStatus.textContent = '已复制微信号 yes1974g，打开微信搜索添加即可。';
+                if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'wechat-id', ok: true });
                 window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
             },
             function () {
                 wechatCopyStatus.textContent = '复制失败，请手动复制：yes1974g';
+                if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'wechat-id', ok: false });
                 window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
             });
     });
@@ -324,7 +345,10 @@
 
     /* ---------- 生成并打开 WhatsApp（真实跳转，不伪装后端成功） ---------- */
     function compose() {
-        var label = SERVICE_LABEL[currentService()] || '其他服务';
+        var label = currentService() ? (SERVICE_LABEL[currentService()] || '其他服务') : '其他服务';
+        // 保留访客点进来的具体服务（如"远程打卡配置"），减少二次解释
+        var detail = (rawService && SERVICE_ALIAS[rawService] === currentService()) ? SERVICE_DETAILS[rawService] : null;
+        if (detail) label = detail.label + '（' + label + '）';
         var name = document.getElementById('cf-name').value.trim();
         var contact = document.getElementById('cf-contact').value.trim();
         var message = messageField.value.trim();
@@ -346,6 +370,7 @@
         e.preventDefault();
         if (!validate()) return;
         pendingMessage = compose();
+        if (window.zsTrack) window.zsTrack('lead_draft_generated', { method: 'whatsapp', service: rawService || currentService() || 'other' });
         resultBox.style.display = 'block';
         resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         openWhatsApp(pendingMessage);
@@ -378,11 +403,14 @@
         function ok() {
             btn.textContent = '已复制，请打开微信粘贴发送';
             announce('已复制咨询内容，请按下方步骤去微信发送');
+            if (window.zsTrack) window.zsTrack('lead_draft_generated', { method: 'wechat_copy', service: rawService || currentService() || 'other' });
+            if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'draft-wechat', ok: true });
             scheduleBtnRestore(btn, original, 4000);
         }
         function fail() {
             btn.textContent = '复制失败，请在下方草稿中手动复制';
             announce('复制失败，请在下方草稿中手动复制');
+            if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'draft-wechat', ok: false });
             showDraft(pendingMessage);
             scheduleBtnRestore(btn, original, 4000);
         }
@@ -421,9 +449,14 @@
     document.getElementById('copyMsg').addEventListener('click', function () {
         var btn = this;
         var text = pendingMessage || compose();
-        function ok() { btn.textContent = '已复制'; scheduleBtnRestore(btn, '复制咨询内容', 2200); }
+        function ok() {
+            btn.textContent = '已复制';
+            if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'result-copy', ok: true });
+            scheduleBtnRestore(btn, '复制咨询内容', 2200);
+        }
         function fail() {
             btn.textContent = '复制失败，请在下方草稿中手动复制';
+            if (window.zsTrack) window.zsTrack('contact_copy_result', { target: 'result-copy', ok: false });
             scheduleBtnRestore(btn, '复制咨询内容', 4000);
             showDraft(text);
         }

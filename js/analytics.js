@@ -128,13 +128,9 @@
         });
     }, true);
 
-    document.addEventListener('submit', function (event) {
-        var form = event.target;
-        if (!form || form.tagName !== 'FORM') return;
-
-        sendEvent('lead_form_submit', {
-            form_id: form.id || '',
-            form_name: form.getAttribute('name') || ''
-        });
-    }, true);
+    // 页面在"校验通过后生成草稿""复制成功/失败"等真实动作后调用；
+    // 不再监听裸 submit（空表单/校验失败也会计入），不采集表单内容
+    window.zsTrack = function (name, params) {
+        sendEvent(name, params || {});
+    };
 })();
