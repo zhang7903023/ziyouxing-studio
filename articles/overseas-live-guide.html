@@ -27,6 +27,7 @@
     <link rel="icon" type="image/png" sizes="48x48" href="../favicon.png">
     <link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
 
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/article.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,18 +58,27 @@
 </script>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-inner">
-            <a href="../index.html" class="logo">自由行Studio</a>
-            <nav class="nav">
-                <a href="../index.html" class="nav-link">首页</a>
-                <a href="../services.html" class="nav-link">服务</a>
-                <a href="../articles/" class="nav-link active">文章</a>
-                <a href="../contact.html" class="nav-link">联系</a>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
-        </div>
-    </header>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a href="../" class="logo" aria-label="自由行Studio首页">自由行<span>Studio</span></a>
+    <nav class="site-nav" id="siteNav" aria-label="主导航">
+      <a href="../virtual-location.html" class="nav-item">虚拟定位</a>
+      <a href="../overseas-live.html" class="nav-item">海外直播</a>
+      <a href="../services.html" class="nav-item">服务总览</a>
+      <a href="../articles/" class="nav-item" aria-current="page">教程</a>
+      <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品与价格请前往 Gexiv 产品商城查看">商品商城 <span aria-hidden="true">↗</span></a>
+      <span class="store-note">商品与价格请前往 Gexiv 产品商城查看</span>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="header-cta">立即咨询</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="打开菜单">
+        <span class="menu-label-open">菜单</span>
+        <span class="menu-label-close">关闭</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
     <div class="mobile-menu">
         <a href="../index.html">首页</a>
         <a href="../services.html">服务</a>
@@ -187,22 +197,36 @@
 
         </article>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-brand">
-                <p class="footer-name">自由行Studio</p>
-                <p class="footer-tagline">一对一设备环境配置与技术支持</p>
-            </div>
-            <div class="footer-links">
-                <p>微信：yes1974g</p>
-                <p>邮箱：zhang7903023@gmail.com</p>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 自由行Studio</p>
-            </div>
-        </div>
-    </footer>
+    <footer class="site-footer minimal-footer">
+  <div class="container footer-directory">
+    <div class="footer-brand">
+      <p>自由行 Studio</p>
+      <span>一对一设备配置与技术支持</span>
+    </div>
+    <div class="footer-links">
+      <h2>设备与定位</h2>
+      <a href="../virtual-location.html">虚拟定位</a>
+      <a href="../remote-checkin.html">定位异常与打卡</a>
+      <a href="../phone-clone.html">iPhone 分身</a>
+    </div>
+    <div class="footer-links">
+      <h2>海外与平台</h2>
+      <a href="../overseas-live.html">海外直播</a>
+      <a href="../social-media-growth.html">粉丝与互动服务</a>
+      <a href="../platform-auth.html">平台认证</a>
+    </div>
+    <div class="footer-links">
+      <h2>帮助</h2>
+      <a href="../services.html">服务总览</a>
+      <a href="./">文章与教程</a>
+      <a href="https://www.gexiv.com/" target="_blank" rel="noopener">Gexiv 产品商城 ↗</a>
+      <a href="../contact.html">联系我们</a>
+    </div>
+  </div>
+  <p class="container footer-copyright">© 2026 自由行 Studio</p>
+</footer>
 
+    <script src="../js/site.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/analytics.js"></script>
 </body>

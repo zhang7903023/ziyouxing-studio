@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://zyxstudio.net/articles/douyin-overseas-live-fix.html">
 
     <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/article.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%230a0a0a'/><circle cx='50' cy='50' r='20' fill='none' stroke='%23ff6b35' stroke-width='6'/><circle cx='50' cy='50' r='6' fill='%23ff6b35'/><path d='M50 10 L55 25 L50 22 L45 25 Z' fill='%23ff6b35'/></svg>">
 <!-- Google Analytics 4 -->
@@ -45,18 +46,27 @@
 </script>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-inner">
-            <a href="../index.html" class="logo">自由行Studio</a>
-            <nav class="nav">
-                <a href="../index.html" class="nav-link">首页</a>
-                <a href="../services.html" class="nav-link">服务</a>
-                <a href="index.html" class="nav-link active">文章</a>
-                <a href="../contact.html" class="nav-link">联系</a>
-            </nav>
-            <button class="mobile-menu-btn" aria-label="菜单"><span></span><span></span><span></span></button>
-        </div>
-    </header>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a href="../" class="logo" aria-label="自由行Studio首页">自由行<span>Studio</span></a>
+    <nav class="site-nav" id="siteNav" aria-label="主导航">
+      <a href="../virtual-location.html" class="nav-item">虚拟定位</a>
+      <a href="../overseas-live.html" class="nav-item">海外直播</a>
+      <a href="../services.html" class="nav-item">服务总览</a>
+      <a href="../articles/" class="nav-item" aria-current="page">教程</a>
+      <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品与价格请前往 Gexiv 产品商城查看">商品商城 <span aria-hidden="true">↗</span></a>
+      <span class="store-note">商品与价格请前往 Gexiv 产品商城查看</span>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="header-cta">立即咨询</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="打开菜单">
+        <span class="menu-label-open">菜单</span>
+        <span class="menu-label-close">关闭</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
     <div class="mobile-menu">
         <a href="../index.html">首页</a><a href="../services.html">服务</a><a href="index.html">文章</a><a href="../contact.html">联系</a>
     </div>
@@ -281,6 +291,7 @@
             <p>&copy; 2026 自由行Studio · 专注虚拟定位技术</p>
         </div>
     </footer>
+    <script src="../js/site.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/analytics.js"></script>
 </body>
