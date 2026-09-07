@@ -103,7 +103,7 @@
         <span class="ch-name">微信（主要）</span>
         <span class="ch-value">yes1974g</span>
         <span class="ch-actions">
-          <button type="button" class="ch-btn" id="wechatCopy" data-copy="yes1974g">复制微信号</button>
+          <button type="button" class="ch-btn" id="wechatCopy">复制微信号</button>
         </span>
         <span class="ch-status" id="wechatCopyStatus" aria-live="polite"></span>
       </div>
@@ -119,7 +119,7 @@
 
     <div class="contact-form-wrap">
       <h2>填写表单</h2>
-      <p class="form-intro">提交后会在 WhatsApp 打开整理好的咨询草稿，点「发送」后我们才会收到；不会自动发送。</p>
+      <p class="form-intro">两条路都可以：点「整理信息，去 WhatsApp 发送」会打开 WhatsApp 草稿；点「复制内容，去微信发送」把内容粘到微信。都需要你手动点「发送」，我们不会自动发出任何消息。</p>
 
       <form id="contactForm" novalidate>
         <div class="form-group">
@@ -160,6 +160,13 @@
           <span class="form-fallback">点提交后会打开 WhatsApp 并带入咨询内容，需要你手动点「发送」，不会自动发送。</span>
         </div>
         <p class="field-error" id="errWechatCopy" style="display:none;">内容还没有整理成功：请先补全必填项，或点「复制咨询内容」手动复制。</p>
+
+        <p class="wechat-steps">微信发送步骤：① 点「复制内容，去微信发送」→ ② 微信添加好友 yes1974g → ③ 在聊天中粘贴并发送。</p>
+
+        <div class="draft-area" id="draftArea" hidden>
+          <label for="draftText">咨询内容草稿（复制失败时可在这里手动复制）</label>
+          <textarea id="draftText" class="form-control" rows="5" readonly aria-label="完整咨询内容，可手动复制"></textarea>
+        </div>
       </form>
 
       <div class="submit-result" id="submitResult" role="status" aria-live="polite">
@@ -169,7 +176,7 @@
           <button type="button" class="btn btn-primary" id="resendWa">重新打开 WhatsApp</button>
           <button type="button" class="btn btn-outline" id="copyMsg">复制咨询内容</button>
         </div>
-        <p class="result-help">WhatsApp 打不开？改用 <a href="https://wa.me/14154251293" target="_blank" rel="noopener">网页版 WhatsApp 入口</a>，或直接添加微信：<button type="button" class="text-link" id="resultWechat" data-copy="yes1974g">yes1974g（复制）</button>，也可以 <a href="mailto:zhang7903023@gmail.com">发邮件</a>。</p>
+        <p class="result-help">WhatsApp 没弹出？<a href="https://wa.me/14154251293" target="_blank" rel="noopener">直接打开 WhatsApp</a> 重试，或用下方微信 / 邮箱方式。</p>
       </div>
     </div>
 
@@ -268,12 +275,19 @@
     updateServiceUi();
     serviceSelect.addEventListener('change', updateServiceUi);
 
-    /* ---------- 微信复制状态 ---------- */
+    /* ---------- 微信复制状态（等待剪贴板结果后再反馈，不提前报成功） ---------- */
     var wechatCopyBtn = document.getElementById('wechatCopy');
     var wechatCopyStatus = document.getElementById('wechatCopyStatus');
     wechatCopyBtn.addEventListener('click', function () {
-        wechatCopyStatus.textContent = '已复制微信号 yes1974g，打开微信搜索添加即可。';
-        window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
+        copyTextToClipboard('yes1974g',
+            function () {
+                wechatCopyStatus.textContent = '已复制微信号 yes1974g，打开微信搜索添加即可。';
+                window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
+            },
+            function () {
+                wechatCopyStatus.textContent = '复制失败，请手动复制：yes1974g';
+                window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
+            });
     });
 
     /* ---------- 读屏提示（aria-live 区域复用 wechatCopyStatus） ---------- */
@@ -284,22 +298,23 @@
 
     /* ---------- 表单校验 ---------- */
     function setError(id, hasError) {
-        var group = document.getElementById(id).closest('.form-group');
-        group.classList.toggle('has-error', hasError);
-        if (!hasError) group.classList.remove('has-error');
+        var el = document.getElementById(id);
+        el.closest('.form-group').classList.toggle('has-error', hasError);
+        el.setAttribute('aria-invalid', hasError ? 'true' : 'false');
     }
     function validate() {
         var ok = true;
+        var firstBad = null;
         var contact = document.getElementById('cf-contact').value.trim();
         var service = currentService();
         var message = messageField.value.trim();
 
-        setError('cf-contact', contact === '');
-        setError('cf-service', service === '');
-        setError('cf-message', message === '');
-        if (contact === '') ok = false;
-        if (service === '') ok = false;
-        if (message === '') ok = false;
+        [['cf-contact', contact === ''], ['cf-service', service === ''], ['cf-message', message === '']].forEach(function (pair) {
+            setError(pair[0], pair[1]);
+            if (pair[1]) { ok = false; if (!firstBad) firstBad = document.getElementById(pair[0]); }
+        });
+        // 手机端聚焦第一个错误字段，避免"点了没反应"的错觉
+        if (firstBad) firstBad.focus();
         return ok;
     }
     ['cf-contact', 'cf-message'].forEach(function (id) {
@@ -322,11 +337,9 @@
     }
     function openWhatsApp(text) {
         var url = 'https://wa.me/14154251293?text=' + encodeURIComponent(text);
-        var w = window.open(url, '_blank', 'noopener');
-        if (!w) {
-            // 被浏览器拦截：明确告知，不假装成功
-            resultBox.querySelector('p').textContent = '浏览器没有自动打开 WhatsApp。请点下方「重新打开 WhatsApp」重试，或复制咨询内容改用微信 / 邮箱发送。';
-        }
+        // window.open 的返回值不可靠（即使成功打开也可能为 null），不做失败断言
+        window.open(url, '_blank', 'noopener');
+        resultBox.querySelector('p').textContent = '已尝试打开 WhatsApp。请在弹出的对话中点「发送」；如果没有弹出，点下方「重新打开 WhatsApp」重试，或复制内容改用微信 / 邮箱发送。';
     }
 
     form.addEventListener('submit', function (e) {
@@ -338,11 +351,23 @@
         openWhatsApp(pendingMessage);
     });
 
+    /* ---------- 可见草稿区：复制失败时展开，手动复制兜底 ---------- */
+    var draftArea = document.getElementById('draftArea');
+    var draftText = document.getElementById('draftText');
+    function showDraft(text) {
+        draftText.value = text;
+        draftArea.hidden = false;
+        draftText.focus();
+        draftText.select();
+    }
+
     /* ---------- 微信主路径：复制整理好的内容，由用户去微信粘贴发送 ---------- */
     var wechatCopyErr = document.getElementById('errWechatCopy');
-    document.getElementById('cfWechatCopy').addEventListener('click', function () {
+    var wechatStepsBtn = document.getElementById('cfWechatCopy');
+    wechatStepsBtn.addEventListener('click', function () {
         var btn = this;
-        var original = btn.textContent;
+        var original = btn.dataset.originalLabel || btn.textContent;
+        btn.dataset.originalLabel = original;
         if (!validate()) {
             wechatCopyErr.style.display = 'block';
             announce('请先补全必填项');
@@ -352,25 +377,42 @@
         pendingMessage = compose();
         function ok() {
             btn.textContent = '已复制，请打开微信粘贴发送';
-            announce('已复制咨询内容，请打开微信粘贴发送');
-            window.setTimeout(function () { btn.textContent = original; }, 3200);
+            announce('已复制咨询内容，请按下方步骤去微信发送');
+            scheduleBtnRestore(btn, original, 4000);
         }
         function fail() {
-            btn.textContent = '复制失败，请手动复制';
-            announce('复制失败，请手动复制');
-            document.getElementById('copyMsg').click();
+            btn.textContent = '复制失败，请在下方草稿中手动复制';
+            announce('复制失败，请在下方草稿中手动复制');
+            showDraft(pendingMessage);
+            scheduleBtnRestore(btn, original, 4000);
         }
+        copyTextToClipboard(pendingMessage, ok, fail);
+    });
+    // 连续点击时只让最后一次的恢复定时器生效
+    function scheduleBtnRestore(btn, original, delay) {
+        btn._seq = (btn._seq || 0) + 1;
+        var seq = btn._seq;
+        window.setTimeout(function () {
+            if (btn._seq === seq) btn.textContent = original;
+        }, delay);
+    }
+    function copyTextToClipboard(text, ok, fail) {
         if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(pendingMessage).then(ok, fail);
+            navigator.clipboard.writeText(text).then(ok, fail);
         } else {
             var ta = document.createElement('textarea');
-            ta.value = pendingMessage;
+            ta.value = text;
+            ta.setAttribute('readonly', '');
+            ta.style.position = 'fixed';
+            ta.style.left = '-9999px';
             document.body.appendChild(ta);
             ta.select();
-            try { document.execCommand('copy') ? ok() : fail(); } catch (err) { fail(); }
+            var okFlag = false;
+            try { okFlag = document.execCommand('copy'); } catch (err) { okFlag = false; }
             document.body.removeChild(ta);
+            okFlag ? ok() : fail();
         }
-    });
+    }
 
     document.getElementById('resendWa').addEventListener('click', function () {
         if (pendingMessage) openWhatsApp(pendingMessage);
@@ -379,37 +421,13 @@
     document.getElementById('copyMsg').addEventListener('click', function () {
         var btn = this;
         var text = pendingMessage || compose();
-        var pendingTextarea = null;
-        function showManualCopy() {
-            if (!pendingTextarea) {
-                pendingTextarea = document.createElement('textarea');
-                pendingTextarea.id = 'pendingMsgTextarea';
-                pendingTextarea.readOnly = true;
-                pendingTextarea.className = 'form-control';
-                pendingTextarea.style.cssText = 'display:none;margin-top:14px;min-height:130px;font-size:13px;line-height:1.6;';
-                pendingTextarea.setAttribute('aria-label', '完整咨询内容，可手动复制');
-                resultBox.appendChild(pendingTextarea);
-            }
-            pendingTextarea.value = text;
-            pendingTextarea.style.display = 'block';
-            pendingTextarea.focus();
-            pendingTextarea.select();
-        }
-        function ok() { btn.textContent = '已复制'; window.setTimeout(function () { btn.textContent = '复制咨询内容'; }, 2200); }
+        function ok() { btn.textContent = '已复制'; scheduleBtnRestore(btn, '复制咨询内容', 2200); }
         function fail() {
-            btn.textContent = '复制失败，请手动复制下方内容';
-            showManualCopy();
+            btn.textContent = '复制失败，请在下方草稿中手动复制';
+            scheduleBtnRestore(btn, '复制咨询内容', 4000);
+            showDraft(text);
         }
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(text).then(ok, fail);
-        } else {
-            var ta = document.createElement('textarea');
-            ta.value = text;
-            document.body.appendChild(ta);
-            ta.select();
-            try { document.execCommand('copy') ? ok() : fail(); } catch (err) { fail(); }
-            document.body.removeChild(ta);
-        }
+        copyTextToClipboard(text, ok, fail);
     });
 })();
 </script>

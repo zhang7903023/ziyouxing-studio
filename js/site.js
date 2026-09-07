@@ -123,35 +123,35 @@
         if (btn) btn.textContent = label;
     }
 
-    function restoreLabel(btn, original) {
+    // 用操作序号处理连续点击：只有最后一次点击的定时器能恢复文案
+    function scheduleRestore(btn, original, delay) {
+        btn._copySeq = (btn._copySeq || 0) + 1;
+        const seq = btn._copySeq;
         window.setTimeout(function () {
-            if (btn && !btn.dataset.copiedFlag) {
-                setButtonLabel(btn, original);
-            }
-            if (btn) delete btn.dataset.copiedFlag;
-        }, 2200);
+            if (btn._copySeq === seq) setButtonLabel(btn, original);
+        }, delay);
     }
 
-    function copy(text, btn) {
+    function copy(text, btn, statusBox) {
         const original = btn ? (btn.dataset.originalLabel || btn.textContent || '复制') : '';
-        if (btn) {
-            btn.dataset.originalLabel = original;
-            btn.dataset.copiedFlag = '1';
-        }
+        if (btn) btn.dataset.originalLabel = original;
         const doWrite = navigator.clipboard && navigator.clipboard.writeText
             ? navigator.clipboard.writeText(text)
             : Promise.resolve(fallbackCopy(text, btn)).then(function (ok) {
                 if (!ok) throw new Error('fallback copy failed');
             });
 
+        // 成功/失败都等剪贴板结果后再反馈，不提前报成功
         doWrite.then(function () {
             setButtonLabel(btn, '已复制');
             announce('已复制');
-            restoreLabel(btn, original);
+            if (statusBox) statusBox.textContent = '已复制：' + text + '。请打开微信添加好友继续沟通。';
+            if (btn) scheduleRestore(btn, original, 2200);
         }).catch(function () {
-            setButtonLabel(btn, '复制失败，请手动复制：' + text);
+            setButtonLabel(btn, '复制失败');
             announce('复制失败，请手动复制');
-            restoreLabel(btn, original);
+            if (statusBox) statusBox.textContent = '复制失败。微信号：' + text + '，请手动复制。';
+            if (btn) scheduleRestore(btn, original, 2600);
         });
     }
 
@@ -166,13 +166,8 @@
             || '';
         if (!text) return;
         e.preventDefault();
-        const statusBox = btn.closest('.contact-item, .contact-card, .page-hero-text, .service-block')
-            && btn.closest('.contact-item, .contact-card, .page-hero-text, .service-block').querySelector('[data-copy-status], .wechat-inline-status');
-        copy(text, btn);
-        if (statusBox) {
-            window.setTimeout(function () {
-                statusBox.textContent = '已复制：' + text + '。请打开微信添加好友继续沟通。';
-            }, 30);
-        }
+        const scope = btn.closest('.contact-item, .contact-card, .page-hero-text, .service-block');
+        const statusBox = scope && scope.querySelector('[data-copy-status], .wechat-inline-status');
+        copy(text, btn, statusBox);
     }, true);
 })();

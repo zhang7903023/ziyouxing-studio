@@ -1673,7 +1673,9 @@ select.form-control { appearance: auto; }
 
 @media (max-width: 640px) {
   .contact-channels { flex-direction: column; }
+  /* 纵向排列时 320px 会变成高度基准，把表单推远——改回内容自适应 */
   .contact-channel { width: 100%; flex-wrap: wrap; }
+  .contact-channel.primary { flex: 0 1 auto; min-height: 0; }
   .contact-channel .ch-actions { width: 100%; margin-left: 0; justify-content: flex-end; }
   .contact-layout { max-width: 100%; }
 }
@@ -1756,3 +1758,23 @@ select.form-control { appearance: auto; }
   color: #fff !important;
 }
 .services-overview .detail-cta-row .btn-primary:hover { background: #000 !important; }
+
+/* ---------- 咨询页补充（第二轮审查修复） ---------- */
+.wechat-steps {
+  margin-top: 14px;
+  color: var(--zs-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.draft-area {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px dashed var(--zs-line);
+  border-radius: 12px;
+  background: #fafafa;
+}
+.draft-area label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 650; color: var(--zs-text); }
+.draft-area textarea { min-height: 110px; font-size: 13px; line-height: 1.6; background: #fff; }
+/* 桌面联系卡允许换行，让 ch-status 真正另起一行 */
+.contact-channel { flex-wrap: wrap; }
+.contact-channel .ch-status { flex-basis: 100%; }
