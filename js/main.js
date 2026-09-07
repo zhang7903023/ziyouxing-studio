@@ -161,9 +161,9 @@ const translations = {
     'remote-checkin': [
         { selector: '.page-hero .hero-kicker', zh: '考勤定位配置 · 先看规则再处理', en: 'Attendance location setup · Check rules first' },
         { selector: '.page-hero h1', zh: '钉钉 / 企业微信打卡异常，先判断 GPS、WiFi 和拍照校验', en: 'DingTalk / WeCom check-in issues: check GPS, WiFi and photo validation first' },
-        { selector: '.page-hero p', zh: '遇到不在考勤范围、海外/异地提示、GPS 偏移、WiFi 考勤、外勤拍照等情况，不建议盲目试工具。把机型、系统版本、考勤规则和报错截图发来，先判断哪种配置方式更稳。', en: 'If you see out-of-range, overseas / remote-location prompts, GPS drift, WiFi attendance or photo check-in rules, do not try random tools first. Send your device, system version, attendance rules and screenshots so I can check the safer path.' },
-        { selector: '.page-hero .btn-primary', zh: 'WhatsApp 发截图', en: 'Send screenshots on WhatsApp' },
-        { selector: '.page-hero .btn-outline', zh: '查看微信联系方式', en: 'View WeChat contact' },
+        { selector: '.page-hero .hero-summary', zh: '遇到不在考勤范围、海外/异地提示、GPS 偏移、WiFi 考勤、外勤拍照等情况，不建议盲目试工具。把机型、系统版本、考勤规则和报错截图发来，先判断哪种配置方式更稳。', en: 'If you see out-of-range, overseas / remote-location prompts, GPS drift, WiFi attendance or photo check-in rules, do not try random tools first. Send your device, system version, attendance rules and screenshots so I can check the safer path.' },
+        { selector: '.page-hero .btn-primary', zh: '复制微信号咨询', en: 'Copy WeChat ID' },
+        { selector: '.page-hero .btn-outline', zh: 'WhatsApp', en: 'WhatsApp' },
         { selector: '.proof-strip .proof-card strong', zh: ['先看规则', '看设备环境', '远程协助', '不盲目承诺'], en: ['Check rules first', 'Check device environment', 'Remote support', 'No blind promises'] },
         { selector: '.proof-strip .proof-card span', zh: ['GPS、WiFi、拍照、外勤审批，每种考勤规则处理方式不同。', 'iPhone 看 iOS 版本，安卓看品牌系统和权限环境。', '适合海外、异地办公、外勤和不方便当面处理的用户。', '先判断能否处理、风险点和后续维护，再给明确建议。'], en: ['GPS, WiFi, photo and field-work approval rules need different handling.', 'For iPhone we check iOS version; for Android we check brand, system and permissions.', 'Suitable for overseas users, remote work, field work and people who cannot meet in person.', 'I check feasibility, risks and follow-up needs before giving a clear suggestion.'] },
         { selector: '.service-page-head .platforms-label', zh: '远程打卡配置', en: 'Remote Check-in Setup' },
@@ -172,13 +172,13 @@ const translations = {
         { selector: '.service-block .result-tag', zh: ['常见场景', '诊断重点', '处理流程', '参考费用'], en: ['Common cases', 'Diagnosis focus', 'Process', 'Reference pricing'] },
         { selector: '.service-block h2', zh: ['你可能遇到的问题', '先确认这几件事', '一对一远程怎么做', '按设备和规则报价'], en: ['Issues you may be seeing', 'What we confirm first', 'How one-on-one remote setup works', 'Pricing depends on device and rules'] },
         { selector: '.service-block .service-intro', zh: ['适合先发截图判断，不需要你先懂技术细节。', '不同规则对应的处理路径不同，先看清楚再动手更稳。', '流程尽量简单：先判断，再配置，最后用你的页面确认效果。', '简单 GPS 场景和复杂 WiFi/拍照/多规则场景差异很大，先确认再报价。'], en: ['Send screenshots first. You do not need to understand the technical details.', 'Different attendance rules require different paths. Checking first is more stable.', 'The process is simple: check first, configure, then verify on your app page.', 'Simple GPS cases and complex WiFi / photo / multi-rule cases are very different, so pricing is confirmed after diagnosis.'] },
-        { selector: '.service-actions .btn-primary', zh: '发截图判断', en: 'Send screenshots' },
-        { selector: '.service-actions .btn-outline', zh: '微信咨询', en: 'WeChat contact' },
+        { selector: '.service-actions .btn-primary', zh: '复制微信号，发截图判断', en: 'Copy WeChat ID' },
+        { selector: '.service-actions .btn-outline', zh: 'WhatsApp', en: 'WhatsApp' },
         { selector: '.intake-card .platforms-label', zh: '咨询前准备', en: 'Before contacting' },
         { selector: '.intake-card h2', zh: '发这 4 样信息，我可以更快判断', en: 'Send these 4 items for faster diagnosis' },
         { selector: '.intake-copy p', zh: '越具体，越能避免来回问。你直接复制下面这份清单发给我就行。', en: 'The more specific your message is, the less back-and-forth we need. You can copy this checklist directly.' },
-        { selector: '.intake-actions .btn-primary', zh: 'WhatsApp 发资料', en: 'Send details on WhatsApp' },
-        { selector: '.intake-actions .btn-outline', zh: '查看微信', en: 'View WeChat' },
+        { selector: '.intake-actions .btn-primary', zh: '复制微信号，发送资料', en: 'Copy WeChat ID' },
+        { selector: '.intake-actions .btn-outline', zh: 'WhatsApp', en: 'WhatsApp' },
         { selector: '.related-articles h3', zh: '相关页面', en: 'Related Pages' },
         { selector: '.contact-section .section-title', zh: '直接联系我', en: 'Contact Me Directly' },
         { selector: '.contact-desc', zh: '说明你的手机型号、使用的打卡App和当前问题，直接沟通。', en: 'Tell me your phone model, check-in app and current issue. We can discuss directly.' }
@@ -268,6 +268,13 @@ function applyEntry(entry, lang) {
 
 function applyTranslations(lang) {
     [...translations.common, ...(translations[pageKey] || [])].forEach(entry => applyEntry(entry, lang));
+
+    // 文章页的 index.html 指向教程目录，不是网站首页。
+    if (/\/articles\//.test(window.location.pathname)) {
+        document.querySelectorAll('.nav-link[href="index.html"], .mobile-menu > a[href="index.html"], .footer-links a[href="index.html"]').forEach(link => {
+            link.textContent = lang === 'en' ? 'Articles' : '文章';
+        });
+    }
 }
 
 function updatePageMeta(lang) {
@@ -346,7 +353,7 @@ document.addEventListener('click', (e) => {
 });
 
 // 统一处理复制按钮，避免英文界面点击后按钮文字又回到中文。
-document.addEventListener('click', (e) => {
+document.addEventListener('click', async (e) => {
     const btn = e.target.closest('.copy-btn');
     if (!btn) return;
 
@@ -356,16 +363,45 @@ document.addEventListener('click', (e) => {
     if (!text) return;
 
     e.preventDefault();
-    e.stopImmediatePropagation();
+    // 阻止旧的 inline onclick；保留同一 document 上的统计监听器。
+    e.stopPropagation();
 
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text);
+    try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = currentLang === 'en' ? 'Copied' : '已复制';
+    } catch (error) {
+        btn.textContent = (currentLang === 'en' ? 'Copy manually: ' : '请手动复制：') + text;
+        return;
     }
-    btn.textContent = currentLang === 'en' ? 'Copied' : '已复制';
     setTimeout(() => {
         btn.textContent = currentLang === 'en' ? 'Copy' : '复制';
     }, 2000);
 }, true);
+
+// 打卡文章优先复制微信号，并提示用户下一步发送哪些资料。
+document.addEventListener('click', async (e) => {
+    const btn = e.target.closest('[data-wechat-copy]');
+    if (!btn) return;
+
+    const wechatId = btn.dataset.wechatCopy;
+    const consultSource = btn.dataset.consultSource || '网站咨询';
+    const originalLabel = btn.dataset.label || btn.textContent;
+    const statusContainer = btn.closest('.wechat-cta, .page-hero-text, .service-block, .intake-card, .contact-card');
+    const status = statusContainer?.querySelector('.wechat-copy-status, .wechat-inline-status');
+
+    try {
+        await navigator.clipboard.writeText(wechatId);
+        btn.textContent = '微信号已复制';
+        if (status) status.textContent = '打开微信添加好友，请先发送“' + consultSource + '”，再发' + (btn.dataset.consultDetails || '手机型号、系统版本、使用场景和报错截图') + '。';
+    } catch (error) {
+        btn.textContent = '微信号：' + wechatId;
+        if (status) status.textContent = '请长按或手动复制微信号，然后在微信中添加好友。';
+    }
+
+    window.setTimeout(() => {
+        btn.textContent = originalLabel;
+    }, 3000);
+});
 
 // 页面加载时初始化语言
 document.addEventListener('DOMContentLoaded', () => {

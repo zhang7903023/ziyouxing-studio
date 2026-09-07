@@ -69,7 +69,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"钉钉或企业微信提示不在打卡范围内，能先判断吗？","acceptedAnswer":{"@type":"Answer","text":"可以。需要先看手机型号、系统版本、考勤 App、打卡规则截图和当前提示，再判断适合 GPS、WiFi、外勤或其他配置方式。"}},{"@type":"Question","name":"公司有 WiFi 打卡要求怎么办？","acceptedAnswer":{"@type":"Answer","text":"需要确认 WiFi 名称、是否要求连接指定网络、是否同时校验 GPS 或拍照。不同规则处理方式不同，建议先发截图判断。"}},{"@type":"Question","name":"iPhone 和安卓都支持评估吗？","acceptedAnswer":{"@type":"Answer","text":"支持先评估。iPhone 主要看 iOS 版本和目标 App；安卓主要看品牌、系统版本、权限和是否需要同时处理多个 App。"}},{"@type":"Question","name":"配置需要多久？","acceptedAnswer":{"@type":"Answer","text":"常见情况可以在 15-30 分钟完成初步判断和配置；复杂规则、公司策略较多或设备限制较强时，需要按实际情况确认。"}}]}
 </script>
-</head><body>
+</head><body class="remote-checkin-page">
 
 <!-- Header -->
 <header class="site-header">
@@ -84,23 +84,17 @@
 </header>
 
 
-    <div class="mobile-menu">
-        <a href="/">首页</a>
-        <a href="services.html">服务</a>
-        <a href="articles/">教程</a>
-        <a href="contact.html">联系</a>
-    </div>
-
     <section class="page-hero">
         <div class="container page-hero-inner">
             <div class="page-hero-text">
                 <div class="hero-kicker">考勤定位配置 · 先看规则再处理</div>
                 <h1>钉钉 / 企业微信打卡异常，先判断 GPS、WiFi 和拍照校验</h1>
-                <p>遇到不在考勤范围、海外/异地提示、GPS 偏移、WiFi 考勤、外勤拍照等情况，不建议盲目试工具。把机型、系统版本、考勤规则和报错截图发来，先判断哪种配置方式更稳。</p>
+                <p class="hero-summary">遇到不在考勤范围、海外/异地提示、GPS 偏移、WiFi 考勤、外勤拍照等情况，不建议盲目试工具。把机型、系统版本、考勤规则和报错截图发来，先判断哪种配置方式更稳。</p>
                 <div class="hero-btns">
-                    <a href="https://wa.me/14154251293" target="_blank" class="btn btn-primary">WhatsApp 发截图</a>
-                    <a href="contact.html" class="btn btn-outline">查看微信联系方式</a>
+                    <button type="button" class="btn btn-primary" data-wechat-copy="yes1974g" data-consult-source="打卡服务" data-label="复制微信号咨询">复制微信号咨询</button>
+                    <a href="https://wa.me/14154251293" target="_blank" class="btn btn-outline">WhatsApp</a>
                 </div>
+                <p class="wechat-inline-status" aria-live="polite"></p>
             </div>
             <div class="page-hero-visual" aria-hidden="true">
                 <img src="images/service-remote-checkin.png" alt="远程打卡示意图" class="page-hero-img">
@@ -185,10 +179,6 @@
                         <div class="value">¥199/月起</div>
                         <div class="price-note">以机型、系统版本、考勤规则和维护周期为准</div>
                     </div>
-                    <div class="service-actions">
-                        <a href="https://wa.me/14154251293" target="_blank" class="btn btn-primary">发截图判断</a>
-                        <a href="contact.html" class="btn btn-outline">微信咨询</a>
-                    </div>
                 </div>
             </div>
 
@@ -204,10 +194,6 @@
                     <li>打卡规则截图：GPS 范围、WiFi 要求、拍照/外勤要求</li>
                     <li>当前报错截图：不在范围、定位失败、网络异常或其他提示</li>
                 </ul>
-                <div class="intake-actions">
-                    <a href="https://wa.me/14154251293" target="_blank" class="btn btn-primary">WhatsApp 发资料</a>
-                    <a href="contact.html" class="btn btn-outline">查看微信</a>
-                </div>
             </div>
 
             <div class="related-articles">
@@ -230,7 +216,7 @@
                 <div class="contact-card">
                     <span class="contact-label">微信</span>
                     <span class="contact-value">yes1974g</span>
-                    <button class="copy-btn" onclick="copyText('yes1974g', this)">复制</button>
+                    <button type="button" class="copy-btn" data-wechat-copy="yes1974g" data-consult-source="打卡服务" data-label="复制">复制</button>
                 </div>
                 <div class="contact-card">
                     <span class="contact-label">WhatsApp</span>
@@ -247,28 +233,6 @@
     </section>
 
     
-<!-- Contact CTA -->
-<section class="cta-section">
-  <div class="container">
-    <h2>直接把情况发过来</h2>
-    <p>把设备型号、系统版本、目标 App、报错截图、你想达到的效果一起发过来。我会先判断，再告诉你下一步。</p>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h4>WhatsApp</h4>
-        <p>+1 415 425 1293</p>
-      </div>
-      <div class="contact-card">
-        <h4>微信</h4>
-        <p>yes1974g</p>
-      </div>
-      <div class="contact-card">
-        <h4>邮箱</h4>
-        <p>zhang7903023@gmail.com</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Footer -->
 <footer class="site-footer">
   <div class="container">
@@ -277,6 +241,7 @@
   </div>
 </footer>
 
-<script src="js/analytics.js"></script>
+<script src="js/main.js?v=20260804-wechat"></script>
+<script src="js/analytics.js?v=20260804-wechat"></script>
 </body>
 </html>

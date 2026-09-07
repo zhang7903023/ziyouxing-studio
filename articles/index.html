@@ -139,9 +139,9 @@
 
         /* ── Hero 区域 ── */
         .articles-hero {
-            text-align: center;
-            padding: 60px 24px 40px;
-            max-width: 640px;
+            text-align: left;
+            padding: 64px 24px 36px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -162,6 +162,7 @@
             font-size: 16px;
             color: var(--text-light);
             line-height: 1.6;
+            max-width: 680px;
         }
 
         /* ── 分类标签 ── */
@@ -169,13 +170,13 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            justify-content: center;
-            margin-bottom: 40px;
+            justify-content: flex-start;
+            margin-top: 24px;
         }
 
         .filter-btn {
-            font-size: 13px;
-            padding: 6px 16px;
+            font-size: 14px;
+            padding: 8px 18px;
             border-radius: 100px;
             border: 1px solid var(--border);
             background: transparent;
@@ -197,8 +198,8 @@
             margin: 0 auto;
             padding: 0 24px 80px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
         }
 
         .article-card {
@@ -213,7 +214,7 @@
 
         /* 卡片封面 */
         .card-cover {
-            height: 160px;
+            height: 210px;
             background: #F4F5F7;
             display: flex;
             align-items: center;
@@ -255,6 +256,10 @@
             letter-spacing: 0.3px;
         }
 
+        .card-top .tag:not(:first-child) {
+            display: none;
+        }
+
         .tag-ios { background: rgba(0,122,255,0.1); color: #007AFF; }
         .tag-android { background: rgba(52,199,89,0.1); color: #248A3D; }
         .tag-dingtalk { background: rgba(88,86,214,0.1); color: #5856D6; }
@@ -270,7 +275,7 @@
         .card-body { padding: 16px 24px 0; flex: 1; }
 
         .card-body h2 {
-            font-size: 17px;
+            font-size: 19px;
             font-weight: 600;
             line-height: 1.4;
             margin-bottom: 8px;
@@ -309,6 +314,21 @@
         .article-card:hover .read-link { gap: 8px; }
         .read-link svg { width: 14px; height: 14px; }
 
+        /* ── 精简页脚：联系方式由悬浮咨询入口承接 ── */
+        .footer { padding: 28px 0; border-top: 1px solid var(--border); }
+        .footer > .container {
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 28px;
+        }
+        .footer-brand, .footer-links { margin: 0; }
+        .footer-name { font-size: 16px; font-weight: 600; }
+        .footer-tagline, .footer-links + .footer-links { display: none; }
+        .footer-links { display: flex; justify-content: center; gap: 24px; font-size: 14px; color: var(--text-light); }
+        .footer-bottom { font-size: 13px; color: var(--text-light); white-space: nowrap; }
+
         /* ── 响应式 ── */
         @media (max-width: 768px) {
             .header .nav {
@@ -323,6 +343,21 @@
                 padding: 40px 24px 24px;
             }
 
+            .articles-hero h1 {
+                font-size: 30px;
+            }
+
+            .filters {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                scrollbar-width: none;
+            }
+
+            .filters::-webkit-scrollbar { display: none; }
+
+            .filter-btn { white-space: nowrap; }
+
             .articles-grid {
                 grid-template-columns: 1fr;
                 gap: 16px;
@@ -336,6 +371,14 @@
             .card-top { padding: 16px 16px 0; }
             .card-body { padding: 12px 16px 0; }
             .card-footer { padding: 12px 16px 16px; }
+            .card-cover { height: 190px; }
+
+            .footer { padding: 22px 0; }
+            .footer > .container { grid-template-columns: 1fr auto; gap: 10px 18px; }
+            .footer-name { font-size: 15px; }
+            .footer-links { justify-content: flex-end; gap: 14px; font-size: 13px; }
+            .footer-links a:nth-child(3) { display: none; }
+            .footer-bottom { grid-column: 1 / -1; font-size: 11px; }
         }
     </style>
 
@@ -377,16 +420,13 @@
     </div>
 
     <section class="articles-hero">
-        <h1>找到你需要的那篇 <em>教程</em></h1>
-        <p>原创内容，深入浅出，覆盖iOS 26全系列与企业考勤、社媒运营全场景。</p>
+        <h1>教程与问题指南</h1>
+        <p>按使用场景查找定位设置、考勤异常和内容平台相关教程。</p>
 
         <div class="filters">
             <button class="filter-btn active" onclick="filterArticles('all', this)">全部</button>
-            <button class="filter-btn" onclick="filterArticles('ios', this)">iOS 26</button>
-            <button class="filter-btn" onclick="filterArticles('android', this)">安卓</button>
-            <button class="filter-btn" onclick="filterArticles('dingtalk', this)">钉钉/飞书</button>
-            <button class="filter-btn" onclick="filterArticles('workwechat', this)">企业微信</button>
-            <button class="filter-btn" onclick="filterArticles('camera', this)">水印相机</button>
+            <button class="filter-btn" onclick="filterArticles('location', this)">定位教程</button>
+            <button class="filter-btn" onclick="filterArticles('checkin', this)">考勤排查</button>
             <button class="filter-btn" onclick="filterArticles('social', this)">社媒运营</button>
         </div>
     </section>
@@ -395,15 +435,15 @@
 
         <!-- iOS 26 改定位 -->
         <a href="ios-26-location-guide.html" class="article-card" data-category="ios">
-            <div class="card-cover"><img src="../images/article-covers/ios-26-location-guide.jpg" alt="iOS 26 改定位完全指南封面" loading="lazy"></div>
+            <div class="card-cover"><img src="../images/article-covers/ios-26-location-guide.jpg" alt="iOS 26 iPhone虚拟定位设置与恢复指南封面" loading="lazy"></div>
             <div class="card-top">
                 <span class="tag tag-ios">iOS 26</span>
                 <span class="tag tag-guide">攻略</span>
                 <span class="tag tag-2026">2026年更新</span>
             </div>
             <div class="card-body">
-                <h2>iOS 26 改定位完全指南</h2>
-                <p>iOS 26.4免越狱改定位实战，覆盖钉钉、企业微信、今日水印相机等主流考勤应用，兼容iPhone XS至16全系列。</p>
+                <h2>iOS 26 iPhone虚拟定位设置、限制与恢复</h2>
+                <p>对比 Xcode、USB 工具和 VPN，说明 GPS 与 IP 的区别、兼容限制及恢复方法。</p>
             </div>
             <div class="card-footer">
                 <span class="card-meta">2026-04-25 · 约1800字</span>
@@ -449,15 +489,15 @@
 
         <!-- 企业微信 -->
         <a href="workwechat-location-guide.html" class="article-card" data-category="workwechat">
-            <div class="card-cover"><img src="../images/article-covers/workwechat-location-guide.jpg" alt="企业微信打卡改定位完全指南封面" loading="lazy"></div>
+            <div class="card-cover"><img src="../images/article-covers/workwechat-location-guide.jpg" alt="企业微信打卡定位异常排查指南封面" loading="lazy"></div>
             <div class="card-top">
                 <span class="tag tag-workwechat">企业微信</span>
                 <span class="tag tag-guide">教程</span>
                 <span class="tag tag-2026">2026年更新</span>
             </div>
             <div class="card-body">
-                <h2>企业微信打卡改定位完全指南</h2>
-                <p>GPS + WiFi双模式支持，iOS 26和安卓双平台覆盖。海外考勤无忧，支持纯GPS打卡和双重验证场景。</p>
+                <h2>企业微信打卡定位异常排查指南</h2>
+                <p>排查企业微信不在打卡范围、定位失败和 WiFi 打卡异常，覆盖 iPhone 与 Android 常见设置。</p>
             </div>
             <div class="card-footer">
                 <span class="card-meta">2026-04-25 · 约1600字</span>
@@ -485,15 +525,15 @@
 
         <!-- 飞书钉钉 -->
         <a href="feishu-dingtalk-guide.html" class="article-card" data-category="dingtalk">
-            <div class="card-cover"><img src="../images/article-covers/feishu-dingtalk-guide.jpg" alt="飞书钉钉多平台打卡改定位指南封面" loading="lazy"></div>
+            <div class="card-cover"><img src="../images/article-covers/feishu-dingtalk-guide.jpg" alt="飞书钉钉打卡定位异常排查指南封面" loading="lazy"></div>
             <div class="card-top">
                 <span class="tag tag-feishu">飞书/钉钉</span>
                 <span class="tag tag-guide">教程</span>
                 <span class="tag tag-2026">2026年更新</span>
             </div>
             <div class="card-body">
-                <h2>飞书 / 钉钉多平台打卡改定位指南</h2>
-                <p>两家平台防作弊机制深度解析，GPS/WiFi/蓝牙三种打卡方式全覆盖。飞书更简单，钉钉稍复杂，对症下药。</p>
+                <h2>飞书 / 钉钉打卡定位异常排查指南</h2>
+                <p>按 GPS、WiFi、蓝牙、权限和企业考勤规则，排查飞书与钉钉定位异常。</p>
             </div>
             <div class="card-footer">
                 <span class="card-meta">2026-04-25 · 约1700字</span>
@@ -538,14 +578,14 @@
 
         <!-- 安卓改定位 -->
         <a href="android-location-guide.html" class="article-card" data-category="android">
-            <div class="card-cover"><img src="../images/article-covers/android-location-guide.jpg" alt="安卓免ROOT改定位全攻略封面" loading="lazy"></div>
+            <div class="card-cover"><img src="../images/article-covers/android-location-guide.jpg" alt="安卓免ROOT虚拟定位设置与排查指南封面" loading="lazy"></div>
             <div class="card-top">
                 <span class="tag tag-android">安卓</span>
                 <span class="tag tag-guide">教程</span>
             </div>
             <div class="card-body">
-                <h2>安卓免ROOT改定位全攻略</h2>
-                <p>无需ROOT，用开发者选项内置功能实现虚拟定位。安卓10到安卓16稳定兼容，附详细操作截图说明。</p>
+                <h2>安卓免ROOT虚拟定位设置与排查指南</h2>
+                <p>说明模拟位置设置、品牌系统差异、不生效与漂移排查，以及恢复真实定位方法。</p>
             </div>
             <div class="card-footer">
                 <span class="card-meta">2026-04-25 · 约1100字</span>
@@ -606,15 +646,15 @@
 
         <!-- iPhone微信分身 -->
         <a href="iphone-clone-guide.html" class="article-card" data-category="ios">
-            <div class="card-cover"><img src="../images/article-covers/iphone-clone-guide.jpg" alt="iPhone微信分身多开指南封面" loading="lazy"></div>
+            <div class="card-cover"><img src="../images/article-covers/iphone-clone-guide.jpg" alt="iPhone微信分身方式与风险对比封面" loading="lazy"></div>
             <div class="card-top">
                 <span class="tag tag-ios">iPhone</span>
                 <span class="tag tag-guide">教程</span>
                 <span class="tag tag-2026">2026年更新</span>
             </div>
             <div class="card-body">
-                <h2>iPhone微信分身多开完全指南</h2>
-                <p>免越狱实现微信双开/多开，支持抖音、小红书等App分身。企业级签名，数据隔离，消息实时推送。</p>
+                <h2>iPhone微信分身安全吗？方式与风险对比</h2>
+                <p>对比官方切换账号、网页端和第三方签名方案，说明证书、隐私、推送与账号风险。</p>
             </div>
             <div class="card-footer">
                 <span class="card-meta">2026-04-28 · 约1500字</span>
@@ -706,7 +746,7 @@
         <button class="consult-btn" onclick="toggleContact(this)">咨询</button>
         <div class="consult-popup">
             <a href="https://wa.me/14154251293" target="_blank">WhatsApp</a>
-            <a href="https://t.me/" target="_blank">Telegram</a>
+            <a href="https://t.me/zstudio_support" target="_blank" rel="noopener noreferrer">Telegram</a>
             <a onclick="copyText('yes1974g', this)">微信：yes1974g <span class="copy-hint">复制</span></a>
         </div>
     </div>
@@ -727,7 +767,12 @@
                     card.style.display = 'flex';
                 } else {
                     const cardCategory = card.getAttribute('data-category') || '';
-                    card.style.display = cardCategory === category ? 'flex' : 'none';
+                    const groups = {
+                        location: ['ios', 'android'],
+                        checkin: ['dingtalk', 'workwechat', 'camera'],
+                        social: ['social']
+                    };
+                    card.style.display = (groups[category] || []).includes(cardCategory) ? 'flex' : 'none';
                 }
             });
         }

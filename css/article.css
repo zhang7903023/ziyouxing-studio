@@ -123,6 +123,11 @@ a {
     border-bottom: 1px solid var(--border);
 }
 
+/* 兼容早期文章模板：固定导航加入后，为文章标题区预留空间 */
+.header + .article-header {
+    margin-top: 60px;
+}
+
 /* ========================================
    文章容器
    ======================================== */
@@ -502,6 +507,48 @@ a {
     margin-bottom: 28px;
 }
 
+.article-cta .cta-eyebrow {
+    margin-bottom: 10px;
+    color: rgba(255,255,255,0.76);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.wechat-checklist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    max-width: 680px;
+    margin: 0 auto 26px;
+    padding: 0;
+    list-style: none;
+}
+
+.wechat-checklist li {
+    padding: 7px 11px;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 6px;
+    color: rgba(255,255,255,0.86);
+    font-size: 13px;
+}
+
+.article-cta .btn-outline {
+    border: 1px solid rgba(255,255,255,0.35);
+    color: white;
+}
+
+.article-cta .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.wechat-copy-status {
+    min-height: 20px;
+    margin: 14px 0 0 !important;
+    color: rgba(255,255,255,0.78) !important;
+    font-size: 13px !important;
+}
+
 .cta-buttons {
     display: flex;
     gap: 12px;
@@ -668,12 +715,20 @@ a {
    页脚
    ======================================== */
 .footer {
-    padding: 48px 0 32px;
+    padding: 28px 0;
     border-top: 1px solid var(--border);
 }
 
+.footer > .container {
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 28px;
+}
+
 .footer-brand {
-    margin-bottom: 24px;
+    margin-bottom: 0;
 }
 
 .footer-name {
@@ -684,14 +739,95 @@ a {
 }
 
 .footer-tagline {
-    font-size: 14px;
-    color: var(--text-light);
+    display: none;
 }
 
 .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
     font-size: 14px;
     color: var(--text-light);
-    margin-bottom: 32px;
+    margin-bottom: 0;
+}
+
+.footer-links + .footer-links {
+    display: none;
+}
+
+/* 旗舰教程：快速判断、视频和验证说明 */
+.quick-answer {
+    margin: 28px 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #fff 0%, #f5f7fa 100%);
+}
+
+.quick-answer-label {
+    margin: 0 0 6px;
+    color: #6e6e73;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.quick-answer h2 {
+    margin: 0 0 20px;
+}
+
+.quick-answer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.quick-answer-grid div {
+    padding: 18px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .88);
+}
+
+.quick-answer-grid strong,
+.quick-answer-grid span {
+    display: block;
+}
+
+.quick-answer-grid span {
+    margin-top: 8px;
+    color: var(--text-light);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.video-embed {
+    position: relative;
+    width: 100%;
+    margin: 22px 0 32px;
+    padding-top: 56.25%;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #111;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .12);
+}
+
+.video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.test-note {
+    margin: 28px 0;
+    padding: 20px 22px;
+    border-left: 3px solid #86868b;
+    border-radius: 0 14px 14px 0;
+    background: #f5f5f7;
+}
+
+.test-note p {
+    margin: 8px 0 0;
 }
 
 .footer-links p {
@@ -701,6 +837,7 @@ a {
 .footer-bottom {
     font-size: 13px;
     color: var(--text-light);
+    white-space: nowrap;
 }
 
 /* ========================================
@@ -714,9 +851,45 @@ a {
     .mobile-menu-btn {
         display: flex;
     }
+
+    .footer {
+        padding: 22px 0;
+    }
+
+    .footer > .container {
+        grid-template-columns: 1fr auto;
+        gap: 10px 18px;
+    }
+
+    .footer-name {
+        font-size: 15px;
+    }
+
+    .footer-links {
+        justify-content: flex-end;
+        gap: 14px;
+        font-size: 13px;
+    }
+
+    .footer-links a:nth-child(3) {
+        display: none;
+    }
+
+    .footer-bottom {
+        grid-column: 1 / -1;
+        font-size: 11px;
+    }
     
     .article-container {
         padding: 40px 0 60px;
+    }
+
+    .wechat-cta .cta-buttons {
+        flex-direction: column;
+    }
+
+    .wechat-cta .btn {
+        width: 100%;
     }
     
     .article-title {
@@ -765,6 +938,14 @@ a {
 
     .app-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-answer {
+        padding: 22px 18px;
+    }
+
+    .quick-answer-grid {
+        grid-template-columns: 1fr;
     }
 }
 
