@@ -44,7 +44,7 @@
       }
     }
     </script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=20260907-r1">
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-629VG3JQRE"></script>
     <script>
@@ -57,17 +57,27 @@
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://zyxstudio.net/"},{"@type":"ListItem","position":2,"name":"联系我们","item":"https://zyxstudio.net/contact.html"}]}
     </script>
 </head>
-<body>
+<body class="contact-page">
 
 <!-- Header -->
 <header class="site-header">
-  <div class="container">
-    <a href="/" class="logo">自由行<span>Studio</span></a>
-    <nav class="nav">
-      <a href="services.html">服务</a>
-      <a href="articles/">教程</a>
-      <a href="contact.html">联系</a>
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="自由行Studio首页">自由行<span>Studio</span></a>
+    <nav class="site-nav" id="siteNav" aria-label="主导航">
+      <a href="virtual-location.html" class="nav-item">虚拟定位</a>
+      <a href="overseas-live.html" class="nav-item">海外直播</a>
+      <a href="services.html" class="nav-item">服务总览</a>
+      <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品与价格请前往 Gexiv 产品商城查看">商品商城 <span aria-hidden="true">↗</span></a>
+      <span class="store-note">商品与价格请前往 Gexiv 产品商城查看</span>
     </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="header-cta" aria-current="page">立即咨询</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="打开菜单">
+        <span class="menu-label-open">菜单</span>
+        <span class="menu-label-close">关闭</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -75,92 +85,292 @@
 <section class="page-hero">
   <div class="container">
     <div class="label">直接联系</div>
-    <h1>把设备、平台和当前问题发过来</h1>
-    <p>我会先判断你的情况，再告诉你怎么处理最有效。不需要自己研究教程。</p>
+    <h1>告诉我们你的情况</h1>
+    <p>把下面的信息一起发来，我们会先确认适配情况与适用条件，再回复你可以怎么处理。这里不需要填写密码、验证码等敏感凭据。</p>
+    <p class="contact-note-preselect" id="preselectNote">当前咨询：<b>未选择服务类型</b></p>
   </div>
 </section>
 
 <!-- Contact Section -->
 <section>
-  <div class="container" style="max-width:720px;">
-    <div class="contact-grid" style="margin-bottom:48px;">
-      <div class="contact-card">
-        <h4>微信</h4>
-        <p>yes1974g</p>
-        <button class="btn btn-outline" style="margin-top:12px;padding:6px 16px;font-size:13px;" onclick="navigator.clipboard.writeText('yes1974g').then(() => this.textContent='已复制');">复制</button>
+  <div class="container contact-layout">
+
+    <h2 style="font-size:20px;font-weight:700;margin:8px 0 4px;">直接联系</h2>
+    <p style="color:var(--zs-muted);font-size:14px;margin-bottom:10px;">想马上沟通可以用下面方式；想先把情况写清楚，也可以直接填下方表单。</p>
+
+    <div class="contact-channels">
+      <div class="contact-channel primary">
+        <span class="ch-name">微信（主要）</span>
+        <span class="ch-value">yes1974g</span>
+        <span class="ch-actions">
+          <button type="button" class="ch-btn" id="wechatCopy" data-copy="yes1974g">复制微信号</button>
+        </span>
+        <span class="ch-status" id="wechatCopyStatus" aria-live="polite"></span>
       </div>
-      <div class="contact-card">
-        <h4>WhatsApp</h4>
-        <p>+1 415 425 1293</p>
-        <a href="https://wa.me/14154251293" target="_blank" class="btn btn-outline" style="margin-top:12px;padding:6px 16px;font-size:13px;display:inline-block;">打开</a>
+      <div class="contact-channel">
+        <span class="ch-name">WhatsApp</span>
+        <a class="ch-value" href="https://wa.me/14154251293" target="_blank" rel="noopener">+1 415 425 1293 <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="contact-card">
-        <h4>邮箱</h4>
-        <p>zhang7903023@gmail.com</p>
-        <a href="mailto:zhang7903023@gmail.com" class="btn btn-outline" style="margin-top:12px;padding:6px 16px;font-size:13px;display:inline-block;">写信</a>
+      <div class="contact-channel">
+        <span class="ch-name">邮箱</span>
+        <a class="ch-value" href="mailto:zhang7903023@gmail.com">zhang7903023@gmail.com</a>
       </div>
     </div>
 
-    <h2 style="font-size:18px;font-weight:600;margin-bottom:24px;">或者填写表单</h2>
-    <form id="contactForm">
-      <div style="margin-bottom:16px;">
-        <label style="display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:var(--text);">称呼</label>
-        <input type="text" name="name" placeholder="怎么称呼你" required style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
+    <div class="contact-form-wrap">
+      <h2>填写表单</h2>
+      <p class="form-intro">提交后会在 WhatsApp 打开整理好的咨询草稿，点「发送」后我们才会收到；不会自动发送。</p>
+
+      <form id="contactForm" novalidate>
+        <div class="form-group">
+          <label for="cf-name">称呼 <span style="color:var(--zs-muted);font-weight:400;">（选填）</span></label>
+          <input type="text" id="cf-name" name="name" class="form-control" placeholder="怎么称呼你" autocomplete="name">
+          <p class="field-error" id="errName"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-contact">你的联系方式</label>
+          <input type="text" id="cf-contact" name="contact" class="form-control" placeholder="微信 / WhatsApp / 邮箱" autocomplete="off" required>
+          <p class="field-error" id="errContact">请填写你的联系方式（微信 / WhatsApp / 邮箱）。</p>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-service">想咨询的服务</label>
+          <select id="cf-service" name="service" class="form-control" required>
+            <option value="">选择服务类型</option>
+            <option value="device-location">设备与定位（虚拟定位 / 打卡 / 分身）</option>
+            <option value="overseas-live">海外直播</option>
+            <option value="overseas-sim">海外手机卡</option>
+            <option value="account-auth">账号与认证</option>
+            <option value="other">其他服务</option>
+          </select>
+          <p class="field-error" id="errService">请选择要咨询的服务类型。</p>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-message">情况说明</label>
+          <textarea id="cf-message" name="message" class="form-control" rows="5" placeholder="请按上面的提示填写情况说明" required aria-describedby="serviceHint"></textarea>
+          <p class="hint" id="serviceHint">填写提示：具体需求及使用场景。</p>
+          <p class="field-error" id="errMessage">请简单说明你的情况，方便我们先做适配判断。</p>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary" id="cfSubmit">生成并打开 WhatsApp 咨询</button>
+          <span class="form-fallback">若 WhatsApp 未自动打开，可在下方用「复制咨询内容」改用微信或邮箱发送。</span>
+        </div>
+      </form>
+
+      <div class="submit-result" id="submitResult" role="status" aria-live="polite">
+        <h3>请在 WhatsApp 中完成发送</h3>
+        <p>咨询内容已整理好，并已尝试打开 WhatsApp。请在弹出的对话中点「发送」；只有发送后我们才会收到你的消息。</p>
+        <div class="result-actions">
+          <button type="button" class="btn btn-primary" id="resendWa">重新打开 WhatsApp</button>
+          <button type="button" class="btn btn-outline" id="copyMsg">复制咨询内容</button>
+        </div>
+        <p class="result-help">WhatsApp 打不开？改用 <a href="https://wa.me/14154251293" target="_blank" rel="noopener">网页版 WhatsApp 入口</a>，或直接添加微信：<a href="javascript:void(0)" id="resultWechat" data-copy="yes1974g">yes1974g（复制）</a>，也可以 <a href="mailto:zhang7903023@gmail.com">发邮件</a>。</p>
       </div>
-      <div style="margin-bottom:16px;">
-        <label style="display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:var(--text);">联系方式</label>
-        <input type="text" name="contact" placeholder="微信 / WhatsApp / 邮箱" required style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
-      </div>
-      <div style="margin-bottom:16px;">
-        <label style="display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:var(--text);">想了解的服务</label>
-        <select name="service" required style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;">
-          <option value="">选择服务类型</option>
-          <option value="location">虚拟定位</option>
-          <option value="clock">远程打卡</option>
-          <option value="overseas">海外直播权限</option>
-          <option value="clone">App 分身</option>
-          <option value="auth">平台认证</option>
-          <option value="other">其他</option>
-        </select>
-      </div>
-      <div style="margin-bottom:24px;">
-        <label style="display:block;font-size:14px;font-weight:500;margin-bottom:6px;color:var(--text);">情况说明</label>
-        <textarea name="message" placeholder="简单说明一下你的设备和需求" rows="5" required style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:14px;resize:vertical;"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">发送</button>
-    </form>
-    <div id="formSuccess" style="display:none;margin-top:24px;padding:16px;background:var(--bg-alt);border-radius:12px;text-align:center;">
-      <h3 style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px;">已生成咨询消息</h3>
-      <p style="font-size:14px;color:var(--text-secondary);">请在打开的 WhatsApp 页面发送，我会尽快回复你。</p>
     </div>
+
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="site-footer">
-  <div class="container">
-    <p>自由行 Studio</p>
-    <p>一对一设备配置与技术支持 · 2026</p>
+<footer class="site-footer minimal-footer">
+  <div class="container footer-directory">
+    <div class="footer-brand">
+      <p>自由行 Studio</p>
+      <span>一对一设备配置与技术支持</span>
+    </div>
+    <div class="footer-links">
+      <h2>设备与定位</h2>
+      <a href="virtual-location.html">虚拟定位</a>
+      <a href="remote-checkin.html">定位异常与打卡</a>
+      <a href="phone-clone.html">iPhone 分身</a>
+    </div>
+    <div class="footer-links">
+      <h2>海外与平台</h2>
+      <a href="overseas-live.html">海外直播</a>
+      <a href="social-media-growth.html">粉丝与互动服务</a>
+      <a href="platform-auth.html">平台认证</a>
+    </div>
+    <div class="footer-links">
+      <h2>帮助</h2>
+      <a href="services.html">服务总览</a>
+      <a href="articles/">文章与教程</a>
+      <a href="https://www.gexiv.com/" target="_blank" rel="noopener">Gexiv 产品商城 ↗</a>
+      <a href="contact.html">联系我们</a>
+    </div>
   </div>
+  <p class="container footer-copyright">© 2026 自由行 Studio</p>
 </footer>
 
+<script src="js/site.js"></script>
 <script>
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    const message = [
-      '你好，我想咨询自由行Studio服务',
-      '称呼：' + (data.get('name') || ''),
-      '联系方式：' + (data.get('contact') || ''),
-      '服务类型：' + (data.get('service') || ''),
-      '情况说明：' + (data.get('message') || '')
-    ].join('\n');
-    window.open('https://wa.me/14154251293?text=' + encodeURIComponent(message), '_blank');
-    this.style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
-  });
-</script>
+(function () {
+    'use strict';
 
+    /* ---------- 服务参数映射与提示 ---------- */
+    var SERVICE_ALIAS = {
+        'device-location': 'device-location',
+        'virtual-location': 'device-location',
+        'remote-checkin': 'device-location',
+        'phone-clone': 'device-location',
+        'overseas-live': 'overseas-live',
+        'overseas-sim': 'overseas-sim',
+        'account-auth': 'account-auth',
+        'platform-auth': 'account-auth',
+        'social-media-growth': 'account-auth'
+    };
+    var SERVICE_LABEL = {
+        'device-location': '设备与定位（虚拟定位 / 打卡 / 分身）',
+        'overseas-live': '海外直播',
+        'overseas-sim': '海外手机卡',
+        'account-auth': '账号与认证',
+        'other': '其他服务'
+    };
+    var SERVICE_HINT = {
+        'device-location': '填写提示：手机型号、系统版本、使用的 App、当前问题（例如哪个功能异常、看到什么报错提示）。',
+        'overseas-live': '填写提示：平台（抖音 / 小红书 / 视频号）、所在国家或地区、使用的设备、当前问题（例如开播入口或权限提示）。',
+        'overseas-sim': '填写提示：需要的国家或地区、实体卡或 eSIM、手机型号与使用场景。',
+        'account-auth': '填写提示：具体需求及使用场景（目标平台、账号现状、想达到的结果）。',
+        'other': '填写提示：具体需求及使用场景。'
+    };
+
+    var form = document.getElementById('contactForm');
+    var serviceSelect = document.getElementById('cf-service');
+    var messageField = document.getElementById('cf-message');
+    var hint = document.getElementById('serviceHint');
+    var preselectNote = document.getElementById('preselectNote');
+    var resultBox = document.getElementById('submitResult');
+    var pendingMessage = '';
+
+    function currentService() {
+        return serviceSelect.value || '';
+    }
+
+    function updateServiceUi() {
+        var key = currentService();
+        hint.textContent = SERVICE_HINT[key] || SERVICE_HINT['other'];
+        messageField.setAttribute('placeholder', key ? '请按上方提示补充说明' : '简单说明你的设备和需求');
+        preselectNote.innerHTML = '当前咨询：<b>' + (SERVICE_LABEL[key] || '未选择服务类型') + '</b>';
+    }
+
+    // 读取 URL 参数（兼容 ?service= 与 ?s=）
+    function readParam(name) {
+        var m = new RegExp('[?&]' + name + '=([^&]+)').exec(window.location.search);
+        return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+    }
+    var raw = readParam('service') || readParam('s') || '';
+    var key = SERVICE_ALIAS[raw] || (raw === 'other' ? 'other' : '');
+    if (key) serviceSelect.value = key;
+    updateServiceUi();
+    serviceSelect.addEventListener('change', updateServiceUi);
+
+    /* ---------- 微信复制状态 ---------- */
+    var wechatCopyBtn = document.getElementById('wechatCopy');
+    var wechatCopyStatus = document.getElementById('wechatCopyStatus');
+    wechatCopyBtn.addEventListener('click', function () {
+        wechatCopyStatus.textContent = '已复制微信号 yes1974g，打开微信搜索添加即可。';
+        window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
+    });
+
+    /* ---------- 表单校验 ---------- */
+    function setError(id, hasError) {
+        var group = document.getElementById(id).closest('.form-group');
+        group.classList.toggle('has-error', hasError);
+        if (!hasError) group.classList.remove('has-error');
+    }
+    function validate() {
+        var ok = true;
+        var contact = document.getElementById('cf-contact').value.trim();
+        var service = currentService();
+        var message = messageField.value.trim();
+
+        setError('cf-contact', contact === '');
+        setError('cf-service', service === '');
+        setError('cf-message', message === '');
+        if (contact === '') ok = false;
+        if (service === '') ok = false;
+        if (message === '') ok = false;
+        return ok;
+    }
+    ['cf-contact', 'cf-message'].forEach(function (id) {
+        document.getElementById(id).addEventListener('input', function () { setError(id, false); });
+    });
+    serviceSelect.addEventListener('change', function () { setError('cf-service', false); });
+
+    /* ---------- 生成并打开 WhatsApp（真实跳转，不伪装后端成功） ---------- */
+    function compose() {
+        var label = SERVICE_LABEL[currentService()] || '其他服务';
+        var name = document.getElementById('cf-name').value.trim();
+        var contact = document.getElementById('cf-contact').value.trim();
+        var message = messageField.value.trim();
+        var lines = ['你好，我想咨询自由行Studio服务。'];
+        lines.push('服务类型：' + label);
+        if (name) lines.push('称呼：' + name);
+        lines.push('联系方式：' + contact);
+        lines.push('情况说明：' + message);
+        return lines.join('\n');
+    }
+    function openWhatsApp(text) {
+        var url = 'https://wa.me/14154251293?text=' + encodeURIComponent(text);
+        var w = window.open(url, '_blank', 'noopener');
+        if (!w) {
+            // 被浏览器拦截：明确告知，不假装成功
+            resultBox.querySelector('p').textContent = '浏览器没有自动打开 WhatsApp。请点下方「重新打开 WhatsApp」重试，或复制咨询内容改用微信 / 邮箱发送。';
+        }
+    }
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validate()) return;
+        pendingMessage = compose();
+        resultBox.style.display = 'block';
+        resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        openWhatsApp(pendingMessage);
+    });
+
+    document.getElementById('resendWa').addEventListener('click', function () {
+        if (pendingMessage) openWhatsApp(pendingMessage);
+    });
+
+    document.getElementById('copyMsg').addEventListener('click', function () {
+        var btn = this;
+        var text = pendingMessage || compose();
+        var pendingTextarea = null;
+        function showManualCopy() {
+            if (!pendingTextarea) {
+                pendingTextarea = document.createElement('textarea');
+                pendingTextarea.id = 'pendingMsgTextarea';
+                pendingTextarea.readOnly = true;
+                pendingTextarea.className = 'form-control';
+                pendingTextarea.style.cssText = 'display:none;margin-top:14px;min-height:130px;font-size:13px;line-height:1.6;';
+                pendingTextarea.setAttribute('aria-label', '完整咨询内容，可手动复制');
+                resultBox.appendChild(pendingTextarea);
+            }
+            pendingTextarea.value = text;
+            pendingTextarea.style.display = 'block';
+            pendingTextarea.focus();
+            pendingTextarea.select();
+        }
+        function ok() { btn.textContent = '已复制'; window.setTimeout(function () { btn.textContent = '复制咨询内容'; }, 2200); }
+        function fail() {
+            btn.textContent = '复制失败，请手动复制下方内容';
+            showManualCopy();
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(ok, fail);
+        } else {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy') ? ok() : fail(); } catch (err) { fail(); }
+            document.body.removeChild(ta);
+        }
+    });
+})();
+</script>
 <script src="js/analytics.js"></script>
 </body>
 </html>

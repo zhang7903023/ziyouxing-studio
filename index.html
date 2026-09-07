@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iPhone/安卓虚拟定位与定位异常配置｜自由行Studio</title>
+<title>iPhone/安卓虚拟定位与设备配置｜自由行Studio</title>
 <meta name="description" content="自由行Studio提供iPhone免越狱、安卓免ROOT虚拟定位，以及钉钉、企业微信、飞书等定位异常远程配置咨询。提交机型、系统版本和目标App后先判断是否适配。">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://zyxstudio.net/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zyxstudio.net/">
-<meta property="og:title" content="iPhone/安卓虚拟定位与定位异常配置｜自由行Studio">
+<meta property="og:title" content="iPhone/安卓虚拟定位与设备配置｜自由行Studio">
 <meta property="og:description" content="自由行Studio提供虚拟定位、定位异常、海外直播、海外手机卡与账号服务咨询，先确认设备与使用场景，再推荐合适方案。">
 <meta property="og:image" content="https://zyxstudio.net/favicon/og-image.png">
 <meta property="og:site_name" content="自由行Studio">
 <meta property="og:locale" content="zh_CN">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="iPhone/安卓虚拟定位与定位异常配置｜自由行Studio">
+<meta name="twitter:title" content="iPhone/安卓虚拟定位与设备配置｜自由行Studio">
 <meta name="twitter:description" content="虚拟定位、定位异常、海外直播、海外手机卡与账号服务咨询。">
 <meta name="twitter:image" content="https://zyxstudio.net/favicon/og-image.png">
 <link rel="icon" href="favicon/favicon.ico" sizes="any">
-<link rel="stylesheet" href="css/style.css?v=20260723-sitesync1">
+<link rel="stylesheet" href="css/style.css?v=20260907-r1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-629VG3JQRE"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -51,99 +51,120 @@
 }
 </script>
 </head>
-<body class="home-minimal">
+<body class="zs-home">
 
-<header class="site-header minimal-header">
-  <div class="container">
+<header class="site-header">
+  <div class="container header-inner">
     <a href="/" class="logo" aria-label="自由行Studio首页">自由行<span>Studio</span></a>
-    <nav class="nav" aria-label="主导航">
-      <a href="#virtual-location">虚拟定位</a>
-      <a href="#overseas-live">海外直播</a>
-      <a href="#overseas-sim">海外手机卡</a>
-      <a href="#account-services">账号服务</a>
-      <a href="https://www.gexiv.com/" class="nav-store">商品与购买 ↗</a>
+    <nav class="site-nav" id="siteNav" aria-label="主导航">
+      <a href="virtual-location.html" class="nav-item">虚拟定位</a>
+      <a href="overseas-live.html" class="nav-item">海外直播</a>
+      <a href="services.html" class="nav-item">服务总览</a>
+      <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品与价格请前往 Gexiv 产品商城查看">商品商城 <span aria-hidden="true">↗</span></a>
+      <span class="store-note">商品与价格请前往 Gexiv 产品商城查看</span>
     </nav>
-    <a href="contact.html" class="header-cta">立即咨询</a>
+    <div class="header-actions">
+      <a href="contact.html" class="header-cta">立即咨询</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="打开菜单">
+        <span class="menu-label-open">菜单</span>
+        <span class="menu-label-close">关闭</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
 </header>
 
-<aside class="site-connection" aria-label="自由行 Studio 站点导航">
-  <div class="container">
-    <p><strong>自由行 Studio 服务官网</strong><span>方案介绍、适配判断与使用教程</span></p>
-    <a href="https://www.gexiv.com/" aria-label="前往 Gexiv 产品商城查看商品和价格">
-      <span>Gexiv 产品商城</span>
-      <strong>查看商品与价格 <span aria-hidden="true">→</span></strong>
-    </a>
-  </div>
-</aside>
-
 <main>
-  <section id="virtual-location" class="minimal-hero">
-    <div class="container hero-center">
-      <h1><span class="hero-platform">iPhone · Android</span><span class="hero-solution">虚拟定位解决方案</span></h1>
-      <p class="hero-lead">根据手机型号、系统版本和使用的 App，先判断是否支持，再推荐合适的解决方式。</p>
-      <p class="hero-note">支持 iPhone、Android 常见定位修改与定位异常问题。</p>
-      <div class="hero-product-frame">
-        <img src="images/hero-two-phones-spaced-v10.png" alt="相互分开的iPhone与Android，分别显示深圳和硅谷卫星地图" width="1672" height="941">
+  <!-- 首屏：虚拟定位与设备配置 -->
+  <section class="home-hero" id="virtual-location">
+    <div class="container hero-split">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">先确认适配情况，再说明可选方案</p>
+        <h1>虚拟定位与设备配置</h1>
+        <p class="hero-aux">支持 iPhone · Android</p>
+        <p class="hero-lead">提供手机型号、系统版本和使用的 App，我们先确认适配情况，再说明可选方案。</p>
+        <div class="hero-actions">
+          <a href="contact.html?service=device-location" class="btn btn-primary">咨询设备适配</a>
+          <a href="virtual-location.html" class="text-link">查看定位方案 →</a>
+        </div>
+        <div class="hero-minor-links">
+          <span>也处理：</span>
+          <a href="remote-checkin.html">定位异常与远程打卡</a>
+          <a href="phone-clone.html">iPhone 分身 / 多账号</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="images/hero-two-phones-spaced-v10.png" alt="iPhone 与 Android 手机并列显示地图定位的示意图" width="1672" height="941" fetchpriority="high">
       </div>
     </div>
   </section>
 
-  <section class="compatibility-bar" aria-label="支持范围">
-    <div class="container compatibility-grid">
-      <div><span>设备</span><strong>iPhone / Android</strong></div>
-      <div><span>配置方式</span><strong>免越狱 / 免 ROOT 为主</strong></div>
-      <div><span>常见 App</span><strong>钉钉 · 企业微信 · 飞书 · 微信</strong></div>
-      <div><span>服务地区</span><strong>中国与海外用户</strong></div>
+  <!-- 支持范围（压缩呈现） -->
+  <section class="home-support" aria-label="支持范围">
+    <div class="container support-grid-4">
+      <div class="support-cell"><span>设备</span><strong>iPhone / Android</strong></div>
+      <div class="support-cell"><span>配置方式</span><strong>免越狱 / 免 ROOT 为主</strong></div>
+      <div class="support-cell"><span>常见 App</span><strong>钉钉 · 企业微信 · 飞书 · 微信</strong></div>
+      <div class="support-cell"><span>服务地区</span><strong>中国与海外用户</strong></div>
     </div>
   </section>
 
-  <section id="overseas-live" class="minimal-services">
+  <!-- 服务快速入口 -->
+  <section class="service-jump" aria-label="服务分类快速入口">
     <div class="container">
-      <div class="minimal-heading">
-        <h2>海外直播服务权限开通</h2>
+      <div class="jump-head">
+        <h2>按需求选择服务</h2>
+        <p>不确定选哪类时，直接咨询并描述使用场景即可。</p>
+      </div>
+      <div class="jump-grid">
+        <a href="#virtual-location"><strong>设备与定位</strong><span>虚拟定位 · 定位异常 · iPhone 分身</span></a>
+        <a href="#overseas-live"><strong>海外直播</strong><span>抖音 / 小红书 / 视频号开播咨询</span></a>
+        <a href="#overseas-sim"><strong>海外手机卡</strong><span>实体卡与 eSIM 选购指引</span></a>
+        <a href="#account-services"><strong>账号与认证</strong><span>平台账号 · 认证 · 账号增长</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 海外直播 -->
+  <section class="home-service-section" id="overseas-live">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">海外直播</p>
+        <h2>海外直播权限开通</h2>
         <p>面向视频号、抖音、小红书等内容平台，提供海外直播环境、设备配置及开播权限相关咨询。</p>
       </div>
-
-      <div class="feature-stack">
-        <a href="overseas-live.html" class="feature-row feature-row-reverse live-feature-row">
-          <div class="feature-copy">
-            <span class="feature-number">海外直播</span>
-            <h3>视频号 · 抖音 · 小红书等内容平台</h3>
-            <p>为海外直播用户提供设备环境配置、账号条件判断及开播权限申请指导。</p>
-            <p>根据平台、账号地区和使用设备，先确认条件，再提供合适的解决方案。</p>
-            <span class="text-link">发送平台与账号信息 <span aria-hidden="true">→</span></span>
+      <div class="service-row">
+        <div class="row-copy">
+          <h3>视频号 · 抖音 · 小红书</h3>
+          <p class="row-desc">根据平台、账号地区和使用设备确认条件，再提供合适的开播方案，不承诺与平台规则无关的结果。</p>
+          <ul class="needs-list">
+            <li>目标平台、所在国家或地区</li>
+            <li>使用的设备与当前遇到的具体问题</li>
+          </ul>
+          <div class="row-actions">
+            <a href="contact.html?service=overseas-live" class="btn btn-primary">咨询海外直播</a>
+            <a href="overseas-live.html" class="text-link">了解海外直播方案 →</a>
           </div>
-          <img src="images/service-overseas-live-iphone-v1.png" alt="iPhone海外直播设备环境，包含补光灯与麦克风" loading="lazy" width="1448" height="1086">
-        </a>
-      </div>
-
-      <div class="secondary-services">
-        <a href="social-media-growth.html">
-          <span>账号增长</span>
-          <h3>粉丝与互动服务</h3>
-          <p>提供 TikTok、小红书、视频号、抖音、快手等内容平台的粉丝与互动服务。</p>
-          <b aria-hidden="true">↗</b>
-        </a>
-        <a href="platform-auth.html">
-          <span>平台认证</span>
-          <h3>平台账号认证服务</h3>
-          <p>提供 TikTok 蓝 V、小红书企业专业号蓝 V、视频号与抖音个人黄 V / 企业蓝 V、快手企业蓝 V 等认证咨询。</p>
-          <b aria-hidden="true">↗</b>
-        </a>
+        </div>
+        <div class="row-visual">
+          <img src="images/service-overseas-live-iphone-v1.png" alt="海外直播设备环境示意图，包含手机、补光灯与麦克风" loading="lazy" width="1448" height="1086">
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="overseas-sim" class="minimal-sim">
+  <!-- 海外手机卡 -->
+  <section class="home-sim" id="overseas-sim">
     <div class="container sim-split">
       <div class="minimal-heading sim-heading">
+        <p class="eyebrow">海外手机卡</p>
         <h2>海外手机卡</h2>
-        <p class="sim-subtitle">海外号码，实体卡与 eSIM。</p>
+        <p class="sim-subtitle">实体卡与 eSIM</p>
         <p>提供美国、英国、香港、日本等国家和地区的实体卡、eSIM 与原生流量卡，适合留学、旅游、外派及跨境业务等使用场景。</p>
         <a href="https://www.gexiv.com/categories/%E6%B5%B7%E5%A4%96%E6%89%8B%E6%9C%BA%E5%8D%A1" class="sim-link">查看手机卡商品与价格 <span aria-hidden="true">→</span></a>
+        <p class="sim-extra">不确定选哪张卡？<a href="contact.html?service=overseas-sim">咨询手机卡选择建议</a></p>
       </div>
-      <a class="sim-product-card" href="https://www.gexiv.com/categories/%E6%B5%B7%E5%A4%96%E6%89%8B%E6%9C%BA%E5%8D%A1" aria-label="在 Gexiv 产品商城查看海外手机卡商品">
+      <a class="sim-product-card" href="https://www.gexiv.com/categories/%E6%B5%B7%E5%A4%96%E6%89%8B%E6%9C%BA%E5%8D%A1" aria-label="在 Gexiv 产品商城查看海外手机卡商品与价格">
         <img src="images/ultramobile-paygo-card.png" alt="Ultra Mobile PayGo美国实体手机卡" loading="lazy" width="540" height="630">
         <div class="sim-product-details">
           <span>热门美国卡</span>
@@ -158,72 +179,60 @@
     </div>
   </section>
 
-  <section id="account-services" class="minimal-accounts">
-    <div class="container account-split">
-      <div class="account-copy">
-        <h2>账号服务</h2>
-        <p class="account-subtitle">多平台账号</p>
-        <p>提供不同地区、类型和验证状态的平台账号，购买前确认登录设备、使用地区及售后范围。</p>
-        <div class="account-platforms" aria-label="支持的平台">
-          <span>WhatsApp</span><span>Facebook</span><span>Instagram</span><span>小红书</span><span>抖音</span>
-        </div>
-        <a href="contact.html" class="account-link">咨询账号服务 <span aria-hidden="true">→</span></a>
+  <!-- 账号与认证 -->
+  <section class="home-service-section" id="account-services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">账号与认证</p>
+        <h2>平台账号、认证与增长</h2>
+        <p>提供不同地区、类型和验证状态的平台账号咨询，以及抖音聚光、小红书专业号、视频号互选等平台功能开通与账号增长服务。</p>
       </div>
-      <div class="account-visual" aria-hidden="true">
-        <div class="account-screen account-screen-back">
-          <span>海外社交</span>
-          <div class="platform-logo-row"><i class="platform-logo logo-whatsapp" aria-hidden="true">☎</i><b>WhatsApp</b></div>
-          <div class="platform-logo-row"><i class="platform-logo logo-facebook" aria-hidden="true">f</i><b>Facebook</b></div>
-          <div class="platform-logo-row"><i class="platform-logo logo-instagram" aria-hidden="true"><em></em></i><b>Instagram</b></div>
-        </div>
-        <div class="account-screen account-screen-front">
-          <span>内容平台</span>
-          <div class="platform-logo-row"><i class="platform-logo logo-xiaohongshu" aria-hidden="true">小红书</i><b>小红书</b></div>
-          <div class="platform-logo-row"><i class="platform-logo logo-douyin" aria-hidden="true">♪</i><b>抖音</b></div>
-        </div>
+      <div class="account-platforms" aria-label="支持的平台" style="margin-top:0;">
+        <span>WhatsApp</span><span>Facebook</span><span>Instagram</span><span>小红书</span><span>抖音</span>
+      </div>
+      <div class="sub-grid">
+        <article class="sub-card">
+          <span class="sub-tag">平台认证</span>
+          <h3>聚光 / 专业号 / 平台认证</h3>
+          <p class="sub-desc">协助判断抖音聚光、小红书专业号、视频号互选等平台功能的资料、账号状态与准入条件。</p>
+          <p class="sub-need"><b>需要提供：</b>目标平台与当前后台提示</p>
+          <span class="sub-actions">
+            <a href="contact.html?service=account-auth" class="btn btn-primary">立即咨询</a>
+            <a href="platform-auth.html" class="text-link">查看方案 →</a>
+          </span>
+        </article>
+        <article class="sub-card">
+          <span class="sub-tag">账号增长</span>
+          <h3>粉丝与互动服务</h3>
+          <p class="sub-desc">提供 TikTok、小红书、视频号、抖音、快手等内容平台的粉丝与互动服务咨询。</p>
+          <p class="sub-need"><b>需要提供：</b>目标平台、账号状态与期望目标</p>
+          <span class="sub-actions">
+            <a href="contact.html?service=account-auth" class="btn btn-primary">立即咨询</a>
+            <a href="social-media-growth.html" class="text-link">查看方案 →</a>
+          </span>
+        </article>
+      </div>
+      <div class="row-actions" style="margin-top:28px;">
+        <a href="contact.html?service=account-auth" class="btn btn-primary">咨询账号与认证</a>
+        <span style="color:var(--zs-muted);font-size:14px;line-height:1.7;">账号类型与可用功能可能不同，具体信息以咨询确认结果为准。</span>
       </div>
     </div>
-    <p class="container account-note">账号类型与可用功能可能不同，具体信息以咨询确认结果为准。</p>
   </section>
 
-  <section class="more-resources" aria-labelledby="more-resources-title">
+  <!-- 按问题查找教程 -->
+  <section class="home-guides" aria-labelledby="guide-title">
     <div class="container">
       <div class="more-resources-heading">
-        <h2 id="more-resources-title">更多服务与教程</h2>
-        <p>原有服务页面和实用教程仍然保留，可根据具体问题继续查看。</p>
+        <h2 id="guide-title">按问题查找教程</h2>
+        <p>虚拟定位、打卡异常、海外直播等常见问题整理的自助指南。选择最接近你情况的场景查看。</p>
       </div>
-      <div class="more-resources-grid">
-        <a href="remote-checkin.html">
-          <span>定位异常</span>
-          <h3>远程打卡与定位排查</h3>
-          <p>钉钉、企业微信、飞书等 GPS 与 WiFi 定位问题。</p>
-          <b aria-hidden="true">→</b>
-        </a>
-        <a href="phone-clone.html">
-          <span>iPhone 服务</span>
-          <h3>应用分身与多账号</h3>
-          <p>了解 iPhone 应用分身、多开与账号环境相关服务。</p>
-          <b aria-hidden="true">→</b>
-        </a>
-        <a href="platform-auth.html">
-          <span>内容平台</span>
-          <h3>平台认证与账号服务</h3>
-          <p>查看蓝 V、黄 V 及内容平台账号认证相关咨询。</p>
-          <b aria-hidden="true">→</b>
-        </a>
-        <a href="articles/">
-          <span>教程中心</span>
-          <h3>查看全部教程</h3>
-          <p>虚拟定位、打卡异常、海外直播及平台环境指南。</p>
-          <b aria-hidden="true">→</b>
-        </a>
+      <div class="guide-quick">
+        <a href="articles/android-gps-tools-compare.html">安卓模拟位置工具怎么选？<span>查看教程 →</span></a>
+        <a href="articles/overseas-live-guide.html">海外直播权限开通条件<span>查看教程 →</span></a>
+        <a href="articles/douyin-overseas-live-fix.html">抖音海外直播异地开播排查<span>查看教程 →</span></a>
+        <a href="articles/ios-26-location-guide.html">iOS 26 定位与设备适配指南<span>查看教程 →</span></a>
       </div>
-      <div class="popular-guides" aria-label="热门问题指南">
-        <span>热门问题指南</span>
-        <a href="articles/android-gps-tools-compare.html">安卓模拟位置工具怎么选？</a>
-        <a href="articles/overseas-live-guide.html">海外直播权限开通条件</a>
-        <a href="articles/douyin-overseas-live-fix.html">抖音海外直播异地开播排查</a>
-      </div>
+      <a href="articles/" class="guides-more-link">查看全部教程 →</a>
     </div>
   </section>
 </main>
@@ -235,7 +244,7 @@
       <span>一对一设备配置与技术支持</span>
     </div>
     <div class="footer-links">
-      <h2>核心服务</h2>
+      <h2>设备与定位</h2>
       <a href="virtual-location.html">虚拟定位</a>
       <a href="remote-checkin.html">定位异常与打卡</a>
       <a href="phone-clone.html">iPhone 分身</a>
@@ -250,13 +259,14 @@
       <h2>帮助</h2>
       <a href="services.html">服务总览</a>
       <a href="articles/">文章与教程</a>
-      <a href="https://www.gexiv.com/">Gexiv 产品商城 ↗</a>
+      <a href="https://www.gexiv.com/" target="_blank" rel="noopener">Gexiv 产品商城 ↗</a>
       <a href="contact.html">联系我们</a>
     </div>
   </div>
   <p class="container footer-copyright">© 2026 自由行 Studio</p>
 </footer>
 
+<script src="js/site.js"></script>
 <script src="js/analytics.js"></script>
 </body>
 </html>
