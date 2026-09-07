@@ -2,6 +2,9 @@
  * 自由行Studio - 主脚本
  */
 
+// 标记主脚本已加载：site.js 的复制代理据此跳过，避免双重处理
+window.HAS_MAIN_JS = true;
+
 const pageKey = (() => {
     const path = window.location.pathname.replace(/\/+$/, '');
     const file = path.split('/').pop() || 'index.html';

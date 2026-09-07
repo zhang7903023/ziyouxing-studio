@@ -155,9 +155,11 @@
         </div>
 
         <div class="form-submit">
-          <button type="submit" class="btn btn-primary" id="cfSubmit">生成并打开 WhatsApp 咨询</button>
-          <span class="form-fallback">若 WhatsApp 未自动打开，可在下方用「复制咨询内容」改用微信或邮箱发送。</span>
+          <button type="submit" class="btn btn-primary" id="cfSubmit">整理信息，去 WhatsApp 发送</button>
+          <button type="button" class="btn btn-outline" id="cfWechatCopy">复制内容，去微信发送</button>
+          <span class="form-fallback">点提交后会打开 WhatsApp 并带入咨询内容，需要你手动点「发送」，不会自动发送。</span>
         </div>
+        <p class="field-error" id="errWechatCopy" style="display:none;">内容还没有整理成功：请先补全必填项，或点「复制咨询内容」手动复制。</p>
       </form>
 
       <div class="submit-result" id="submitResult" role="status" aria-live="polite">
@@ -167,7 +169,7 @@
           <button type="button" class="btn btn-primary" id="resendWa">重新打开 WhatsApp</button>
           <button type="button" class="btn btn-outline" id="copyMsg">复制咨询内容</button>
         </div>
-        <p class="result-help">WhatsApp 打不开？改用 <a href="https://wa.me/14154251293" target="_blank" rel="noopener">网页版 WhatsApp 入口</a>，或直接添加微信：<a href="javascript:void(0)" id="resultWechat" data-copy="yes1974g">yes1974g（复制）</a>，也可以 <a href="mailto:zhang7903023@gmail.com">发邮件</a>。</p>
+        <p class="result-help">WhatsApp 打不开？改用 <a href="https://wa.me/14154251293" target="_blank" rel="noopener">网页版 WhatsApp 入口</a>，或直接添加微信：<button type="button" class="text-link" id="resultWechat" data-copy="yes1974g">yes1974g（复制）</button>，也可以 <a href="mailto:zhang7903023@gmail.com">发邮件</a>。</p>
       </div>
     </div>
 
@@ -274,6 +276,12 @@
         window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
     });
 
+    /* ---------- 读屏提示（aria-live 区域复用 wechatCopyStatus） ---------- */
+    function announce(msg) {
+        wechatCopyStatus.textContent = msg;
+        window.setTimeout(function () { wechatCopyStatus.textContent = ''; }, 4000);
+    }
+
     /* ---------- 表单校验 ---------- */
     function setError(id, hasError) {
         var group = document.getElementById(id).closest('.form-group');
@@ -328,6 +336,40 @@
         resultBox.style.display = 'block';
         resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         openWhatsApp(pendingMessage);
+    });
+
+    /* ---------- 微信主路径：复制整理好的内容，由用户去微信粘贴发送 ---------- */
+    var wechatCopyErr = document.getElementById('errWechatCopy');
+    document.getElementById('cfWechatCopy').addEventListener('click', function () {
+        var btn = this;
+        var original = btn.textContent;
+        if (!validate()) {
+            wechatCopyErr.style.display = 'block';
+            announce('请先补全必填项');
+            return;
+        }
+        wechatCopyErr.style.display = 'none';
+        pendingMessage = compose();
+        function ok() {
+            btn.textContent = '已复制，请打开微信粘贴发送';
+            announce('已复制咨询内容，请打开微信粘贴发送');
+            window.setTimeout(function () { btn.textContent = original; }, 3200);
+        }
+        function fail() {
+            btn.textContent = '复制失败，请手动复制';
+            announce('复制失败，请手动复制');
+            document.getElementById('copyMsg').click();
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(pendingMessage).then(ok, fail);
+        } else {
+            var ta = document.createElement('textarea');
+            ta.value = pendingMessage;
+            document.body.appendChild(ta);
+            ta.select();
+            try { document.execCommand('copy') ? ok() : fail(); } catch (err) { fail(); }
+            document.body.removeChild(ta);
+        }
     });
 
     document.getElementById('resendWa').addEventListener('click', function () {

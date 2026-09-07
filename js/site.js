@@ -151,12 +151,14 @@
         }).catch(function () {
             setButtonLabel(btn, '复制失败，请手动复制：' + text);
             announce('复制失败，请手动复制');
+            restoreLabel(btn, original);
         });
     }
 
     // 统一代理：data-copy / .copy-btn / [data-wechat-copy]
+    // （main.js 加载时会设置 window.HAS_MAIN_JS，避免双重处理）
     document.addEventListener('click', function (e) {
-        if (HAS_MAIN_JS) return;
+        if (window.HAS_MAIN_JS) return;
         const btn = e.target.closest('[data-copy], .copy-btn, [data-wechat-copy]');
         if (!btn) return;
         const text = btn.getAttribute('data-copy')
