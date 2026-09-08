@@ -8,7 +8,9 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function main() {
   const list = await fetch(`http://127.0.0.1:${PORT}/json/list`).then(r => r.json());
   let page = list.find(t => t.type === 'page' && t.url.includes('search-console'));
-  if (!page) throw new Error('GSC tab 不存在');
+  if (!page) {
+    page = await fetch(`http://127.0.0.1:${PORT}/json/new?about%3Ablank`, { method: 'PUT' }).then(r => r.json());
+  }
   const ws = new WebSocket(page.webSocketDebuggerUrl);
   await new Promise(r => ws.onopen = r);
   let id = 0; const pending = new Map();
