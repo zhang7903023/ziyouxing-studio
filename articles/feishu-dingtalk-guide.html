@@ -40,9 +40,52 @@
 {"@context":"https://schema.org","@type":"Article","headline":"飞书/钉钉打卡定位异常怎么办？GPS、WiFi与蓝牙排查指南","description":"按 GPS、WiFi、蓝牙、权限和企业考勤规则排查飞书与钉钉打卡不在范围、定位失败等问题。","author":{"@type":"Organization","name":"自由行Studio"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-04-25","dateModified":"2026-08-13","mainEntityOfPage":"https://zyxstudio.net/articles/feishu-dingtalk-guide.html"}
 </script>
 
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"飞书或钉钉为什么提示不在打卡范围内？","acceptedAnswer":{"@type":"Answer","text":"常见原因包括定位权限未开启、精确位置关闭、室内定位偏移、考勤范围调整，或企业同时要求指定 WiFi、蓝牙与其他校验。"}},{"@type":"Question","name":"GPS 打卡和 WiFi 打卡有什么区别？","acceptedAnswer":{"@type":"Answer","text":"GPS 打卡依据手机位置和地理围栏判断；WiFi 打卡依据企业管理员配置的办公网络判断，两者需要分别排查。"}},{"@type":"Question","name":"公司使用蓝牙打卡时应该检查什么？","acceptedAnswer":{"@type":"Answer","text":"蓝牙打卡通常依赖现场 Beacon 等设备，应先确认蓝牙权限、距离、设备状态及管理员配置，单独调整 GPS 不能解决蓝牙条件。"}},{"@type":"Question","name":"更新系统后打卡定位异常怎么办？","acceptedAnswer":{"@type":"Answer","text":"重新检查定位、精确位置、蓝牙和后台运行权限，更新飞书或钉钉后重启手机；仍有异常时让管理员核对考勤规则。"}}]}
-</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "飞书或钉钉为什么提示不在打卡范围内？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "常见原因包括定位权限未开启、精确位置关闭、室内定位偏移、考勤范围调整，或企业同时要求指定 WiFi、蓝牙与其他校验。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "GPS 打卡和 WiFi 打卡有什么区别？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "GPS 打卡依据手机位置和地理围栏判断；WiFi 打卡依据企业管理员配置的办公网络判断，两者需要分别排查。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "公司使用蓝牙打卡时应该检查什么？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "蓝牙打卡通常依赖现场 Beacon 等设备，应先确认蓝牙权限、距离、设备状态及管理员配置，单独调整 GPS 不能解决蓝牙条件。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "更新系统后打卡定位异常怎么办？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "重新检查定位、精确位置、蓝牙和后台运行权限，更新飞书或钉钉后重启手机；仍有异常时让管理员核对考勤规则。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "有没有开源的 GitHub 打卡虚拟定位项目可以用？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "GitHub 上确实有一些模拟位置类的开源项目，但要注意三点：一是多数需要自己编译安装，对非技术用户门槛高；二是通用性强但缺少针对考勤场景的适配，WiFi 校验、拍照水印等规则经常无法覆盖；三是开源项目的更新跟不上平台风控变化，稳定性没有保障。建议先用开源项目理解原理，实际使用优先选择持续维护的方案。"
+   }
+  }
+ ]
+}</script>
 </head>
 <body>
     <header class="site-header">
@@ -240,6 +283,8 @@
                 <div class="faq-item">
                     <h3>Q：飞书和钉钉能同时改定位吗？</h3>
                     <p>不一定。两套平台可能采用不同考勤规则，应分别查看打卡页面，并由管理员确认 GPS、WiFi、蓝牙等条件。</p>
+<h3>Q：有没有开源的 GitHub 打卡虚拟定位项目可以用？</h3>
+<p>GitHub 上确实有一些模拟位置类的开源项目，但多数需要自己编译安装，对非技术用户门槛高；且缺少考勤场景适配，WiFi 校验、拍照水印等规则经常无法覆盖，更新也跟不上平台风控变化。建议先用开源项目理解原理，实际使用优先选择持续维护的方案。</p>
                 </div>
                 <div class="faq-item">
                     <h3>Q：公司用的是蓝牙打卡，GPS改定位有用吗？</h3>

@@ -45,13 +45,44 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Article","headline":"钉钉 WiFi 打卡和 GPS 打卡有什么区别？定位到了仍失败的原因","description":"钉钉打卡中 GPS、WiFi、IP、拍照外勤几类规则的区别，以及地图定位到了公司但打卡仍然失败的常见原因。","author":{"@type":"Organization","name":"自由行Studio"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-05-24","dateModified":"2026-05-24","mainEntityOfPage":"https://zyxstudio.net/articles/dingtalk-wifi-gps-checkin.html"}
 </script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"钉钉 WiFi 打卡和 GPS 打卡有什么区别？","acceptedAnswer":{"@type":"Answer","text":"GPS 打卡主要判断手机坐标是否在考勤范围内，WiFi 打卡会判断是否连接或识别到公司指定网络。部分公司会同时要求 GPS 和 WiFi 满足。"}},
-{"@type":"Question","name":"为什么定位到了公司，钉钉还是不能打卡？","acceptedAnswer":{"@type":"Answer","text":"可能是公司启用了 WiFi、IP、拍照水印或设备风控。地图显示正常只说明普通地图应用读取的位置正常，不代表钉钉考勤规则全部通过。"}},
-{"@type":"Question","name":"人在海外可以处理钉钉打卡异常吗？","acceptedAnswer":{"@type":"Answer","text":"需要先确认手机型号、系统版本、公司打卡方式以及当前报错。纯 GPS 场景和 GPS+WiFi 场景处理方式不同。"}}
-]}
-</script>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "钉钉 WiFi 打卡和 GPS 打卡有什么区别？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "GPS 打卡主要判断手机坐标是否在考勤范围内，WiFi 打卡会判断是否连接或识别到公司指定网络。部分公司会同时要求 GPS 和 WiFi 满足。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "为什么定位到了公司，钉钉还是不能打卡？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "可能是公司启用了 WiFi、IP、拍照水印或设备风控。地图显示正常只说明普通地图应用读取的位置正常，不代表钉钉考勤规则全部通过。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "人在海外可以处理钉钉打卡异常吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "需要先确认手机型号、系统版本、公司打卡方式以及当前报错。纯 GPS 场景和 GPS+WiFi 场景处理方式不同。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "有没有开源的 GitHub 打卡虚拟定位项目可以用？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "GitHub 上确实有一些模拟位置类的开源项目，但要注意三点：一是多数需要自己编译安装，对非技术用户门槛高；二是通用性强但缺少针对考勤场景的适配，WiFi 校验、拍照水印等规则经常无法覆盖；三是开源项目的更新跟不上平台风控变化，稳定性没有保障。建议先用开源项目理解原理，实际使用优先选择持续维护的方案。"
+   }
+  }
+ ]
+}</script>
 </head>
 <body>
     <header class="site-header">
