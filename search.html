@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>站内搜索 | 自由行Studio - 虚拟定位 · 微信双开 · 打卡定位教程</title>
+    <meta name="description" content="搜索自由行Studio全部教程：虚拟定位、微信双开、钉钉企业微信打卡定位、水印相机、海外直播。">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://zyxstudio.net/search.html">
+    <link rel="stylesheet" href="css/style.css?v=20260907-r1">
+    <style>
+        .search-wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+        .search-box { display: flex; gap: 8px; margin-bottom: 8px; }
+        .search-box input {
+            flex: 1; padding: 12px 16px; font-size: 16px;
+            border: 2px solid #d8dee9; border-radius: 10px; outline: none;
+        }
+        .search-box input:focus { border-color: #2f6fed; }
+        .search-box button {
+            padding: 12px 22px; font-size: 15px; border: 0; border-radius: 10px;
+            background: #2f6fed; color: #fff; cursor: pointer;
+        }
+        .search-hint { font-size: 13px; color: #8a94a6; margin: 0 0 20px; }
+        .result { padding: 14px 0; border-bottom: 1px solid #eef1f5; }
+        .result h3 { margin: 0 0 4px; font-size: 17px; }
+        .result h3 a { color: #1a40a0; text-decoration: none; }
+        .result h3 a:hover { text-decoration: underline; }
+        .result p { margin: 0; font-size: 14px; color: #5b6472; line-height: 1.6; }
+        .result .url { font-size: 12px; color: #8a94a6; margin-bottom: 2px; word-break: break-all; }
+        .empty { text-align: center; color: #8a94a6; padding: 40px 0; font-size: 15px; }
+        .hot { margin-top: 28px; }
+        .hot h2 { font-size: 15px; color: #5b6472; margin: 0 0 10px; }
+        .hot a { display: inline-block; margin: 0 8px 8px 0; padding: 6px 14px; font-size: 14px;
+                 background: #f2f5fa; border-radius: 999px; color: #1a40a0; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo" aria-label="自由行Studio首页">自由行<span>Studio</span></a>
+            <nav class="site-nav" id="siteNav" aria-label="主导航">
+                <a href="virtual-location.html" class="nav-item">虚拟定位</a>
+                <a href="overseas-live.html" class="nav-item">海外直播</a>
+                <a href="services.html" class="nav-item">服务总览</a>
+  <a href="search.html" class="nav-item">搜索</a>
+                <a href="articles/" class="nav-item">教程</a>
+                <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品与价格请前往 Gexiv 产品商城查看">商品商城 <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="search-wrap">
+        <h1 style="font-size:24px;margin:0 0 16px;">站内搜索</h1>
+        <div class="search-box">
+            <input id="q" type="search" placeholder="搜教程关键词，如：微信双开、钉钉定位、水印相机" autofocus autocomplete="off">
+            <button id="go" type="button">搜索</button>
+        </div>
+        <p class="search-hint">输入空格可分隔多个词，需全部命中才会出现在结果里</p>
+        <div id="results"><div class="empty">输入关键词开始搜索</div></div>
+        <div class="hot">
+            <h2>热门搜索</h2>
+            <a href="#" data-q="微信双开">微信双开</a>
+            <a href="#" data-q="iOS 26 改定位">iOS 26 改定位</a>
+            <a href="#" data-q="钉钉 打卡 定位">钉钉打卡定位</a>
+            <a href="#" data-q="水印相机">水印相机</a>
+            <a href="#" data-q="安卓 免ROOT">安卓免ROOT</a>
+            <a href="#" data-q="视频号 海外直播">视频号海外直播</a>
+        </div>
+    </main>
+
+    <script>
+    (function () {
+        var DATA = null;
+        var box = document.getElementById('q');
+        var out = document.getElementById('results');
+
+        fetch('/search-index.json').then(function (r) { return r.json(); }).then(function (d) { DATA = d; });
+
+        function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+
+        function search(q) {
+            var terms = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+            if (!terms.length || !DATA) return [];
+            return DATA.map(function (p) {
+                var t = (p.t || '').toLowerCase(), d = (p.d || '').toLowerCase(), x = (p.x || '').toLowerCase();
+                var score = 0, all = true;
+                terms.forEach(function (term) {
+                    var s = 0;
+                    if (t.indexOf(term) > -1) s += 10;
+                    if (d.indexOf(term) > -1) s += 5;
+                    if (x.indexOf(term) > -1) s += 1;
+                    if (!s) all = false;
+                    score += s;
+                });
+                if (!all) return null;
+                var snippet = p.d || '';
+                var i = x.indexOf(terms[0]);
+                if (i > -1) snippet = (i > 40 ? '…' : '') + x.slice(Math.max(0, i - 40), i + 120) + '…';
+                return { score: score, p: p, snippet: snippet };
+            }).filter(Boolean).sort(function (a, b) { return b.score - a.score; }).slice(0, 10);
+        }
+
+        function render(q) {
+            var rs = search(q);
+            if (!q.trim()) { out.innerHTML = '<div class="empty">输入关键词开始搜索</div>'; return; }
+            if (!rs.length) { out.innerHTML = '<div class="empty">没有找到「' + esc(q) + '」相关内容，换个词试试</div>'; return; }
+            out.innerHTML = rs.map(function (r) {
+                var url = r.p.u ? '/' + r.p.u : '/';
+                return '<div class="result"><div class="url">zyxstudio.net/' + esc(r.p.u || '') + '</div>' +
+                    '<h3><a href="' + url + '">' + esc(r.p.t) + '</a></h3>' +
+                    '<p>' + esc(r.snippet) + '</p></div>';
+            }).join('');
+        }
+
+        function run() { var q = box.value; render(q); if (q.trim()) history.replaceState(null, '', '?q=' + encodeURIComponent(q.trim())); }
+        document.getElementById('go').addEventListener('click', run);
+        box.addEventListener('keydown', function (e) { if (e.key === 'Enter') run(); });
+        document.querySelectorAll('.hot a').forEach(function (a) {
+            a.addEventListener('click', function (e) { e.preventDefault(); box.value = a.dataset.q; run(); });
+        });
+        var init = new URLSearchParams(location.search).get('q');
+        if (init) { box.value = init; render(init); }
+    })();
+    </script>
+</body>
+</html>
