@@ -74,7 +74,10 @@
         var box = document.getElementById('q');
         var out = document.getElementById('results');
 
-        fetch('/search-index.json').then(function (r) { return r.json(); }).then(function (d) { DATA = d; });
+        fetch('/search-index.json').then(function (r) { return r.json(); }).then(function (d) {
+            DATA = d;
+            if (box.value.trim()) render(box.value);
+        });
 
         function esc(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
 
