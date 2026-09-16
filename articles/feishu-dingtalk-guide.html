@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>飞书/钉钉打卡虚拟定位怎么设置？定位异常排查与方案 | 自由行Studio</title>
-    <meta name="description" content="飞书或钉钉打卡提示不在范围内、定位失败怎么办？按 GPS、WiFi、蓝牙、权限和企业考勤规则逐项排查，适用于 iPhone 与 Android。">
-    <meta name="keywords" content="飞书打卡定位异常,钉钉打卡定位异常,飞书不在打卡范围内,钉钉不在打卡范围内,飞书定位失败,钉钉定位失败,GPS打卡,WiFi打卡,蓝牙打卡">
+    <title>钉钉/飞书打卡虚拟定位怎么设置？GitHub 开源方案+免root教程</title>
+    <meta name="description" content="钉钉打卡虚拟定位 2026 最新做法：先对比 GitHub 上的开源方案与风险，再给免 root / 免越狱的设置步骤和定位异常排查清单，飞书打卡同样适用。">
+    <meta name="keywords" content="钉钉打卡虚拟定位,飞书打卡定位,钉钉打卡虚拟定位github,飞书打卡github,钉钉虚拟定位怎么设置,钉钉免root打卡,企业微信打卡虚拟定位,钉钉打卡定位异常,飞书打卡定位异常,飞书不在打卡范围内,钉钉不在打卡范围内,飞书定位失败,钉钉定位失败,GPS打卡,WiFi打卡,蓝牙打卡,安卓虚拟定位免root">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://zyxstudio.net/articles/feishu-dingtalk-guide.html">
 
     <meta property="og:image" content="https://zyxstudio.net/favicon/og-image.png">
-    <meta property="og:title" content="飞书/钉钉打卡定位异常排查指南 | 自由行Studio">
-    <meta property="og:description" content="按 GPS、WiFi、蓝牙、权限和考勤规则排查飞书与钉钉打卡异常。">
+    <meta property="og:title" content="钉钉/飞书打卡虚拟定位怎么设置？GitHub 开源方案+免root教程">
+    <meta property="og:description" content="先对比 GitHub 上的四类开源方案与各自局限，再给免 root / 免越狱的设置步骤和定位异常排查清单。">
     <meta property="og:type" content="article">
 
     <link rel="stylesheet" href="../css/style.css">
@@ -37,7 +37,7 @@
 ]}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"飞书/钉钉打卡虚拟定位怎么设置？定位异常排查与方案","description":"按 GPS、WiFi、蓝牙、权限和企业考勤规则排查飞书与钉钉打卡不在范围、定位失败等问题。","author":{"@type":"Organization","name":"自由行Studio"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-04-25","dateModified":"2026-08-13","mainEntityOfPage":"https://zyxstudio.net/articles/feishu-dingtalk-guide.html"}
+{"@context":"https://schema.org","@type":"Article","headline":"钉钉/飞书打卡虚拟定位怎么设置？GitHub 开源方案+免root教程","description":"先对比 GitHub 上的四类开源方案与各自局限，再给免 root / 免越狱的设置步骤和定位异常排查清单，飞书打卡同样适用。","author":{"@type":"Organization","name":"自由行Studio"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-04-25","dateModified":"2026-09-16","mainEntityOfPage":"https://zyxstudio.net/articles/feishu-dingtalk-guide.html"}
 </script>
 
 <script type="application/ld+json">{
@@ -145,7 +145,8 @@
                     <li><a href="#challenge">二、常见校验条件</a></li>
                     <li><a href="#feishu">三、飞书定位异常排查</a></li>
                     <li><a href="#dingtalk">四、钉钉定位异常排查</a></li>
-                    <li><a href="#qa">五、常见问题</a></li>
+                    <li><a href="#github">五、GitHub 开源方案对比</a></li>
+                    <li><a href="#qa">六、常见问题</a></li>
                 </ul>
             </div>
 
@@ -281,14 +282,65 @@
                 <li><strong>蓝牙打卡（钉钉）：</strong>联系我们评估定制方案</li>
             </ul>
 
-            <h2 id="qa">五、常见问题</h2>
+            <h2 id="github">五、GitHub 开源方案对比：哪类能用、哪类不建议碰</h2>
+
+            <p>搜「钉钉打卡虚拟定位 GitHub」的人，通常是想找一个免费、自己动手就能跑通的方案。GitHub 上确实有这类项目，但它们的实际可用性差别很大——先按下面的分类判断，能省掉大量试错时间。</p>
+
+            <div class="compare-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>项目类型</th>
+                            <th>典型做法</th>
+                            <th>能覆盖的场景</th>
+                            <th>主要问题</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>模拟位置（Mock Location）类</td>
+                            <td>安卓端第三方模拟位置应用，需在开发者选项里指定为「模拟位置信息应用」</td>
+                            <td>只读取系统 GPS 的应用</td>
+                            <td>钉钉/飞书常优先取系统真实定位，或直接识别开发者选项与模拟位置标记</td>
+                        </tr>
+                        <tr>
+                            <td>Xposed / LSPosed 模块类</td>
+                            <td>Hook 定位接口，把返回值替换成目标坐标</td>
+                            <td>安卓单一应用生效，精度可控</td>
+                            <td><strong>需要 root</strong>；App 版本一更新模块就失效，维护者常停更；企业风控可检测 Hook 环境</td>
+                        </tr>
+                        <tr>
+                            <td>iOS GPX 注入类</td>
+                            <td>用 Xcode 或开源工具注入 GPX 轨迹文件，改系统级定位</td>
+                            <td>iOS 全局定位，App 读到的是目标坐标</td>
+                            <td>需要连电脑与开发者环境；重启后失效；新系统版本经常把小版本修好</td>
+                        </tr>
+                        <tr>
+                            <td>接口篡改 / 服务端类</td>
+                            <td>抓包后伪造上报接口的坐标参数</td>
+                            <td>理论上可绕过客户端检测</td>
+                            <td>证书校验、请求签名、行为风控基本都会拦下来，且明确违反公司考勤制度</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout callout-warning">
+                <strong>为什么不建议直接拿开源项目去打卡：</strong>开源项目多由个人维护，更新节奏跟不上钉钉、飞书的风控变化；多数只处理 GPS 一个维度，而企业启用的 WiFi、蓝牙 Beacon、设备指纹、打卡时间窗校验都覆盖不到；自行 root 或越狱还会削弱手机本身的支付与账号安全。更合适的用法是把它当作理解原理的参考资料。
+            </div>
+
+            <p>如果你的打卡条件确实只有 GPS、又想用开源项目试手，正确顺序是：先在备用机（非主力机）上验证打卡页面是否真的读到了改动后的定位，确认它属于「系统级定位」还是「App 内独立校验」，再决定要不要投入时间。跳过这一步直接装模块，基本是在白折腾。</p>
+
+            <h2 id="qa">六、常见问题</h2>
 
             <div class="faq">
                 <div class="faq-item">
                     <h3>Q：飞书和钉钉能同时改定位吗？</h3>
                     <p>不一定。两套平台可能采用不同考勤规则，应分别查看打卡页面，并由管理员确认 GPS、WiFi、蓝牙等条件。</p>
-<h3>Q：有没有开源的 GitHub 打卡虚拟定位项目可以用？</h3>
-<p>GitHub 上确实有一些模拟位置类的开源项目，但多数需要自己编译安装，对非技术用户门槛高；且缺少考勤场景适配，WiFi 校验、拍照水印等规则经常无法覆盖，更新也跟不上平台风控变化。建议先用开源项目理解原理，实际使用优先选择持续维护的方案。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Q：有没有开源的 GitHub 打卡虚拟定位项目可以用？</h3>
+                    <p>有，但可用性差别很大：模拟位置类和 Xposed 模块类只覆盖安卓且容易被识别，iOS GPX 注入类需要连电脑、重启后失效，接口篡改类基本会被签名与风控拦下。四类方案的具体对比与局限见上文<a href="#github">第五节</a>。建议先用开源项目理解原理，实际使用优先选择持续维护的方案。</p>
                 </div>
                 <div class="faq-item">
                     <h3>Q：公司用的是蓝牙打卡，GPS改定位有用吗？</h3>
