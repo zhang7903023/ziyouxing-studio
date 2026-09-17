@@ -57,16 +57,7 @@
 {"@context":"https://schema.org","@type":"VideoObject","name":"iPhone微信双开+虚拟定位实测｜iOS稳定不掉签","description":"演示 iPhone 上同时登录两个微信的安装与验证流程，以及定位相关的配套设置。","thumbnailUrl":["https://i.ytimg.com/vi/9drq4FmpuCM/maxresdefault.jpg"],"uploadDate":"2024-06-18","embedUrl":"https://www.youtube.com/embed/9drq4FmpuCM","contentUrl":"https://www.youtube.com/watch?v=9drq4FmpuCM"}
 </script>
 
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"微信多开 mac 最多能开几个？","acceptedAnswer":{"@type":"Answer","text":"用 open -n 方式启动，理论上没有硬性上限，每执行一次就多一个独立进程，实际能开几个取决于电脑内存。2 到 3 个通常很稳定，开到 4 个以上时内存占用明显上升，且部分微信版本会主动限制第二个之后的实例启动。"}},
-{"@type":"Question","name":"电脑登入两个微信，会影响手机上的微信吗？","acceptedAnswer":{"@type":"Answer","text":"会，如果电脑登录的是和手机同一个微信号。微信的规则是同一帐号在同一设备类型上只能有一个在线实例，电脑端登录通常会顶掉手机端的登录状态。想让手机和电脑同时在线，需要在电脑上登录另一个微信号，或者用微信官方支持的「手机 + 电脑」组合方式，具体表现随版本变化。"}},
-{"@type":"Question","name":"微信多开在电脑上要花钱吗？","acceptedAnswer":{"@type":"Answer","text":"macOS 的 open -n 命令和 Windows 的批处理脚本都是系统自带能力，不需要付费，也不需要安装任何第三方软件。市面上收费的「微信多开助手电脑版」大多只是把这些命令打包成了图形界面，功能上并没有额外优势。"}},
-{"@type":"Question","name":"微信多开电脑版下载要注意什么？","acceptedAnswer":{"@type":"Answer","text":"只从微信官方网站下载客户端。网上流传的「微信多开版客户端」「微信分身电脑版」多数是重新打包过的安装程序，可能捆绑推广软件或注入代码，风险和收益完全不成比例。桌面端多开用系统命令就够了，没有理由去下载修改版。"}},
-{"@type":"Question","name":"为什么 open -n 打不开第二个微信了？","acceptedAnswer":{"@type":"Answer","text":"微信 Mac 版在多个版本中加入了多开检测，检测到已有实例时会直接退出新进程。可以先尝试把客户端更新到最新版或降到较早的稳定版本；如果仍然无效，说明该版本已屏蔽此方式，此时改用复制应用副本的方式（复制 WeChat.app 并重命名后再启动）有时可以绕过，但这属于非官方做法，随版本变化。"}},
-{"@type":"Question","name":"微信多开和微信双开是一回事吗？","acceptedAnswer":{"@type":"Answer","text":"是同一件事，只是叫法不同。双开通常指两个，多开泛指两个及以上。在电脑上，很多人口中的「双开」其实只是同一台电脑切换两个帐号，并不能同时接收两边消息；真正的同时在线需要两个独立进程。"}}
-]}
-</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"微信多开 mac 最多能开几个？","acceptedAnswer":{"@type":"Answer","text":"用 open -n 启动，理论上没有硬性上限，每执行一次就多一个独立进程，实际能开几个主要取决于电脑内存。2 到 3 个通常很稳定，开到 4 个以上时内存占用上升明显，而且部分微信版本会主动限制第二个之后的实例启动。"}},{"@type":"Question","name":"电脑登入两个微信，会影响手机上的微信吗？","acceptedAnswer":{"@type":"Answer","text":"会，前提是电脑登录了和手机同一个微信号。微信的规则是同一帐号在同一设备类型上只能有一个在线实例，电脑端登录通常会顶掉手机端的登录状态。想让手机和电脑同时在线，需要在电脑上登录另一个微信号。"}},{"@type":"Question","name":"微信多开在电脑上要花钱吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。macOS 的 open -n 和 Windows 的批处理脚本都是系统自带能力，不用装任何第三方软件。市面上收费的「微信多开助手电脑版」大多只是把这些命令打包成了图形界面，功能上并没有额外优势。"}},{"@type":"Question","name":"网上那些「微信多开电脑版下载」能装吗？","acceptedAnswer":{"@type":"Answer","text":"不建议。只从微信官方网站下载客户端。流传的「微信多开版客户端」「微信分身电脑版」多数是重新打包过的安装程序，可能捆绑推广软件或注入代码，风险和收益完全不成比例。桌面端多开用系统命令就够了。"}},{"@type":"Question","name":"为什么 open -n 突然打不开第二个微信了？","acceptedAnswer":{"@type":"Answer","text":"先检查是不是有残留进程没退干净（在「活动监视器」里搜 WeChat 全部结束掉），再重新执行命令。如果确认没有残留仍然无效，说明当前客户端版本已经屏蔽了这种方式。可以尝试更新或降级客户端版本，但不要为此安装来源不明的补丁。"}},{"@type":"Question","name":"微信多开 github 上的开源方案靠谱吗？","acceptedAnswer":{"@type":"Answer","text":"GitHub 上确实有一些桌面端微信多开的小工具，原理和上面几条命令基本一致，属于「把 open -n 做成图形界面」。判断标准很简单：源码是否公开、是否需要输入账号密码、是否要求安装到系统目录。只调用系统命令启动客户端的工具风险低；要求读取或输入你的微信凭据的，一律不要用。"}},{"@type":"Question","name":"微信多开和微信双开是一回事吗？","acceptedAnswer":{"@type":"Answer","text":"是同一件事，只是叫法不同：双开通常指两个，多开泛指两个及以上。在电脑上，很多人口中的「双开」其实只是同一台电脑切换两个帐号，并不能同时接收两边消息；真正的同时在线需要两个独立进程。"}}]}</script>
 </head>
 <body>
     <header class="site-header">

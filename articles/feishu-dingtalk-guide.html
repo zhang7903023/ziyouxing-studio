@@ -41,52 +41,7 @@
 {"@context":"https://schema.org","@type":"Article","headline":"钉钉/飞书打卡虚拟定位怎么设置？GitHub 开源方案+免root教程","description":"先对比 GitHub 上的四类开源方案与各自局限，再给免 root / 免越狱的设置步骤和定位异常排查清单，飞书打卡同样适用。","author":{"@type":"Organization","name":"自由行Studio"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-04-25","dateModified":"2026-09-16","mainEntityOfPage":"https://zyxstudio.net/articles/feishu-dingtalk-guide.html"}
 </script>
 
-<script type="application/ld+json">{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
-  {
-   "@type": "Question",
-   "name": "飞书或钉钉为什么提示不在打卡范围内？",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "常见原因包括定位权限未开启、精确位置关闭、室内定位偏移、考勤范围调整，或企业同时要求指定 WiFi、蓝牙与其他校验。"
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "GPS 打卡和 WiFi 打卡有什么区别？",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "GPS 打卡依据手机位置和地理围栏判断；WiFi 打卡依据企业管理员配置的办公网络判断，两者需要分别排查。"
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "公司使用蓝牙打卡时应该检查什么？",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "蓝牙打卡通常依赖现场 Beacon 等设备，应先确认蓝牙权限、距离、设备状态及管理员配置，单独调整 GPS 不能解决蓝牙条件。"
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "更新系统后打卡定位异常怎么办？",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "重新检查定位、精确位置、蓝牙和后台运行权限，更新飞书或钉钉后重启手机；仍有异常时让管理员核对考勤规则。"
-   }
-  },
-  {
-   "@type": "Question",
-   "name": "有没有开源的 GitHub 打卡虚拟定位项目可以用？",
-   "acceptedAnswer": {
-    "@type": "Answer",
-    "text": "GitHub 上确实有一些模拟位置类的开源项目，但要注意三点：一是多数需要自己编译安装，对非技术用户门槛高；二是通用性强但缺少针对考勤场景的适配，WiFi 校验、拍照水印等规则经常无法覆盖；三是开源项目的更新跟不上平台风控变化，稳定性没有保障。建议先用开源项目理解原理，实际使用优先选择持续维护的方案。"
-   }
-  }
- ]
-}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"飞书和钉钉能同时改定位吗？","acceptedAnswer":{"@type":"Answer","text":"不一定。两套平台可能采用不同考勤规则，应分别查看打卡页面，并由管理员确认 GPS、WiFi、蓝牙等条件。"}},{"@type":"Question","name":"有没有开源的 GitHub 打卡虚拟定位项目可以用？","acceptedAnswer":{"@type":"Answer","text":"有，但可用性差别很大：模拟位置类和 Xposed 模块类只覆盖安卓且容易被识别，iOS GPX 注入类需要连电脑、重启后失效，接口篡改类基本会被签名与风控拦下。四类方案的具体对比与局限见上文第五节。建议先用开源项目理解原理，实际使用优先选择持续维护的方案。"}},{"@type":"Question","name":"公司用的是蓝牙打卡，GPS改定位有用吗？","acceptedAnswer":{"@type":"Answer","text":"蓝牙打卡通常依赖现场 Beacon 等设备，单独调整 GPS 不能满足蓝牙条件。先检查蓝牙权限、距离和管理员配置。"}},{"@type":"Question","name":"飞书的定位比钉钉更难改吗？","acceptedAnswer":{"@type":"Answer","text":"不能只按平台判断。真正影响处理方式的是企业启用的考勤规则，以及手机权限、系统版本和现场环境。"}},{"@type":"Question","name":"iOS 26.4对飞书/钉钉有影响吗？","acceptedAnswer":{"@type":"Answer","text":"兼容情况会随 App 与系统小版本变化。更新后先重新检查定位、精确位置、蓝牙和后台运行权限，再测试打卡页面。"}},{"@type":"Question","name":"改定位打卡后公司会收到提醒吗？","acceptedAnswer":{"@type":"Answer","text":"无法承诺。企业的考勤配置和异常提醒方式不同，应遵守公司制度；遇到正常定位故障时，保留截图并联系管理员核对。"}}]}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"VideoObject","name":"安卓虚拟定位教程｜钉钉企业微信定位设置实测","description":"自由行Studio 真机实测：虚拟定位、微信双开、打卡定位实操教程。","thumbnailUrl":["https://i.ytimg.com/vi/GwCgYA73Fqc/hqdefault.jpg"],"uploadDate":"2024-09-10","embedUrl":"https://www.youtube-nocookie.com/embed/GwCgYA73Fqc","publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"}}
 </script>
