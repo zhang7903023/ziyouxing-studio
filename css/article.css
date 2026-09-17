@@ -954,3 +954,55 @@ a {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========================================
+   提示框（callout）与代码块
+   ======================================== */
+
+.callout {
+    margin: 24px 0;
+    padding: 18px 22px;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-lg);
+    background: #F7F8FA;
+}
+
+.callout p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text);
+}
+
+.callout p + p {
+    margin-top: 10px;
+}
+
+.callout-warning {
+    border-left-color: #C9822B;
+    background: #FDF9F2;
+}
+
+.callout-warning strong {
+    color: #8A5A16;
+}
+
+article code,
+.article-container code {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #F2F3F5;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: break-all;
+    color: #2B3A4A;
+}
+
+.article-container table.compare-table + p,
+.article-container .callout + h3 {
+    margin-top: 26px;
+}

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微信双开怎么弄？iPhone/安卓/Mac/电脑 全平台方法对比</title>
+    <meta name="description" content="微信双开怎么弄？同一台设备登录两个微信，方法完全取决于系统：安卓多数自带应用分身，iPhone 官方不支持需第三方方案，Mac 与 Windows 有非官方方法。本文对比四个平台的设置路径、稳定性与账号风险，并说明两个微信的消息和记录为什么不互通。">
+    <meta name="keywords" content="微信双开怎么弄,微信双开,微信多开,微信分身,微信双开安卓,微信多开安卓,微信分身安卓,微信双开电脑,微信双开mac,两个微信,一个电话两个微信,应用分身,微信分身版,双开助手,微信多开电脑,微信雙開">
+    <meta name="author" content="自由行Studio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zyxstudio.net/articles/wechat-clone-all-platforms.html">
+
+    <!-- ✦ Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zyxstudio.net/articles/wechat-clone-all-platforms.html">
+    <meta property="og:title" content="微信双开怎么弄？iPhone/安卓/Mac/电脑 全平台方法对比">
+    <meta property="og:description" content="安卓多数自带应用分身，iPhone 官方不支持，Mac 与 Windows 有非官方方法。四平台可行做法与账号风险对比。">
+    <meta property="og:image" content="https://zyxstudio.net/favicon/og-image.png">
+    <meta property="og:site_name" content="自由行Studio">
+    <meta property="og:locale" content="zh_CN">
+
+    <!-- ✦ Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="微信双开怎么弄？全平台方法对比 - 自由行Studio">
+    <meta name="twitter:description" content="安卓自带分身、iPhone 需第三方方案、Mac 与 Windows 有取巧方法，四平台对比与风险说明。">
+
+    <link rel="icon" type="image/png" sizes="48x48" href="../favicon.png">
+    <link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-629VG3JQRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-629VG3JQRE');
+</script>
+
+<!-- SEO Structured Data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"首页","item":"https://zyxstudio.net/"},
+{"@type":"ListItem","position":2,"name":"教程","item":"https://zyxstudio.net/articles/"},
+{"@type":"ListItem","position":3,"name":"微信双开怎么弄？全平台方法对比"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"微信双开怎么弄？iPhone/安卓/Mac/电脑 全平台方法对比","description":"对比 iPhone、安卓、Mac、Windows 四个平台实现微信双开/多开的可行方法、设置路径、稳定性与账号风险。","author":{"@type":"Organization","name":"自由行Studio"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-09-17","dateModified":"2026-09-17","mainEntityOfPage":"https://zyxstudio.net/articles/wechat-clone-all-platforms.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"iPhone微信双开+虚拟定位实测｜iOS稳定不掉签","description":"演示 iPhone 上同时登录两个微信的安装与验证流程，以及定位相关的配套设置。","thumbnailUrl":["https://i.ytimg.com/vi/9drq4FmpuCM/maxresdefault.jpg"],"uploadDate":"2024-06-18","embedUrl":"https://www.youtube.com/embed/9drq4FmpuCM","contentUrl":"https://www.youtube.com/watch?v=9drq4FmpuCM"}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"微信双开会被封号吗？","acceptedAnswer":{"@type":"Answer","text":"取决于实现方式。安卓系统自带的应用分身没有修改微信客户端本身，风险相对最低；第三方修改版或来路不明的签名包改动过程序文件，风险明显更高。微信官方《个人帐号使用规范》对使用非官方客户端有约束，最终判定以官方规则为准，无法承诺绝对不封。"}},
+{"@type":"Question","name":"一个手机号能注册两个微信吗？","acceptedAnswer":{"@type":"Answer","text":"微信官方长期只支持一个手机号对应一个帐号，但近年对部分帐号放开了「同一手机号注册第二个微信号」，入口在 设置 → 切换账号 → 添加账号 → 注册一个新的账号，能否使用取决于帐号状态和灰度范围。注意：即使是两个帐号，在同一台手机上仍需切换登录，无法同时在线。"}},
+{"@type":"Question","name":"两个微信的聊天记录能互通吗？","acceptedAnswer":{"@type":"Answer","text":"不能。应用分身或第三方双开的第二个微信是一套独立的存储空间，聊天记录、收藏、文件都与主微信分开存放，互相看不到，也无法互相迁移，只能各自单独备份。"}},
+{"@type":"Question","name":"分身微信收不到消息怎么办？","acceptedAnswer":{"@type":"Answer","text":"先检查分身微信是否被系统限制了后台运行和通知权限，接着把分身微信加入电池优化白名单、允许自启动，并确认没有开启省电模式。安卓的深度定制系统对分身应用的后台限制通常比主应用更严格。"}},
+{"@type":"Question","name":"微信官方支持双开吗？","acceptedAnswer":{"@type":"Answer","text":"不支持。微信官方一直没有提供同一设备同时登录两个账号的功能，官方方案是「切换账号」，同一时间只有一个账号在线。所有能同时收消息的双开方式，都依赖系统能力或第三方程序，不属于官方支持范围。"}}
+]}
+</script>
+</head>
+<body>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a href="../" class="logo" aria-label="自由行Studio首页">自由行<span>Studio</span></a>
+    <nav class="site-nav" id="siteNav" aria-label="主导航">
+      <a href="../virtual-location.html" class="nav-item">虚拟定位</a>
+      <a href="../overseas-live.html" class="nav-item">海外直播</a>
+      <a href="../services.html" class="nav-item">服务总览</a>
+      <a href="../search.html" class="nav-item">搜索</a>
+      <a href="../articles/" class="nav-item" aria-current="page">教程</a>
+      <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品与价格请前往 Gexiv 产品商城查看">商品商城 <span aria-hidden="true">↗</span></a>
+      <span class="store-note">商品与价格请前往 Gexiv 产品商城查看</span>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="header-cta">立即咨询</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="打开菜单">
+        <span class="menu-label-open">菜单</span>
+        <span class="menu-label-close">关闭</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+    <div class="mobile-menu">
+        <a href="../">首页</a>
+        <a href="../services.html">服务</a>
+        <a href="../articles/">文章</a>
+        <a href="../contact.html">联系</a>
+    </div>
+
+    <article class="article-container">
+        <div class="container">
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">教程攻略</span>
+                    <span class="article-date">更新于 2026-09-17</span>
+                </div>
+                <h1 class="article-title">微信双开怎么弄？全平台方法对比</h1>
+                <p class="article-subtitle">同一台设备登录两个微信，iPhone、安卓、Mac、Windows 各自能怎么做</p>
+            </div>
+
+            <div class="article-intro">
+                <p><strong>先把叫法说清楚：</strong>微信双开、微信多开、微信分身，以及不少人习惯说的「两个微信」「一个电话两个微信」「双开助手」，讲的都是同一件事——在一台设备上同时登录两个微信帐号，让两边的消息都能收到。</p>
+                <p><strong>先说结论：</strong>能不能双开、用什么方法，几乎完全由你的系统决定。安卓手机大多自带「应用分身」，是四个平台里最省事的；iPhone 官方始终没有这个功能，只能靠第三方安装方式；Mac 和 Windows 有一些取巧办法，但稳定性随微信版本变化。下面按平台拆开讲。</p>
+            </div>
+
+            <section class="quick-answer" aria-labelledby="quick-title">
+                <p class="quick-answer-label">30 秒快速判断</p>
+                <h2 id="quick-title">你的设备属于哪一种情况</h2>
+                <div class="quick-answer-grid">
+                    <div><strong>安卓手机</strong><span>先翻设置里有没有「应用分身 / 应用双开」，有就用它，免费且最稳。</span></div>
+                    <div><strong>iPhone</strong><span>系统不提供该功能，只能走第三方签名安装，需要挑稳定的安装渠道。</span></div>
+                    <div><strong>Mac 或 Windows</strong><span>有非官方多开方法，但随微信版本变化，可能随时失效。</span></div>
+                </div>
+            </section>
+
+            <!-- 目录 -->
+            <div class="article-toc">
+                <h2>目录</h2>
+                <ol>
+                    <li><a href="#s1">为什么手机系统决定了能不能双开</a></li>
+                    <li><a href="#s2">安卓：系统自带应用分身（推荐）</a></li>
+                    <li><a href="#s3">iPhone：官方不支持，只能靠第三方方案</a></li>
+                    <li><a href="#s4">Mac 与 Windows 的多开方法</a></li>
+                    <li><a href="#s5">双开会不会封号？风险等级对照</a></li>
+                    <li><a href="#s6">常见问题</a></li>
+                </ol>
+            </div>
+
+            <section id="s1">
+                <h2>一、为什么手机系统决定了能不能双开</h2>
+                <p>一个 App 在同一台设备上能否跑两份，本质上是操作系统层面的事情。应用需要独立的存储空间、独立的进程和独立的通知通道，才能互不干扰地跑两份。微信本身没有做这件事，它是靠系统提供的隔离能力被动实现的。</p>
+                <p>这就解释了为什么各平台差异这么大：</p>
+                <ul>
+                    <li><strong>安卓</strong>：系统原生就有「多用户」和「工作资料」机制，国产手机厂商在这个基础上做成了图形界面的「应用分身」，属于系统功能，不需要修改微信本身。</li>
+                    <li><strong>iOS</strong>：系统是封闭的，不允许同一个 App 的多个实例同时存在。所以 iPhone 上所有双开方案，本质都是「把微信重新签一次名，伪装成另一个应用」，属于第三方行为。</li>
+                    <li><strong>桌面系统</strong>：macOS 和 Windows 允许同一个程序开多个进程，但微信客户端自己做了检测，多开是否成功取决于版本。</li>
+                </ul>
+                <p>理解了这一层，后面各平台的方法就好判断了——安卓用的是系统能力，iPhone 用的是第三方安装，桌面端用的是进程技巧，三者的风险级别并不相同。</p>
+            </section>
+
+            <section id="s2">
+                <h2>二、安卓：系统自带应用分身（推荐）</h2>
+                <p>这是目前四个平台里最省事也最稳定的方式，因为它没有改动微信客户端本身，只是由系统提供了第二份独立的运行空间。绝大多数国产安卓手机都内置了这个功能，只是各家叫法不同。</p>
+
+                <table class="compare-table">
+                    <thead>
+                        <tr><th>手机品牌</th><th>设置路径</th><th>备注</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>小米 / Redmi</td><td>设置 → 应用设置 → 应用双开</td><td>可勾选微信、QQ 等，入口较深</td></tr>
+                        <tr><td>华为 / 荣耀</td><td>设置 → 应用 → 应用分身</td><td>部分机型在「应用和服务」下</td></tr>
+                        <tr><td>OPPO / 一加 / realme</td><td>设置 → 应用管理 → 应用分身</td><td>ColorOS 各版本位置略有差异</td></tr>
+                        <tr><td>vivo / iQOO</td><td>设置 → 应用与权限 → 应用分身</td><td>OriginOS 在海平面样式下叫「应用分身」</td></tr>
+                        <tr><td>三星</td><td>设置 → 高级功能 → 双 Messenger；或安全文件夹</td><td>国行与海外版路径不同</td></tr>
+                        <tr><td>原生 / 类原生 Android</td><td>设置 → 用户和账号 → 添加工作资料</td><td>没有应用分身时的通用替代</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>开启之后要注意什么</h3>
+                <ul>
+                    <li><strong>分身微信是独立空间</strong>：聊天记录、收藏、文件都和主微信分开，互相看不到，也无法互相迁移。换机时两块数据要分别备份。</li>
+                    <li><strong>通知可能不同步</strong>：分身微信常被系统当成"次要应用"限制后台，容易出现收不到消息、消息延迟的情况。解决方式是把它加进电池优化白名单，并允许自启动。</li>
+                    <li><strong>两个账号不会互相影响</strong>：一个账号被封，不会自动波及另一个——但如果两个账号登录环境高度相似，也存在被关联判断的可能。</li>
+                    <li><strong>不要用第三方「双开助手」替代</strong>：这类工具需要更高的系统权限，且会把你的账号输入暴露在第三方进程里。系统自带的分身已经够用，没有必要冒隐私风险。</li>
+                </ul>
+
+                <div class="callout-warning">
+                    <p><strong>一个容易被忽略的前置条件：</strong>部分国产系统在开启应用分身时，要求先关闭该应用的「应用锁」「隐私密码」或企业设备管理（工作资料）状态。如果设置项点不动或者开启后微信立刻闪退，先排查这几项。</p>
+                </div>
+            </section>
+
+            <section id="s3">
+                <h2>三、iPhone：官方不支持，只能靠第三方方案</h2>
+                <p>先把最重要的事实说清楚：<strong>微信官方从未发布过任何叫「分身版」「多开版」的 iPhone 客户端</strong>，App Store 里也搜不到。你在网上看到的所有「iOS 微信双开下载」，指向的都是第三方二次签名过的安装包。</p>
+                <p>也就是说，iPhone 上要做微信双开，唯一的路是「把微信重新签一次名」。而不同签名方式的差别，直接决定了能用多久、什么时候会掉：</p>
+                <ul>
+                    <li><strong>企业证书签名</strong>：装起来最快，但证书一旦被苹果批量吊销，全部失效，属于不可控的中断。</li>
+                    <li><strong>TestFlight 分发</strong>：走苹果官方测试渠道，稳定性好，但每个版本有 90 天上限，到期需要重新安装新版本。</li>
+                    <li><strong>自签（个人证书）</strong>：自己签自己用，7 天需要重签一次，适合有 Mac 且愿意折腾的用户。</li>
+                </ul>
+                <p>三种方式的具体安装步骤、掉签后的处理办法，以及怎么判断一个渠道靠不靠谱，我们在另一篇里拆得比较细：</p>
+                <p><a href="iphone-clone-guide.html"><strong>→ iPhone 微信双开怎么设置？免越狱不掉签教程</strong></a></p>
+                <p>如果你只是想先搞清楚「为什么 iPhone 这么麻烦」，记住一句话就够了：安卓是系统帮你隔离，iPhone 只能是别人帮你重新打包。后者的稳定性不取决于你，而取决于签名渠道能撑多久。</p>
+            </section>
+
+            <section id="s4">
+                <h2>四、Mac 与 Windows 的多开方法</h2>
+                <p>桌面端的情况介于两者之间：系统本身允许同一程序跑多份，但微信客户端会做检测。所以市面上的方法都属于"能用就用，失效了就换"的性质。</p>
+
+                <h3>Mac：让同一个应用开两个实例</h3>
+                <p>macOS 提供了一个「忽略已有实例、强制再开一份」的启动方式。在「终端」里执行：</p>
+                <p><code>open -n /Applications/WeChat.app</code></p>
+                <p>原理是让系统为 WeChat 再创建一个独立进程，从而出现第二个登录窗口。需要注意三点：第一，微信 Mac 版在后续版本中逐步加入了多开检测，部分版本已经无法通过这种方式启动第二份；第二，<strong>不要在 Mac 上登录与手机相同的账号</strong>，否则会把手机端挤下线；第三，桌面端多开不涉及修改客户端文件，风险低于第三方修改版，但仍不是官方支持的方式。</p>
+
+                <h3>Windows：复制一份程序目录</h3>
+                <p>Windows 上的常见做法是复制一份微信安装目录，然后分别启动两个目录下的主程序；或者写一个批处理脚本连续调用两次启动命令。这类方法在早期版本比较有效，微信 PC 版后续多次做过限制，现在多数版本已经无法直接多用。如果你只是想在一台电脑上切换两个账号，用微信自带的「切换账号」其实更快，代价是无法同时接收两边消息。</p>
+            </section>
+
+            <section id="s5">
+                <h2>五、双开会不会封号？风险等级对照</h2>
+                <p>这是问得最多的问题，也是最不能一句话回答的问题。关键在于：<strong>你的做法有没有改动微信客户端本身</strong>。</p>
+
+                <table class="compare-table">
+                    <thead>
+                        <tr><th>方式</th><th>是否改动客户端</th><th>相对风险</th><th>主要不确定因素</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>安卓系统自带应用分身</td><td>否，仅系统隔离</td><td>最低</td><td>系统后台限制导致的收消息问题</td></tr>
+                        <tr><td>桌面端 open -n / 多开脚本</td><td>否</td><td>较低</td><td>微信版本更新后随时失效</td></tr>
+                        <tr><td>企业证书签名包</td><td>是，重新签名</td><td>较高</td><td>证书被吊销；安装包来源不明</td></tr>
+                        <tr><td>第三方修改版 / 双开助手</td><td>是，可能篡改程序</td><td>最高</td><td>注入代码、隐私泄露、被判定非官方客户端</td></tr>
+                    </tbody>
+                </table>
+
+                <p>另外有一个跟"双开"不同的思路值得知道：微信官方提供了「切换账号」功能，在 设置 → 切换账号 里可以保存多个账号快速切换。它的限制是同一时间只有一个账号在线、收不到另一个的消息，但这是唯一完全官方支持的多账号方案。至于「同一个手机号注册两个微信号」，微信近年对部分帐号放开了，入口同样在「切换账号 → 添加账号」，能否使用取决于你的帐号状态和灰度范围。</p>
+
+                <div class="callout-warning">
+                    <p><strong>我们的立场说得直白一点：</strong>能不用第三方修改版就不用。系统自带的分身已经能满足绝大多数人的需求；iPhone 用户需要第三方方案时，重点应该放在"渠道是否长期稳定、掉签后有没有人处理"上，而不是"能不能装"。凡是要求你提供微信密码的第三方工具，一律不要用。</p>
+                </div>
+            </section>
+
+            <section id="s6">
+                <h2>六、常见问题</h2>
+
+                <div class="faq-item">
+                    <h3>Q：微信双开会被封号吗？</h3>
+                    <p>取决于实现方式。安卓系统自带的应用分身没有修改微信客户端本身，风险相对最低；第三方修改版或来路不明的签名包改动过程序文件，风险明显更高。微信官方《个人帐号使用规范》对使用非官方客户端有约束，最终判定以官方规则为准，任何渠道都无法承诺绝对不封。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q：一个手机号能注册两个微信吗？</h3>
+                    <p>微信长期只支持一个手机号对应一个帐号，但近年对部分帐号放开了「同一手机号注册第二个微信号」，入口在 设置 → 切换账号 → 添加账号 → 注册一个新的账号，能否使用取决于帐号状态和灰度范围。需要提醒的是：即使是两个帐号，在同一台手机上仍要切换登录，无法同时在线。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q：两个微信的聊天记录能互通吗？</h3>
+                    <p>不能。分身或第三方双开出来的第二个微信是一套独立的存储空间，聊天记录、收藏、文件全部与主微信分开存放，互相看不到，也无法互相迁移，只能各自单独备份。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q：分身微信收不到消息、消息延迟怎么办？</h3>
+                    <p>多半是系统后台限制导致的。依次检查：分身微信的通知权限是否开启、是否加入了电池优化白名单、是否允许自启动、有没有开启省电模式。安卓的深度定制系统对分身应用的后台限制通常比对主应用更严格，这属于正常现象，不是微信故障。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q：微信官方支持双开吗？</h3>
+                    <p>不支持。官方方案只有「切换账号」，同一时间只有一个账号在线。所有能同时收两边消息的双开方式，都依赖系统能力或第三方程序，不属于官方支持范围。</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3>Q：安卓的应用分身和第三方双开助手，选哪个？</h3>
+                    <p>优先选系统自带的。系统分身由操作系统提供隔离，不需要额外授权，也不会把你的输入暴露给第三方进程；第三方双开助手通常要求更宽的权限，且稳定性依赖它自己跟着微信更新，风险更高。只有系统确实没有分身功能时，才考虑用「工作资料 / 多用户」这类系统级替代方案。</p>
+                </div>
+            </section>
+
+            <!-- 视频 -->
+            <div style="margin:32px 0;">
+                <h2 style="margin-bottom:12px;">真机实测视频</h2>
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000;margin:12px 0;">
+                    <iframe src="https://www.youtube-nocookie.com/embed/9drq4FmpuCM" title="iPhone微信双开+虚拟定位｜iOS稳定不掉签" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" loading="lazy" allowfullscreen allow="encrypted-media; picture-in-picture"></iframe>
+                </div>
+                <p style="font-size:13px;color:#5b6472;margin:6px 0 0;">视频来自我们的 YouTube 频道 <a href="https://www.youtube.com/@ziyouxingstudio" target="_blank" rel="noopener">自由行Studio @ziyouxingstudio</a>（更多虚拟定位/打卡定位实测，欢迎订阅）。工具与方案咨询可添加微信 yes1974g。</p>
+            </div>
+
+            <div class="related-articles">
+                <h3>相关文章</h3>
+                <div class="related-grid">
+                    <a href="iphone-clone-guide.html" class="related-card">
+                        <span class="related-category">微信双开</span>
+                        <h4>iPhone 微信双开怎么设置？</h4>
+                    </a>
+                    <a href="iphone-clone-guide-tw.html" class="related-card">
+                        <span class="related-category">繁體版</span>
+                        <h4>iPhone 微信雙開怎麼設定？</h4>
+                    </a>
+                    <a href="wechat-location-guide.html" class="related-card">
+                        <span class="related-category">微信</span>
+                        <h4>微信定位能改吗？实测结果</h4>
+                    </a>
+                    <a href="android-location-guide.html" class="related-card">
+                        <span class="related-category">安卓</span>
+                        <h4>安卓手机改定位怎么弄？（免ROOT）</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        </article>
+
+    <footer class="site-footer minimal-footer">
+  <div class="container footer-directory">
+    <div class="footer-brand">
+      <p>自由行 Studio</p>
+      <span>一对一设备配置与技术支持</span>
+    </div>
+    <div class="footer-links">
+      <h2>设备与定位</h2>
+      <a href="../virtual-location.html">虚拟定位</a>
+      <a href="../remote-checkin.html">定位异常与打卡</a>
+      <a href="../phone-clone.html">iPhone 分身</a>
+    </div>
+    <div class="footer-links">
+      <h2>海外与平台</h2>
+      <a href="../overseas-live.html">海外直播</a>
+      <a href="../social-media-growth.html">粉丝与互动服务</a>
+      <a href="../platform-auth.html">平台认证</a>
+    </div>
+    <div class="footer-links">
+      <h2>帮助</h2>
+      <a href="../services.html">服务总览</a>
+      <a href="./">文章与教程</a>
+      <a href="https://www.gexiv.com/" target="_blank" rel="noopener">Gexiv 产品商城 ↗</a>
+      <a href="../contact.html">联系我们</a>
+    </div>
+  </div>
+  <p class="container footer-copyright">© 2026 自由行 Studio</p>
+</footer>
+
+    <script src="../js/site.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+</body>
+</html>
