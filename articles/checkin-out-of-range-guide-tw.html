@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打卡定位怎麼改？更改定位到公司打卡的設定教學（釘釘／企業微信／飛書）</title>
+    <meta name="description" content="打卡定位怎麼改？想把定位更改到公司打卡，先確認公司採用的是 GPS、WiFi 還是拍照打卡，再照本文步驟設定。涵蓋釘釘、企業微信、飛書的定位變更、遠端打卡，以及「不在範圍內」的完整排查順序，支援 iOS 26 與 Android。">
+    <meta name="keywords" content="打卡定位怎麼改,更改定位,定位更改,公司打卡,訂位更改,虛擬定位打卡,遠端打卡,釘釘打卡定位,企業微信打卡定位,飛書打卡定位,打卡不在範圍內,打卡定位異常,海外打卡,釘釘打卡虛擬定位,企業微信打卡虛擬定位">
+    <meta name="author" content="自由行Studio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zyxstudio.net/articles/checkin-out-of-range-guide-tw.html">
+    <link rel="alternate" hreflang="zh-Hans" href="https://zyxstudio.net/articles/checkin-out-of-range-guide.html">
+    <link rel="alternate" hreflang="zh-TW" href="https://zyxstudio.net/articles/checkin-out-of-range-guide-tw.html">
+
+    <link rel="icon" type="image/png" sizes="48x48" href="../favicon.png">
+    <link rel="icon" type="image/x-icon" href="../favicon/favicon.ico">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zyxstudio.net/articles/checkin-out-of-range-guide-tw.html">
+    <meta property="og:image" content="https://zyxstudio.net/images/article-covers/workwechat-location-guide.jpg">
+    <meta property="og:title" content="打卡定位怎麼改？更改定位到公司打卡的設定教學（釘釘／企業微信／飛書）">
+    <meta property="og:description" content="先確認公司採用 GPS、WiFi 還是拍照打卡，再照步驟把定位更改到公司打卡範圍。">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/article.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-629VG3JQRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-629VG3JQRE');
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"首頁","item":"https://zyxstudio.net/"},
+{"@type":"ListItem","position":2,"name":"教程","item":"https://zyxstudio.net/articles/"},
+{"@type":"ListItem","position":3,"name":"打卡定位怎麼改"}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"打卡定位怎麼改？更改定位到公司打卡的設定教學（釘釘／企業微信／飛書）","description":"先確認公司採用 GPS、WiFi 還是拍照打卡，再照步驟把定位更改到公司打卡範圍，涵蓋釘釘、企業微信、飛書。","author":{"@type":"Organization","name":"自由行Studio"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-05-24","dateModified":"2026-09-17","mainEntityOfPage":"https://zyxstudio.net/articles/checkin-out-of-range-guide-tw.html"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"打卡提示不在範圍內一定是GPS問題嗎？","acceptedAnswer":{"@type":"Answer","text":"不一定。常見原因包括GPS座標不準、公司開啟WiFi打卡、IP位置異常、拍照水印校驗、裝置或賬號風控。需要先確認考勤規則。"}},
+{"@type":"Question","name":"人在海外打卡提示不在範圍內怎麼辦？","acceptedAnswer":{"@type":"Answer","text":"先確認目標App、手機型號、系統版本、公司是否要求WiFi或拍照打卡，再判斷是單純定位問題還是多重校驗問題。"}},
+{"@type":"Question","name":"為什麼地圖顯示到了公司，打卡還是失敗？","acceptedAnswer":{"@type":"Answer","text":"可能是打卡App讀取的定位、WiFi、IP或拍照水印並不一致。地圖App正常不代表考勤App一定透過。"}}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"安卓虛擬定位教程｜釘釘企業微信通用實測","description":"自由行Studio 真機實測：虛擬定位、微信雙開、打卡定位實操教程。","thumbnailUrl":["https://i.ytimg.com/vi/9ccYX97dVbk/hqdefault.jpg"],"uploadDate":"2022-01-13","embedUrl":"https://www.youtube-nocookie.com/embed/9ccYX97dVbk","publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"}}
+</script>
+</head>
+<body>
+    <header class="site-header">
+  <div class="container header-inner">
+    <a href="../" class="logo" aria-label="自由行Studio首頁">自由行<span>Studio</span></a>
+    <nav class="site-nav" id="siteNav" aria-label="主導航">
+      <a href="../virtual-location.html" class="nav-item">虛擬定位</a>
+      <a href="../overseas-live.html" class="nav-item">海外直播</a>
+      <a href="../services.html" class="nav-item">服務總覽</a>
+      <a href="../search.html" class="nav-item">搜尋</a>
+      <a href="../articles/" class="nav-item" aria-current="page">教程</a>
+      <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品與價格請前往 Gexiv 產品商城檢視">商品商城 <span aria-hidden="true">↗</span></a>
+      <span class="store-note">商品與價格請前往 Gexiv 產品商城檢視</span>
+    </nav>
+    <div class="header-actions">
+      <a href="../contact.html" class="header-cta">立即諮詢</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="開啟選單">
+        <span class="menu-label-open">選單</span>
+        <span class="menu-label-close">關閉</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+    <div class="mobile-menu">
+        <a href="../">首頁</a>
+        <a href="../services.html">服務</a>
+        <a href="../articles/">文章</a>
+        <a href="../contact.html">聯絡</a>
+    </div>
+
+    <article class="article-container">
+        <div class="container">
+            <div class="article-header">
+                <div class="article-meta">
+                    <span class="article-category">打卡排查</span>
+                    <span class="article-date">2026年5月</span>
+                </div>
+                <h1 class="article-title">打卡定位怎麼改？更改定位到公司打卡</h1>
+                <p class="article-subtitle">企業微信、釘釘、飛書定位異常，先按這 5 類原因排查。</p>
+            </div>
+
+            <div class="article-body">
+                <p>企業微信、釘釘、飛書打卡時提示“不在打卡範圍內”，很多人第一反應是定位沒改好。但實際情況往往更復雜：有的公司只看 GPS，有的同時看 WiFi，有的還會結合 IP、拍照水印、裝置環境判斷。</p>
+
+                <p>如果你人在海外、異地出差、遠端辦公，或者明明地圖已經顯示在公司附近但還是不能打卡，可以先按下面幾項排查。把問題型別分清楚，再處理會快很多。</p>
+
+                <p><strong>先說叫法：</strong>「打卡定位怎麼改」「更改定位」「定位更改」「訂位更改」，甚至打錯成「訂位」，講的都是同一件事——讓打卡位置落回公司的考勤範圍。台灣與港澳使用者常搜的「更改定位到公司打卡」「公司打卡定位」，對應的處理方式完全一樣。</p>
+
+                <p><strong>關於「打卡虛擬定位」：</strong>很多人搜「釘釘打卡虛擬定位」「企業微信打卡虛擬定位」，目的是讓打卡位置落回考勤範圍。是否適合用虛擬定位，取決於公司考勤規則——純 GPS 圍欄、WiFi 校驗、拍照水印三種規則對應的可行性與風險不同，先按下面的分類判斷自己屬於哪種，再決定處理方式。</p>
+
+                <h2>一、先確認是不是純 GPS 打卡</h2>
+                <p>最簡單的情況是公司只要求在某個地理圍欄內打卡。表現通常是：App 開啟後顯示距離公司多少米，或者提示“不在考勤範圍內”。</p>
+                <p>這類問題重點看三件事：手機系統版本、目標 App、公司設定的打卡半徑。iPhone 和安卓處理方式不同，iOS 版本越新，越需要先判斷相容性。</p>
+
+                <h2>二、地圖到了公司，為什麼還是失敗？</h2>
+                <p>地圖 App 顯示的位置，不一定等於考勤 App 實際讀取的位置。考勤 App 可能會重新請求定位許可權，也可能結合基站、WiFi、系統定位服務狀態判斷。</p>
+                <p>如果你看到地圖位置正常，但企業微信或釘釘仍然失敗，建議截圖保留三個畫面：地圖當前位置、打卡頁提示、手機系統版本。這樣更容易判斷是 App 讀取問題，還是考勤規則更復雜。</p>
+
+                <h2>三、公司是否開啟了 WiFi 打卡</h2>
+                <p>如果公司要求連線指定 WiFi 才能打卡，單獨調整 GPS 往往不夠。常見提示包括“未連線指定 WiFi”“當前網路不符合要求”，或者位置正常但按鈕仍然不可用。</p>
+                <p>這類場景要先確認公司是“GPS + WiFi 二選一”，還是“GPS + WiFi 同時滿足”。兩者差別很大，處理方案也完全不同。</p>
+
+                <h2>四、海外使用者還要注意 IP 和賬號環境</h2>
+                <p>人在海外時，打卡 App 看到的可能是海外網路出口。如果 GPS 顯示在國內公司，但網路環境長期在海外，部分平臺會把它當作異常訊號。</p>
+                <p>這不代表一定不能處理，但需要把定位、網路、裝置環境放在一起看。不要只盯著“座標有沒有到公司”，否則容易反覆失敗。</p>
+
+                <h2>五、拍照、水印、外勤打卡也要單獨判斷</h2>
+                <p>有些公司開啟外勤拍照、水印照片、現場備註、審批流程。此時打卡結果不只由 GPS 決定，還可能檢查照片水印、時間、地點名稱、備註內容。</p>
+                <p>如果你的問題和今日水印相機、外勤照片有關，可以先看 <a href="water-mark-camera-guide.html">今日水印相機改定位教程</a>，再結合考勤 App 的具體規則判斷。</p>
+
+                <h2>諮詢前最好準備這些資訊</h2>
+                <ul>
+                    <li>手機型號：例如 iPhone 15、iPhone 16、小米、三星等</li>
+                    <li>系統版本：iOS 或安卓版本</li>
+                    <li>目標 App：企業微信、釘釘、飛書、今日水印相機等</li>
+                    <li>打卡方式：GPS、WiFi、拍照、外勤、審批</li>
+                    <li>失敗截圖：打卡頁提示、地圖位置、系統版本頁</li>
+                </ul>
+
+                <p>如果你不確定屬於哪種情況，可以直接把截圖發來。我會先判斷是 GPS、WiFi、IP 還是拍照水印問題，再告訴你下一步。</p>
+
+                <div class="article-cta">
+                    <h3>需要快速判斷？</h3>
+                    <p>發手機型號、系統版本、目標 App 和報錯截圖，先判斷能不能處理。</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/14154251293" target="_blank" class="btn btn-primary">WhatsApp 發截圖</a>
+                        <a href="../remote-checkin.html" class="btn btn-outline">檢視定位異常服務</a>
+                        <a href="https://www.gexiv.com/categories" class="btn btn-outline">檢視相關商品</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-articles">
+                <h3>影片教程（真機實測）</h3>
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;background:#000;margin:12px 0;">
+                    <iframe src="https://www.youtube-nocookie.com/embed/9ccYX97dVbk" title="安卓虛擬定位教程｜釘釘企業微信通用實測" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" loading="lazy" allowfullscreen allow="encrypted-media; picture-in-picture"></iframe>
+                </div>
+                <p style="font-size:13px;color:#5b6472;margin:6px 0 0;">影片來自我們的 YouTube 頻道 <a href="https://www.youtube.com/@ziyouxingstudio" target="_blank" rel="noopener">自由行Studio @ziyouxingstudio</a>（更多虛擬定位/打卡定位實測，歡迎訂閱）。工具與方案諮詢可新增微信 yes1974g。</p>
+            </div>
+
+            <div class="related-articles">
+                <h3>相關文章</h3>
+                <div class="related-grid">
+                    <a href="workwechat-location-guide.html" class="related-card">
+                        <span class="related-category">企業微信</span>
+                        <h4>企業微信打卡改定位完全指南</h4>
+                    </a>
+                    <a href="overseas-dingtalk.html" class="related-card">
+                        <span class="related-category">釘釘打卡</span>
+                        <h4>海外釘釘打卡異常？3種方案解決</h4>
+                    </a>
+                    <a href="feishu-dingtalk-guide.html" class="related-card">
+                        <span class="related-category">多平臺</span>
+                        <h4>飛書 / 釘釘多平臺打卡改定位指南</h4>
+                    </a>
+                    <a href="iphone-clone-guide-tw.html" class="related-card">
+                        <span class="related-category">微信雙開</span>
+                        <h4>iPhone 微信雙開怎麼設定？（繁體版）</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div class="float-consult">
+        <button class="consult-btn" onclick="toggleContact(this)">諮詢</button>
+        <div class="consult-popup">
+            <a href="https://wa.me/14154251293" target="_blank">WhatsApp</a>
+            <a href="../contact.html">微信</a>
+            <a href="https://www.facebook.com/gpschanger888/" target="_blank">Facebook</a>
+        </div>
+    </div>
+
+    <footer class="site-footer minimal-footer">
+  <div class="container footer-directory">
+    <div class="footer-brand">
+      <p>自由行 Studio</p>
+      <span>一對一裝置配置與技術支援</span>
+    </div>
+    <div class="footer-links">
+      <h2>裝置與定位</h2>
+      <a href="../virtual-location.html">虛擬定位</a>
+      <a href="../remote-checkin.html">定位異常與打卡</a>
+      <a href="../phone-clone.html">iPhone 分身</a>
+    </div>
+    <div class="footer-links">
+      <h2>海外與平臺</h2>
+      <a href="../overseas-live.html">海外直播</a>
+      <a href="../social-media-growth.html">粉絲與互動服務</a>
+      <a href="../platform-auth.html">平臺認證</a>
+    </div>
+    <div class="footer-links">
+      <h2>幫助</h2>
+      <a href="../services.html">服務總覽</a>
+      <a href="./">文章與教程</a>
+      <a href="https://www.gexiv.com/" target="_blank" rel="noopener">Gexiv 產品商城 ↗</a>
+      <a href="../contact.html">聯絡我們</a>
+    </div>
+  </div>
+  <p class="container footer-copyright">© 2026 自由行 Studio</p>
+</footer>
+
+    <script src="../js/site.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/analytics.js"></script>
+</body>
+</html>
