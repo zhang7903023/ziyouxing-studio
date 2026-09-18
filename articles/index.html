@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="applicable-device" content="pc,mobile">
-    <title>虚拟定位与微信双开教程大全｜iPhone/安卓改定位、打卡定位实测 - 自由行Studio</title>
+    <title>虚拟定位与微信双开教程大全｜iPhone/安卓改定位、iOS 27 与打卡定位 - 自由行Studio</title>
     <meta name="description" content="虚拟定位与微信双开原创教程大全：iPhone/安卓怎么改定位、微信双开多开怎么弄（含 TestFlight 稳定方案）、钉钉/企业微信打卡虚拟定位、水印相机改经纬度、iOS 26 真机实测。">
     <meta name="keywords" content="虚拟定位教程,微信双开,微信多开,苹果微信分身,改定位,钉钉打卡虚拟定位,企业微信打卡虚拟定位,水印相机改定位,iOS 26,安卓免root,TestFlight微信双开">
 
     <meta name="robots" content="index, follow">
 
     <meta property="og:image" content="https://zyxstudio.net/favicon/og-image.png">
+<meta property="og:url" content="https://zyxstudio.net/articles/">
     <meta property="og:title" content="虚拟定位与微信双开教程大全 | 自由行Studio">
     <meta property="og:description" content="iPhone/安卓改定位 · 微信双开多开 · 钉钉企微打卡定位，全部真机实测。">
     <meta property="og:type" content="website">
@@ -402,6 +403,7 @@
     <nav class="site-nav" id="siteNav" aria-label="主导航">
       <a href="../virtual-location.html" class="nav-item">虚拟定位</a>
       <a href="../overseas-live.html" class="nav-item">海外直播</a>
+      <a href="../overseas-mobile-network.html" class="nav-item">海外网络</a>
       <a href="../services.html" class="nav-item">服务总览</a>
       <a href="../search.html" class="nav-item">搜索</a>
       <a href="../articles/" class="nav-item" aria-current="page">教程</a>
@@ -429,17 +431,90 @@
 
     <section class="articles-hero">
         <h1>虚拟定位与微信双开教程大全</h1>
-        <p>按使用场景查找定位设置、考勤异常和内容平台相关教程。</p>
+        <p>按使用场景查找定位设置、考勤异常、海外设备与内容平台相关教程。四大专题入口：iPhone 虚拟定位、iOS 27 兼容性、安卓虚拟定位、海外手机卡与网络。</p>
 
         <div class="filters">
             <button class="filter-btn active" onclick="filterArticles('all', this)">全部</button>
             <button class="filter-btn" onclick="filterArticles('location', this)">定位教程</button>
             <button class="filter-btn" onclick="filterArticles('checkin', this)">考勤排查</button>
             <button class="filter-btn" onclick="filterArticles('social', this)">社媒运营</button>
+            <button class="filter-btn" onclick="filterArticles('overseas', this)">海外设备</button>
         </div>
     </section>
 
     <main class="articles-grid">
+
+        <!-- 专题：iPhone 虚拟定位 -->
+        <a href="../iphone-virtual-location.html" class="article-card" data-category="ios">
+            <div class="card-cover"><img src="../images/service-virtual-location.webp" alt="iPhone 与安卓手机虚拟定位示意图" loading="lazy"></div>
+            <div class="card-top">
+                <span class="tag tag-ios">专题</span>
+                <span class="tag tag-guide">iPhone</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>iPhone 虚拟定位修改方法</h2>
+                <p>三条技术路线（电脑连线 / 免电脑配置 / 外接硬件）的原理与适用条件，含失败原因与恢复真实定位步骤。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-09-18 · 专题枢纽</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 专题：iOS 27 虚拟定位 -->
+        <a href="../ios27-virtual-location.html" class="article-card" data-category="ios">
+            <div class="card-cover"><img src="../images/article-covers/ios-26-location-guide.jpg" alt="iOS 系统 iPhone 定位设置界面" loading="lazy"></div>
+            <div class="card-top">
+                <span class="tag tag-ios">iOS 27</span>
+                <span class="tag tag-guide">兼容性</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>iOS 27 虚拟定位方法与兼容性</h2>
+                <p>正式版推送后的可用性跟踪：定位模拟机制的变化、WLOC 类方案状态、回弹原因与恢复方法。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-09-18 · 持续更新</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 专题：安卓虚拟定位 -->
+        <a href="../android-virtual-location.html" class="article-card" data-category="android">
+            <div class="card-cover"><img src="../images/article-covers/android-location-guide.jpg" alt="安卓手机开发者选项模拟位置设置" loading="lazy"></div>
+            <div class="card-top">
+                <span class="tag tag-android">专题</span>
+                <span class="tag tag-guide">Android</span>
+                <span class="tag tag-2026">免ROOT</span>
+            </div>
+            <div class="card-body">
+                <h2>安卓虚拟定位方法</h2>
+                <p>Mock Location 机制、免 ROOT 设置步骤、ROOT 与非 ROOT 的真实差别，以及 App 会检测哪些维度。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-09-18 · 专题枢纽</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
+
+        <!-- 专题：海外手机卡与网络 -->
+        <a href="../overseas-mobile-network.html" class="article-card" data-category="overseas">
+            <div class="card-cover"><img src="../images/ultramobile-paygo-card.webp" alt="Ultra Mobile PayGo 美国实体手机卡" loading="lazy"></div>
+            <div class="card-top">
+                <span class="tag tag-overseas">海外设备</span>
+                <span class="tag tag-guide">手机卡 / eSIM</span>
+                <span class="tag tag-2026">2026年更新</span>
+            </div>
+            <div class="card-body">
+                <h2>海外手机卡与网络配置</h2>
+                <p>Tello、Ultra Mobile PayGo 与境外 eSIM 三条路径：激活方式、Wi-Fi Calling 条件、漫游差异与保号规则。</p>
+            </div>
+            <div class="card-footer">
+                <span class="card-meta">2026-09-18 · 专题枢纽</span>
+                <span class="read-link">阅读 →</span>
+            </div>
+        </a>
 
         <!-- iOS 26 改定位 -->
         <a href="ios-26-location-guide.html" class="article-card" data-category="ios">
@@ -897,12 +972,16 @@
     </div>
     <div class="footer-links">
       <h2>设备与定位</h2>
-      <a href="../virtual-location.html">虚拟定位</a>
+      <a href="../virtual-location.html">虚拟定位总览</a>
+      <a href="../iphone-virtual-location.html">iPhone 虚拟定位</a>
+      <a href="../ios27-virtual-location.html">iOS 27 虚拟定位</a>
+      <a href="../android-virtual-location.html">安卓虚拟定位</a>
       <a href="../remote-checkin.html">定位异常与打卡</a>
       <a href="../phone-clone.html">iPhone 分身</a>
     </div>
     <div class="footer-links">
       <h2>海外与平台</h2>
+      <a href="../overseas-mobile-network.html">海外手机卡与网络</a>
       <a href="../overseas-live.html">海外直播</a>
       <a href="../social-media-growth.html">粉丝与互动服务</a>
       <a href="../platform-auth.html">平台认证</a>
@@ -944,7 +1023,8 @@
                     const groups = {
                         location: ['ios', 'android'],
                         checkin: ['dingtalk', 'workwechat', 'camera'],
-                        social: ['social']
+                        social: ['social', 'live'],
+                        overseas: ['overseas']
                     };
                     card.style.display = (groups[category] || []).includes(cardCategory) ? 'flex' : 'none';
                 }

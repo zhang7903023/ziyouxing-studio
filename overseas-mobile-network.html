@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="applicable-device" content="pc,mobile">
+    <title>海外手机卡与网络配置｜eSIM、Tello、Ultra Mobile使用教程 - 自由行Studio</title>
+    <meta name="description" content="海外手机卡在国内怎么用？整理 Tello、Ultra Mobile PayGo 与境外 eSIM 三条路径的激活方式、Wi-Fi Calling 开启条件、漫游与收验证码差异、长期保号规则，以及最常见的连接故障排查顺序。">
+    <meta name="keywords" content="海外手机卡,美国手机卡,美国手机卡国内使用,Tello中国使用,Tello中国漫游,Ultra Mobile中国,Ultra Mobile PayGo,eSIM中国漫游,Wi-Fi Calling中国,海外号码收验证码">
+    <meta name="author" content="自由行Studio">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="canonical" href="https://zyxstudio.net/overseas-mobile-network.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://zyxstudio.net/overseas-mobile-network.html">
+    <meta property="og:title" content="海外手机卡与网络配置｜eSIM、Tello、Ultra Mobile使用教程">
+    <meta property="og:description" content="Tello、Ultra Mobile PayGo、境外 eSIM 三条路径的激活方式、Wi-Fi Calling 条件、漫游差异与保号规则。">
+    <meta property="og:image" content="https://zyxstudio.net/favicon/og-image.png">
+    <meta property="og:site_name" content="自由行Studio">
+    <meta property="og:locale" content="zh_CN">
+
+    <link rel="stylesheet" href="css/style.css?v=20260907-r1">
+    <link rel="stylesheet" href="css/article.css">
+    <style>:root{--accent:#e60023;--bg:#ffffff;--text:#211922;--text-light:#555555;--text-secondary:#555555;--text-muted:#ababab;--border:#efefef;}</style>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-629VG3JQRE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-629VG3JQRE');
+    </script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://zyxstudio.net/"},{"@type":"ListItem","position":2,"name":"海外设备与网络","item":"https://zyxstudio.net/overseas-mobile-network.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"海外手机卡与网络配置","description":"Tello、Ultra Mobile PayGo 与境外 eSIM 三条路径的激活方式、Wi-Fi Calling 开启条件、漫游与收验证码差异、保号规则与故障排查。","author":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"publisher":{"@type":"Organization","name":"自由行Studio","url":"https://zyxstudio.net/"},"datePublished":"2026-09-18","dateModified":"2026-09-18","mainEntityOfPage":"https://zyxstudio.net/overseas-mobile-network.html"}
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Tello 在中国能用吗？","acceptedAnswer":{"@type":"Answer","text":"能用，但只能靠 Wi-Fi Calling。Tello 不提供国际漫游，回到中国后信号栏显示无服务是正常现象，电话和短信都走 Wi-Fi 通话。前提是账户已启用 Wi-Fi 通话，且网络出口能连到运营商的通话服务器。"}},{"@type":"Question","name":"Tello 和 Ultra Mobile PayGo 有什么区别？","acceptedAnswer":{"@type":"Answer","text":"两者都使用 T-Mobile 网络。主要差别是 Ultra Mobile PayGo 支持中国境内漫游，即使没有 Wi-Fi 也能通过漫游接收短信；Tello 没有漫游，必须依赖 Wi-Fi 通话。价格上 PayGo 的月费更低，但套餐内容也更小。"}},{"@type":"Question","name":"Wi-Fi Calling 在国内为什么开不了？","acceptedAnswer":{"@type":"Answer","text":"常见原因有四个：运营商账户没有开通该功能；部分运营商只允许连接美国基站时启用；网络出口连不到运营商的通话服务器；手机端开关没打开或需要重新插拔 SIM 卡。需要按顺序排查。"}},{"@type":"Question","name":"境外 eSIM 在中国能用吗？","acceptedAnswer":{"@type":"Answer","text":"能。境外发行的数据 eSIM 在中国通过漫游接入中国移动、中国联通或中国电信的网络，数据经境外网关出口，不需要额外配置即可使用。"}},{"@type":"Question","name":"国行 iPhone 能用 eSIM 吗？","acceptedAnswer":{"@type":"Answer","text":"大部分不能。中国内地销售的 iPhone 长期采用双实体 nano-SIM 设计，没有 eSIM 硬件。中国自 2025 年 10 月起开放了运营商手机 eSIM 业务，但办理需要中国身份证实名，机型支持范围也很有限，购买前务必确认自己机型的具体型号。"}},{"@type":"Question","name":"美国号码怎么长期保号？","acceptedAnswer":{"@type":"Answer","text":"核心是不要欠费且保持账户活跃。多数预付费号在余额不足并长期不续费后会被回收，建议开启自动续费，并定期产生一次通话或短信记录。具体规则以运营商条款为准。"}},{"@type":"Question","name":"用 Wi-Fi Calling 收银行验证码可以吗？","acceptedAnswer":{"@type":"Answer","text":"可以，前提是该运营商支持通过 Wi-Fi 通话收发短信，且账户状态正常。部分机构会限制向 VoIP 或漫游号码发送验证码，银行类短信是否可达最终取决于对方的风控策略。"}}]}</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="自由行Studio首页">自由行<span>Studio</span></a>
+    <nav class="site-nav" id="siteNav" aria-label="主导航">
+      <a href="virtual-location.html" class="nav-item">虚拟定位</a>
+      <a href="overseas-mobile-network.html" class="nav-item" aria-current="page">海外网络</a>
+      <a href="overseas-live.html" class="nav-item">海外直播</a>
+      <a href="services.html" class="nav-item">服务总览</a>
+      <a href="articles/" class="nav-item">教程</a>
+      <a href="search.html" class="nav-item">搜索</a>
+      <a href="https://www.gexiv.com/" class="nav-item nav-store" target="_blank" rel="noopener" title="商品与价格请前往 Gexiv 产品商城查看">商品商城 <span aria-hidden="true">↗</span></a>
+      <span class="store-note">商品与价格请前往 Gexiv 产品商城查看</span>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="header-cta">立即咨询</a>
+      <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="打开菜单">
+        <span class="menu-label-open">菜单</span>
+        <span class="menu-label-close">关闭</span>
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="label">海外设备与网络 · 长期居外使用</div>
+    <h1>海外手机卡与网络配置</h1>
+    <p>人在国内或长期在海外，怎么保住一个美国号码、怎么收验证码、怎么打电话——这件事的答案完全取决于你用的是 Tello、Ultra Mobile 还是境外 eSIM。本文把三条路径讲清楚。</p>
+  </div>
+</section>
+
+<article class="article-container">
+  <div class="container">
+    <div class="article-body">
+
+      <div class="quick-answer">
+        <div class="quick-answer-label">先说结论</div>
+        <p>海外号码在国内能用，走的是三条完全不同的路：</p>
+        <p><strong>① Wi-Fi Calling（VoWiFi）</strong>——通过 WiFi 拨打接听美国号码，费率等同美国本地，不产生漫游费。Tello 只能走这条。<br>
+        <strong>② 中国境内漫游</strong>——手机直接接入中国移动或联通的网络，没有 WiFi 也能收短信。Ultra Mobile PayGo 支持。<br>
+        <strong>③ 境外数据 eSIM</strong>——只解决上网，通常不给号码，但数据经境外网关出口。</p>
+        <p>最容易踩的坑：<strong>很多人看到信号栏显示「无服务」就以为卡废了，其实只要 Wi-Fi 通话能打通，卡就是活的。</strong></p>
+      </div>
+
+      <div class="article-toc">
+        <h2>目录</h2>
+        <ol>
+          <li><a href="#why">一、为什么会有「海外卡在国内用」这个需求</a></li>
+          <li><a href="#three">二、三条路径对比</a></li>
+          <li><a href="#choose">三、Tello 与 Ultra Mobile PayGo 怎么选</a></li>
+          <li><a href="#tello">四、Tello 在国内的使用流程</a></li>
+          <li><a href="#ultra">五、Ultra Mobile 在国内的使用流程</a></li>
+          <li><a href="#vowifi">六、Wi-Fi Calling 在国内打不开的 6 个原因</a></li>
+          <li><a href="#esim">七、eSIM 能不能在中国用</a></li>
+          <li><a href="#keep">八、海外号码长期保号</a></li>
+          <li><a href="#sms">九、收验证码的正确预期</a></li>
+          <li><a href="#trouble">十、常见故障排查</a></li>
+          <li><a href="#status">十一、验证状态</a></li>
+          <li><a href="#faq">十二、常见问题</a></li>
+        </ol>
+      </div>
+
+      <h2 id="why">一、为什么会有「海外卡在国内用」这个需求</h2>
+      <p>把号码当成一项资产来维护，而不是当成流量。真正需要长期保留一个美国号码的人，通常是为了这四件事：</p>
+      <div class="article-list">
+        <div class="list-item">
+          <strong>1. 账号绑定与验证码</strong>
+          <p>邮箱、支付、社交、云服务的两步验证都绑在这个号码上。号码没了，账号找回链就断了。</p>
+        </div>
+        <div class="list-item">
+          <strong>2. 接收美国来电</strong>
+          <p>银行客服、机构回访、快递联系，都需要有人能接到这个号码的来电。</p>
+        </div>
+        <div class="list-item">
+          <strong>3. 保留号码归属</strong>
+          <p>换号意味着所有绑定关系都要重建，成本远高于每月几美元的月租。</p>
+        </div>
+        <div class="list-item">
+          <strong>4. 数据出口环境</strong>
+          <p>部分场景需要非内地的网络出口，境外 eSIM 的数据漫游天然满足这一点。</p>
+        </div>
+      </div>
+      <p>理解这一点，就能理解为什么「保号」比「上网」更重要——大多数人的痛点不是没流量，而是号码失效后收不到验证码。</p>
+
+      <h2 id="three">二、三条路径对比</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">对比项</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">Wi-Fi Calling<br>（Tello 类）</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">中国境内漫游<br>（Ultra PayGo 类）</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">境外数据 eSIM</th>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">是否需要 WiFi</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">必须</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">不需要</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">不需要</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">能否打电话</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">能（扣本地通话分钟）</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">能（按漫游资费）</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">多数不支持，仅数据</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">能否收短信</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">能（取决于运营商支持）</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">能</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">一般不能</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">号码归属</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">保留原号码</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">保留原号码</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">通常无号码</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">主要风险</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">通话服务器连不上就全断</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">漫游资费与可用性会变</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">解决不了收码问题</td>
+        </tr>
+      </table>
+      <p>如果只能记一句话：<strong>要号码就走 Wi-Fi Calling 或漫游卡，要上网就走 eSIM。</strong>两者不是替代关系，很多人的实际配置是「一张保号卡 + 一张数据 eSIM」。</p>
+
+      <h2 id="choose">三、Tello 与 Ultra Mobile PayGo 怎么选</h2>
+      <p>两者都跑在 T-Mobile 网络上，都是预付费、无合约。差别集中在「没 WiFi 时能不能用」这一件事上：</p>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">对比项</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">Tello</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">Ultra Mobile PayGo</th>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">网络</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">T-Mobile</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">T-Mobile</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">套餐形态</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">分钟/短信/流量自由组合</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">固定小额套餐（约 $3/月档，含少量分钟、短信与流量）</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">eSIM 支持</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">支持，可即时开通</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">视购买渠道与套餐而定</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">中国境内漫游</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);"><strong>不支持</strong>，回国后必须靠 WiFi 通话</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);"><strong>支持</strong>，无 WiFi 时也能通过漫游收短信</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">适合谁</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">长期有稳定 WiFi、需要通话分钟较多</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">以收短信为主、担心没 WiFi 时失联</td>
+        </tr>
+      </table>
+      <div class="callout">
+        <p><strong>选型建议：</strong>如果你的核心诉求是「收验证码不能断」，优先考虑支持境内漫游的那一类；如果你主要在固定场所（家里、办公室都有 WiFi）并且需要打电话，Tello 这类走 WiFi 通话更划算。价格与套餐内容以运营商官网当期为准，本文不给具体报价。</p>
+      </div>
+
+      <div class="article-cta wechat-cta" data-consult-source="海外手机卡">
+        <p class="cta-eyebrow">微信优先咨询</p>
+        <h3>先确认你的设备能不能装、能不能开 Wi-Fi 通话</h3>
+        <p>海外卡在国内使用的成败，通常卡在三个地方：机型是否支持 eSIM、运营商账户是否已开通 Wi-Fi 通话、网络出口能不能到达通话服务器。把这三项情况发来，我们先判断，再给建议。</p>
+        <ul class="wechat-checklist">
+          <li>手机型号（国行还是海外版）</li>
+          <li>准备用 Tello／Ultra Mobile／境外 eSIM 哪一类</li>
+          <li>主要用途：收验证码／打电话／上网</li>
+          <li>现在遇到的具体现象（无服务／开关打不开／收不到码）</li>
+        </ul>
+        <div class="cta-buttons">
+          <button type="button" class="btn btn-primary wechat-copy-btn" data-wechat-copy="yes1974g" data-consult-source="海外手机卡" data-label="复制微信号：yes1974g">复制微信号：yes1974g</button>
+          <a href="services.html" class="btn btn-outline">查看服务总览</a>
+        </div>
+        <p class="wechat-copy-status" aria-live="polite"></p>
+      </div>
+
+      <h2 id="tello">四、Tello 在国内的使用流程</h2>
+      <p>Tello 的机制是「无漫游 + 纯 WiFi 通话」，所以操作顺序很关键：</p>
+      <ol class="step-list">
+        <li><strong>注册并确认机型兼容。</strong>在官网用邮箱注册，然后用官方的机型检测入口输入手机 IMEI，确认设备已解锁且兼容 T-Mobile 网络。</li>
+        <li><strong>选套餐与 SIM 形态。</strong>按需组合分钟、短信与流量。仅保号用途可以把流量选到最低档。优先选 eSIM，可以即时开通，实体卡需要国际邮寄。</li>
+        <li><strong>填写紧急服务地址。</strong>账户里需要填写用于紧急呼叫的地址信息，这一项不填会影响功能启用。</li>
+        <li><strong>在美区网络环境下完成激活。</strong>激活页面要求美国网络出口，在境内激活需要自行解决网络环境问题。这一步是很多人失败的原因。</li>
+        <li><strong>开启 Wi-Fi 通话。</strong>iPhone：设置 → 电话 → Wi-Fi 通话；安卓：设置 → 网络和互联网 → SIM 卡 → 选择 Tello → 打开 Wi-Fi 通话。</li>
+        <li><strong>验证是否真的激活成功。</strong>不要看信号格。正确做法是打开 Wi-Fi 通话后，试着拨一个国内号码，能接通说明卡已经活了。</li>
+      </ol>
+      <div class="callout-warning callout">
+        <p><strong>最容易被误判的一点：</strong>Tello 没有国际漫游，回到国内后信号栏显示「无服务／无运营商」是<strong>正常现象</strong>，不代表卡没激活。判断标准只有一个——Wi-Fi 通话能不能拨通。已经设置了但显示无服务就急着退款或换卡，是最常见的浪费。</p>
+      </div>
+
+      <h2 id="ultra">五、Ultra Mobile 在国内的使用流程</h2>
+      <p>流程与 Tello 类似，但多了一条兜底路径：</p>
+      <ol class="step-list">
+        <li>购买 SIM 卡（官网或授权渠道），确认购买的是支持境内漫游的套餐版本。</li>
+        <li>在美国网络出口环境下完成激活。</li>
+        <li>开启 Wi-Fi 通话：iPhone 设置 → 电话 → Wi-Fi 通话；安卓在 SIM 卡设置里打开。</li>
+        <li>没有 WiFi 时，手机会自动接入中国移动或联通的网络，可以通过漫游接收短信。</li>
+        <li>开启自动续费，避免因余额不足被停机。</li>
+      </ol>
+      <p>漫游资费与可用性由运营商与当地网络共同决定，且可能随时间调整。如果你打算长期依赖漫游收码，建议每隔一段时间验证一次接收是否正常，不要等到紧急用时才发现断了。</p>
+
+      <h2 id="vowifi">六、Wi-Fi Calling 在国内打不开的 6 个原因</h2>
+      <p>这是咨询量最高的一个问题。按出现频率从高到低排查：</p>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">#</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">原因</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">怎么确认</th>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">1</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">运营商账户未开通该功能</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">登录账户后台确认 Wi-Fi Calling 状态为已启用</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">2</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">紧急服务地址等账户信息未填</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">账户资料页补齐，Tello 用户特别容易漏</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">3</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">网络出口到不了通话服务器</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">更换网络环境（换一个 WiFi 或改用热点）测试开关状态</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">4</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">部分运营商要求连接原生网络才能首次启用</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">若曾在美区启用过，回国后一般可保持；从未启用过的账户会非常困难</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">5</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">手机端开关未打开或需重新识别 SIM</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">重新插拔 SIM／重启后再次打开开关</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">6</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">基站或通话服务器侧临时不可用</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">过一段时间或换个时段重试，社区曾出现集中恢复的情况</td>
+        </tr>
+      </table>
+      <p>社区用户反馈中提到，T-Mobile 系运营商（含 Tello、Ultra Mobile 等）的 Wi-Fi 通话服务器使用的地址段在境内曾出现不可达，需要把该地址段通过路由器层级转发才能恢复。这类信息变动频繁，我们不做统一结论，遇到时按上表顺序排查即可。</p>
+
+      <h2 id="esim">七、eSIM 能不能在中国用</h2>
+      <p>这里要区分两件完全不同的事，混淆会导致买错：</p>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">类型</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">发行方</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">在中国能否使用</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">办理要求</th>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">境外发行的数据 eSIM</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">境外运营商或旅行 eSIM 服务商</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">可以，漫游接入内地网络</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">需在入境前完成安装，境外平台的下载服务器在境内不一定可达</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">中国内地运营商的手机 eSIM</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">中国移动 / 联通 / 电信</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">仅限少数机型，且需到店或营业厅办理</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">需中国身份证实名核验</td>
+        </tr>
+      </table>
+      <p>关于国行 iPhone：<strong>中国内地销售的绝大多数 iPhone 机型采用双实体 nano-SIM 设计，没有 eSIM 硬件</strong>。中国自 2025 年 10 月起开放了运营商手机 eSIM 业务，但支持机型范围很有限。如果你买的是国行 iPhone，想用 eSIM 之前一定要先确认具体型号，不要只看「支持 eSIM」这句话。</p>
+      <div class="callout">
+        <p><strong>为什么境外 eSIM 在境内的网络体验更接近境外？</strong>因为漫游流量的架构就是把数据从内地网络带出去、经境外网关出口，这是漫游本身的工作方式，不是某个产品的特殊功能。它只对移动数据生效，一旦连上咖啡馆或酒店的 WiFi，就回到本地网络的规则。</p>
+      </div>
+
+      <h2 id="keep">八、海外号码长期保号</h2>
+      <p>号码被回收通常不是意外，而是三个动作没做：</p>
+      <ol class="step-list">
+        <li><strong>开启自动续费。</strong>绝大多数预付费号在余额不足且长时间未续费后会被回收，社区反馈中常见的门槛是余额不足且超过 60 天未续费。以运营商条款为准。</li>
+        <li><strong>保持账户活跃。</strong>定期产生一次通话或短信记录，避免被判定为长期不用。</li>
+        <li><strong>不要把开机当唯一检测手段。</strong>没有 WiFi 时信号栏无服务是正常的，定期用 Wi-Fi 通话拨一次号才是有效的存活检测。</li>
+      </ol>
+
+      <h2 id="sms">九、收验证码的正确预期</h2>
+      <p>验证码能不能收到，取决于两层：</p>
+      <ul>
+        <li><strong>运营商层：</strong>号码是否在网、是否能接短信（Wi-Fi 通话下能否收短信取决于运营商支持；漫游状态下通常可以）。</li>
+        <li><strong>发送方层：</strong>部分机构对 VoIP 号码、漫游号码或预付费号码有限制。这是对方的风控策略，运营商层面无法解决。</li>
+      </ul>
+      <p>所以「所有验证码都能收到」这个预期本身是不成立的。如果你要绑定的机构非常关键，先做一次小额验证测试，确认能收到再继续。</p>
+
+      <h2 id="trouble">十、常见故障排查</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">现象</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">先查什么</th>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">信号栏显示无服务</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">先别慌。测试 Wi-Fi 通话能否拨通，能通就是正常的</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">Wi-Fi 通话开关打不开</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">检查账户功能是否开通、紧急服务地址是否填写、换网络环境再试</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">能打电话但收不到短信</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">确认运营商是否支持在 Wi-Fi 通话下收发短信；对比漫游状态的接收结果</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">昨天还能用今天断了</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">先确认号码未被停机（余额与续费状态），再排查网络环境变化</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">eSIM 装不上</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">确认机型有 eSIM 硬件、二维码未过期、安装时网络可达服务商服务器</td>
+        </tr>
+      </table>
+
+      <h2 id="status">十一、验证状态</h2>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;margin:20px 0;">
+        <tr style="background:var(--bg-alt);">
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">结论</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">状态</th>
+          <th style="padding:10px 14px;text-align:left;border:1px solid var(--border);">来源</th>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">境外数据 eSIM 在中国可通过漫游正常使用</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">已核实</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">多份公开的漫游与 eSIM 指南一致</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">中国内地 iPhone 多数不支持 eSIM 硬件</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">已核实</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">机型规格与公开报道</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">Tello 无国际漫游，中国境内依赖 Wi-Fi 通话</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">已核实</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">公开的 Tello 使用说明与用户记录</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">Wi-Fi 通话服务器地址段在境内的可达性变化</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">社区反馈</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">用户论坛记录，随时可能变化，不作统一结论</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 14px;border:1px solid var(--border);">各运营商当期资费与套餐内容</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">以官网为准</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">本文不引用具体报价，避免过期信息误导</td>
+        </tr>
+        <tr style="background:var(--bg-alt);">
+          <td style="padding:10px 14px;border:1px solid var(--border);">本站对具体运营商的自购实测</td>
+          <td style="padding:10px 14px;border:1px solid var(--border);"><strong>待补充</strong></td>
+          <td style="padding:10px 14px;border:1px solid var(--border);">补齐后会在此标注实测机型与时间</td>
+        </tr>
+      </table>
+      <div class="test-note">
+        <p><strong>我们的写法：</strong>这一页只写可核实的机制与流程。凡是需要「我亲自测过」才有资格下的结论（例如某运营商在中国某省的漫游稳定性、某段时间的收码成功率），一律标注为待补充，不用别人的帖子冒充自己的实测。</p>
+      </div>
+
+      <h2>相关服务与教程</h2>
+      <div class="related-articles">
+        <div class="related-grid">
+          <a href="services.html" class="related-card">
+            <span class="related-category">服务总览</span>
+            <h4>海外设备与网络相关服务</h4>
+          </a>
+          <a href="overseas-live.html" class="related-card">
+            <span class="related-category">海外场景</span>
+            <h4>抖音/小红书/视频号海外直播权限</h4>
+          </a>
+          <a href="articles/overseas-live-guide.html" class="related-card">
+            <span class="related-category">平台对比</span>
+            <h4>三平台海外开播要求对比</h4>
+          </a>
+          <a href="virtual-location.html" class="related-card">
+            <span class="related-category">定位相关</span>
+            <h4>手机改定位怎么弄？全平台方案</h4>
+          </a>
+          <a href="ios27-virtual-location.html" class="related-card">
+            <span class="related-category">iPhone</span>
+            <h4>iOS 27 虚拟定位方法与兼容性</h4>
+          </a>
+          <a href="contact.html" class="related-card">
+            <span class="related-category">咨询</span>
+            <h4>把你的设备与需求发过来</h4>
+          </a>
+        </div>
+      </div>
+
+      <p style="font-size:12px;color:var(--text-muted);margin-top:32px;opacity:0.7;">本文为使用流程与机制整理，不构成对任何运营商的推荐。请遵守运营商服务条款及所在地法律法规。文中涉及的资费、功能可用性均可能随时调整，请以运营商官方说明为准。</p>
+
+    </div>
+  </div>
+</article>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <h2>常见问题</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Tello 在中国能用吗？</summary>
+        <p>能用，但只能靠 Wi-Fi Calling。Tello 不提供国际漫游，回到中国后信号栏显示无服务是正常现象，电话和短信都走 Wi-Fi 通话。前提是账户已启用 Wi-Fi 通话，且网络出口能连到运营商的通话服务器。</p>
+      </details>
+      <details class="faq-item">
+        <summary>Tello 和 Ultra Mobile PayGo 有什么区别？</summary>
+        <p>两者都使用 T-Mobile 网络。主要差别是 Ultra Mobile PayGo 支持中国境内漫游，即使没有 Wi-Fi 也能通过漫游接收短信；Tello 没有漫游，必须依赖 Wi-Fi 通话。价格上 PayGo 的月费更低，但套餐内容也更小。</p>
+      </details>
+      <details class="faq-item">
+        <summary>Wi-Fi Calling 在国内为什么开不了？</summary>
+        <p>常见原因有四个：运营商账户没有开通该功能；部分运营商只允许连接美国基站时启用；网络出口连不到运营商的通话服务器；手机端开关没打开或需要重新插拔 SIM 卡。需要按顺序排查。</p>
+      </details>
+      <details class="faq-item">
+        <summary>境外 eSIM 在中国能用吗？</summary>
+        <p>能。境外发行的数据 eSIM 在中国通过漫游接入中国移动、中国联通或中国电信的网络，数据经境外网关出口，不需要额外配置即可使用。</p>
+      </details>
+      <details class="faq-item">
+        <summary>国行 iPhone 能用 eSIM 吗？</summary>
+        <p>大部分不能。中国内地销售的 iPhone 长期采用双实体 nano-SIM 设计，没有 eSIM 硬件。中国自 2025 年 10 月起开放了运营商手机 eSIM 业务，但办理需要中国身份证实名，机型支持范围也很有限，购买前务必确认自己机型的具体型号。</p>
+      </details>
+      <details class="faq-item">
+        <summary>美国号码怎么长期保号？</summary>
+        <p>核心是不要欠费且保持账户活跃。多数预付费号在余额不足并长期不续费后会被回收，建议开启自动续费，并定期产生一次通话或短信记录。具体规则以运营商条款为准。</p>
+      </details>
+      <details class="faq-item">
+        <summary>用 Wi-Fi Calling 收银行验证码可以吗？</summary>
+        <p>可以，前提是该运营商支持通过 Wi-Fi 通话收发短信，且账户状态正常。部分机构会限制向 VoIP 或漫游号码发送验证码，银行类短信是否可达最终取决于对方的风控策略。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>号码断了、开关打不开、收不到码</h2>
+    <p>把机型、运营商和具体现象发过来。我们先帮你定位是账户问题、网络问题还是设备问题。</p>
+    <div class="cta-row">
+      <a href="contact.html?service=overseas-network" class="btn btn-primary">咨询海外号码配置</a>
+      <a href="https://wa.me/14154251293" target="_blank" rel="noopener" class="wa-direct">WhatsApp 直接咨询 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer minimal-footer">
+  <div class="container footer-directory">
+    <div class="footer-brand">
+      <p>自由行 Studio</p>
+      <span>一对一设备配置与技术支持</span>
+    </div>
+    <div class="footer-links">
+      <h2>设备与定位</h2>
+      <a href="virtual-location.html">虚拟定位总览</a>
+      <a href="iphone-virtual-location.html">iPhone 虚拟定位</a>
+      <a href="ios27-virtual-location.html">iOS 27 虚拟定位</a>
+      <a href="android-virtual-location.html">安卓虚拟定位</a>
+      <a href="remote-checkin.html">定位异常与打卡</a>
+      <a href="phone-clone.html">iPhone 分身</a>
+    </div>
+    <div class="footer-links">
+      <h2>海外与平台</h2>
+      <a href="overseas-mobile-network.html">海外手机卡与网络</a>
+      <a href="overseas-live.html">海外直播</a>
+      <a href="social-media-growth.html">粉丝与互动服务</a>
+      <a href="platform-auth.html">平台认证</a>
+    </div>
+    <div class="footer-links">
+      <h2>帮助</h2>
+      <a href="services.html">服务总览</a>
+      <a href="articles/">文章与教程</a>
+      <a href="https://www.gexiv.com/" target="_blank" rel="noopener">Gexiv 产品商城 ↗</a>
+      <a href="contact.html">联系我们</a>
+    </div>
+  </div>
+  <p class="container footer-copyright">© 2026 自由行 Studio</p>
+</footer>
+
+<script src="js/site.js"></script>
+<script src="js/main.js"></script>
+<script src="js/analytics.js"></script>
+</body>
+</html>

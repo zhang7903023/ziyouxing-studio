@@ -16,6 +16,8 @@ ROOT_PAGES = [
     "index.html", "virtual-location.html", "remote-checkin.html", "phone-clone.html",
     "overseas-live.html", "social-media-growth.html", "platform-auth.html",
     "services.html", "contact.html",
+    "iphone-virtual-location.html", "ios27-virtual-location.html",
+    "android-virtual-location.html", "overseas-mobile-network.html",
 ]
 
 X_LIMIT = 3000
