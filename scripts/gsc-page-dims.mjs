@@ -90,7 +90,7 @@ async function main() {
   // 页面过滤器
   await call('Page.navigate', { url: 'https://search.google.com/search-console/performance/search-analytics?resource_id=' + RES });
   await sleep(13000);
-  await ev(`(async () => { const b=[...document.querySelectorAll('button')].find(b=>(b.innerText||'').trim()==='28 天'); if(b) b.click(); await new Promise(r=>setTimeout(r,6000)); return 1; })()`);
+  await ev(`(async () => { const b=[...document.querySelectorAll('button')].find(b=>(b.innerText||'').trim()===${JSON.stringify({ '7d': '7 天', '28d': '28 天', '3m': '3 个月' }[process.env.WINDOW || '28d'] || '28 天')}); if(b) b.click(); await new Promise(r=>setTimeout(r,6000)); return 1; })()`);
   console.error('入口: ' + JSON.stringify(await clickLike('添加过滤条件', { exact: false, minW: 60, maxW: 400, minH: 24, maxH: 70, minLeft: 400 })));
   await sleep(2800);
   console.error('维度网页: ' + JSON.stringify(await clickMenu('网页')));
