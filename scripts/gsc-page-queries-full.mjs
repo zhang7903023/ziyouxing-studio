@@ -7,6 +7,9 @@ const PORT = 9222;
 const RES = encodeURIComponent('https://zyxstudio.net/');
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const TARGETS = process.argv.slice(2);
+// WINDOW=7d|28d|3m —— 默认 28 天（与 Day0 口径一致）
+const WINDOW = process.env.WINDOW || '28d';
+const WIN_LABEL = { '7d': '7 天', '28d': '28 天', '3m': '3 个月' }[WINDOW] || '28 天';
 
 async function main() {
   const list = await fetch(`http://127.0.0.1:${PORT}/json/list`).then(r => r.json());
@@ -117,7 +120,7 @@ async function main() {
     try {
       await call('Page.navigate', { url: 'https://search.google.com/search-console/performance/search-analytics?resource_id=' + RES });
       await sleep(13000);
-      await ev(`(async () => { const b=[...document.querySelectorAll('button')].find(b=>(b.innerText||'').trim()==='28 天'); if(b) b.click(); await new Promise(r=>setTimeout(r,6000)); return 1; })()`);
+      await ev(`(async () => { const b=[...document.querySelectorAll('button')].find(b=>(b.innerText||'').trim()===${JSON.stringify(WIN_LABEL)}); if(b) b.click(); await new Promise(r=>setTimeout(r,6000)); return 1; })()`);
 
       const entry = await clickLike('添加过滤条件', { exact: false, minW: 60, maxW: 400, minH: 24, maxH: 70, minLeft: 400 });
       console.error('### ' + target + ' 入口: ' + JSON.stringify(entry));
